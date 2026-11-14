@@ -1,0 +1,34 @@
+name: Publier Harmonie v3.5.20
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/publier-release-v3.5.20.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publier:
+    if: github.repository == 'philippe015/Harmonie'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer les sources
+        uses: actions/checkout@v4
+      - name: Créer la release source v3.5.20 si absente
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view v3.5.20 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "La release v3.5.20 existe déjà."
+            exit 0
+          fi
+          gh release create v3.5.20 \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "Harmonie v3.5.20 — Hi-Fi Audio PRO" \
+            --notes-file "CHANGELOG_V3_5_20.md"
+          echo "Release sources v3.5.20 créée. Aucun APK non vérifié n'a été ajouté."
