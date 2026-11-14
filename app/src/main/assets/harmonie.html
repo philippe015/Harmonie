@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c1018">
+<title>Harmonie Android v3.5.19 — Hi-Fi Audio PRO · FLAC · Radios · Matrix · BY PHILOU/CYBERPUNK</title>
+<style>
+:root{color-scheme:dark;--bg:#0c1018;--card:#171d28;--panel:#202838;--line:#333e51;--text:#f1f4f9;--muted:#a4b0c4;--soft:#7e8ba1;--accent:#9f89f8;--mint:#52d9bd;--danger:#ff929c;--radius:17px}
+*{box-sizing:border-box}body{font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at top,#1d2640 0%,var(--bg) 58%);color:var(--text);margin:0;min-height:100dvh;padding:16px}button,input,select{font:inherit}button{cursor:pointer;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:10px 12px;transition:background .15s,border .15s;touch-action:manipulation}button:hover:not(:disabled){background:#344055}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--mint);outline-offset:2px}button:disabled{opacity:.43;cursor:not-allowed}button.primary{background:var(--accent);color:#111527;border-color:transparent;font-weight:750}button.primary:hover:not(:disabled){background:#b5a5ff}button.danger{color:var(--danger)}button.selected{background:#214b49;border-color:var(--mint);color:#dcfff7}button.icon-btn{min-width:43px;min-height:43px;font-size:19px;padding:6px}input[type=search],select{width:100%;min-width:0;border:1px solid var(--line);background:#121926;color:var(--text);padding:10px 11px;border-radius:10px}input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}label{color:var(--muted)}.app{max-width:920px;margin:auto;background:var(--card);border:1px solid #303a50;border-radius:22px;box-shadow:0 14px 70px #0006;overflow:hidden}.top{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:19px 22px;background:#1b2231;border-bottom:1px solid var(--line)}h1{font-size:1.27rem;letter-spacing:.2px;margin:0}h2{font-size:1.05rem;margin:0}.sub{font-size:12px;color:var(--muted);margin:4px 0 0}.pill{font-size:12px;color:var(--mint);padding:5px 10px;background:#1f3435;border-radius:99px;white-space:nowrap}.library{padding:18px 20px 11px}.line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.actions{margin:14px 0 12px}.actions button{flex:1 1 115px}.filter-bar{display:grid;grid-template-columns:1.1fr 1fr;gap:10px;margin-bottom:10px}.playlist-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}.playlist-row button{font-size:12px;padding:8px 10px}.playlist-row .spacer{flex:1}.cover-repair-row{display:flex;gap:10px;align-items:center;margin:-1px 0 10px;flex-wrap:wrap}.cover-repair-row button{font-size:12px;padding:8px 10px}.cover-repair-row span{font-size:11px;color:var(--mint)}.stats{font-size:12px;color:var(--muted);padding:0 3px 8px}.list{max-height:36vh;min-height:130px;overflow:auto;border:1px solid var(--line);border-radius:13px;background:#111722;scrollbar-color:#46516b transparent}.track{display:flex;align-items:center;gap:10px;padding:11px 10px;border-bottom:1px solid #252e3e;cursor:pointer}.track:last-child{border-bottom:none}.track:hover{background:#202a3b}.track.active{background:#262b43;box-shadow:inset 3px 0 var(--accent)}.track-cover,.radio-logo{flex-shrink:0;width:44px;height:44px;border-radius:11px;object-fit:cover;background:#0e1622;border:1px solid #31405a;box-shadow:0 0 0 1px #0004 inset}.track .number{color:var(--muted);font-size:12px;width:22px;text-align:center;flex-shrink:0}.track.active .number{color:var(--mint)}.track .namebox{min-width:0;flex:1}.track .name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600;font-size:13.5px}.track .path{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--soft);font-size:11.5px}.track .size{font-size:11px;color:var(--muted);white-space:nowrap}.track .remove{padding:5px 8px;min-width:32px;color:var(--danger);font-size:16px}.empty{text-align:center;color:var(--muted);padding:27px 15px;line-height:1.7}.player{border-top:1px solid var(--line);background:#131a26;padding:18px 20px 20px}.current{display:flex;gap:14px;align-items:center;margin-bottom:16px}.art{flex-shrink:0;display:grid;place-items:center;height:68px;width:68px;border-radius:18px;background:linear-gradient(135deg,#6954c8,#174c53);font-size:29px;overflow:hidden;border:1px solid #3a4964;box-shadow:0 0 20px #0006 inset}.art img{width:100%;height:100%;object-fit:cover;display:block}.current-text{min-width:0;flex:1}.current-title{font-weight:750;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.current-sub{font-size:12px;color:var(--muted);white-space:nowrap;text-overflow:ellipsis;overflow:hidden;margin-top:3px}.timeline{display:flex;align-items:center;gap:10px;margin-bottom:12px}.timeline span{font-size:12px;font-variant-numeric:tabular-nums;color:var(--muted);width:43px;flex-shrink:0}.timeline span:last-child{text-align:right}.controls{display:flex;justify-content:center;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:14px}.controls #playBtn{min-width:110px}.settings{display:grid;grid-template-columns:1fr 1fr;gap:14px}.setting{display:flex;align-items:center;gap:9px}.setting .title{font-size:12px;color:var(--muted);white-space:nowrap}.frequency{display:flex;gap:7px;justify-content:flex-end}.frequency button{font-size:12px;padding:8px 13px}.options{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}.options label{display:flex;gap:7px;align-items:center;font-size:12px;cursor:pointer}.options input{accent-color:var(--mint)}.options button{font-size:12px;padding:7px 10px}.notice{font-size:11.5px;color:var(--muted);line-height:1.5;margin-top:11px}.status{min-height:20px;color:var(--mint);font-size:12px;margin-top:11px}.status.error{color:var(--danger)}details{margin-top:9px;color:var(--muted);font-size:11px}summary{cursor:pointer}#log{max-height:115px;overflow:auto;white-space:pre-wrap;background:#0b111b;border:1px solid var(--line);padding:9px;border-radius:9px;margin-top:7px}#busy{font-size:12px;color:var(--muted)}.footer{padding:12px 20px;border-top:1px solid var(--line);color:var(--soft);font-size:11px;text-align:center}small{color:var(--muted)}@media(max-width:600px){body{padding:0;background:var(--card)}.app{border:0;border-radius:0;min-height:100dvh}.top{padding:16px}.library{padding:14px 12px 9px}.player{padding:15px 13px 24px}.filter-bar{grid-template-columns:1fr}.list{max-height:33vh}.settings{grid-template-columns:1fr}.frequency{justify-content:flex-start}.controls{gap:7px}.top .pill{display:none}.track-cover,.radio-logo{width:40px;height:40px}.art{width:62px;height:62px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Radios Internet : navigation, favoris et recherche accessible */
+.tabs{display:flex;gap:7px;padding:13px 19px 0;background:#1b2231;border-bottom:1px solid var(--line)}
+.tab{flex:1;border-radius:11px 11px 0 0;max-width:260px;border-bottom:0;font-weight:700;color:var(--muted)}
+.tab[aria-selected="true"]{background:var(--card);color:var(--mint);border-color:var(--line)}
+[hidden]{display:none!important}
+.radio-section{padding:17px 20px 12px}
+.radio-info{font-size:12px;color:var(--muted);margin:4px 0 12px}
+.radio-filters{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.radio-search-row{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:10px}
+.radio-search-row input{min-width:0}
+.radio-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:11px 0}
+.radio-tools button{font-size:12px;padding:8px 11px}
+.radio-tools #radioCount{flex:1;color:var(--muted);font-size:12px}
+.radio-results{max-height:42vh;min-height:170px;overflow-y:auto;border:1px solid var(--line);border-radius:13px;background:#111722}
+.radio-item{display:flex;align-items:center;gap:10px;padding:11px;border-bottom:1px solid #2b3444}
+.radio-item:last-child{border-bottom:0}
+.radio-item:hover{background:#222b3b}
+.radio-item.active{background:#263044;border-left:3px solid var(--mint)}
+.radio-item .station-main{flex:1;min-width:0;background:none;border:0;text-align:left;display:block;padding:3px;border-radius:5px}
+.station-name{display:block;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
+.station-meta{display:block;color:var(--muted);font-size:11px;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.radio-fav{font-size:21px;min-width:44px;min-height:44px;padding:4px 8px;color:#acb4c4}
+.radio-fav.on{color:#f8d275}
+.radio-badge{font-size:11px;color:var(--mint);font-weight:650;letter-spacing:.04em}
+.radio-msg{min-height:19px;color:var(--muted);font-size:12px;margin-top:9px}
+.radio-msg.error{color:var(--danger)}
+.radio-pages{display:flex;justify-content:center;gap:12px;margin-top:10px}
+.radio-pages button{min-width:104px}
+.radio-features{display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:11px;font-size:12px}
+.radio-features label{display:flex;align-items:center;gap:7px;cursor:pointer}
+.radio-features input{accent-color:var(--mint)}
+.radio-explain{font-size:11px;color:var(--muted);margin:9px 0 0;line-height:1.55}
+@media(max-width:600px){.tabs{padding:10px 12px 0}.radio-section{padding:14px 12px 10px}.radio-results{max-height:38vh}}
+@media(max-width:370px){.radio-filters{grid-template-columns:1fr}.radio-search-row{grid-template-columns:1fr}.radio-search-row button{width:100%}}
+.app-version-badge{display:inline-block;margin-top:11px;padding:5px 12px;border:1px solid #42556f;border-radius:999px;background:#121d2d;color:var(--mint);font:700 11px/1.4 system-ui,sans-serif;letter-spacing:.09em;font-variant-numeric:tabular-nums}
+/* Égaliseur 8 bandes : version mobile et bureau */
+.eq-section{margin-top:16px;padding:14px;border:1px solid var(--line);background:#192233;border-radius:14px}
+.eq-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.eq-head h2{font-size:15px}
+.eq-head .eq-state{font-size:11px;color:var(--mint)}
+.eq-toolbar{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.eq-toolbar .eq-preset{width:auto;min-width:150px;flex:1 1 145px;font-size:12px}
+.eq-toolbar button{font-size:12px;padding:9px 11px}
+.eq-switch{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;font-size:12px;color:var(--text)}
+.eq-switch input{accent-color:var(--mint);width:16px;height:16px}
+.eq-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px;margin:15px 0 9px;padding:12px 3px 6px;background:#111927;border:1px solid #2c3a4f;border-radius:12px}
+.eq-band{display:flex;flex-direction:column;align-items:center;gap:7px;min-width:0}
+.eq-band label{font-size:11px;color:#d5deec;white-space:nowrap}
+.eq-slider{height:132px!important;width:27px!important;min-width:27px;writing-mode:vertical-lr;direction:rtl;accent-color:var(--mint)!important;cursor:pointer}
+.eq-band output{font-variant-numeric:tabular-nums;font-size:11px;color:var(--muted);min-width:38px;text-align:center;white-space:nowrap}
+.eq-band:focus-within output{color:var(--mint)}
+.eq-band input:disabled{opacity:.35;cursor:not-allowed}
+.eq-controls{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap;margin-top:12px}
+.eq-controls label{font-size:12px}
+.eq-headroom{font-size:11px;color:var(--muted)}
+.eq-help{margin:10px 0 0;font-size:11px;color:var(--muted);line-height:1.5}
+@media(max-width:430px){.eq-section{padding:12px 8px}.eq-grid{gap:2px;padding-left:0;padding-right:0}.eq-band label,.eq-band output{font-size:10px}.eq-band output{min-width:0}.eq-toolbar{gap:7px}.eq-toolbar .eq-preset{min-width:120px}}
+
+/* v7 — Spectre LED Cyberpunk, affichage seulement : aucun traitement du signal. */
+:root{--neon-pink:#fc57d8;--neon-cyan:#38edee}
+.top h1{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.brand-stamp{font-size:10px;letter-spacing:.12em;font-weight:800;color:var(--neon-cyan);white-space:nowrap;text-shadow:0 0 12px #38edee60}
+.led-section{margin:0 0 16px;border:1px solid #3d4767;border-radius:15px;background:linear-gradient(145deg,#11162b,#15172b 64%,#1a1531);padding:12px 13px 14px;box-shadow:inset 0 0 0 1px #ffffff04,0 0 16px #8b39f30a}
+.led-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.led-heading{display:flex;align-items:center;gap:9px;min-width:0}
+.led-indicator{width:9px;height:9px;border-radius:50%;background:#37445d;box-shadow:0 0 0 3px #ffffff06;flex-shrink:0}
+.led-section[data-running="true"] .led-indicator{background:var(--neon-cyan);box-shadow:0 0 9px var(--neon-cyan),0 0 16px #38edee65}
+.led-head h2{font-size:13px;letter-spacing:.045em;line-height:1.35;margin:0}
+.led-kicker{font-size:10px;font-weight:800;letter-spacing:.16em;color:#e37eff;border:1px solid #9935bc64;border-radius:99px;padding:4px 8px}
+.led-screen{position:relative;overflow:hidden;border-radius:11px;background:#060b16;border:1px solid #26344c;box-shadow:inset 0 0 24px #0008}
+.led-screen::before{content:"";pointer-events:none;position:absolute;inset:0;background:linear-gradient(transparent 50%,#03101833 50%);background-size:100% 5px;opacity:.45;z-index:1}
+.led-screen canvas{display:block;width:100%;height:198px;max-width:100%}
+.led-settings{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:11px}
+.led-settings label{display:flex;align-items:center;gap:7px;min-width:0;font-size:12px;color:#c4cde4}
+.led-settings select{font-size:12px;padding:8px;min-width:0;flex:1}
+.led-settings .led-slide{display:flex;align-items:center;gap:8px}
+.led-settings .led-slide>span{font-size:11px;min-width:58px;color:var(--muted)}
+.led-settings input[type="range"]{min-width:0;flex:1}
+.led-settings output{min-width:34px;text-align:right;font-size:11px;color:var(--neon-cyan);font-variant-numeric:tabular-nums}
+.led-status{font-size:11px;line-height:1.4;color:#93b6c6;min-height:16px;margin-top:9px}
+.led-sync-toggle{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px 13px;margin-top:10px;padding:9px 11px;border-radius:9px;background:#0a1d28;border:1px solid #29576e;color:#c5faff;font-size:12px}
+.led-sync-toggle label{display:flex;align-items:center;gap:8px;font-weight:650;cursor:pointer}
+.led-sync-toggle input{accent-color:#45eacb;width:17px;height:17px}
+.led-sync-toggle span{color:#8fb4c7;font-size:10px;line-height:1.45;flex:1 1 215px}
+.led-sync-toggle input:disabled{opacity:.5}
+
+.signature{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:5px}
+.signature b{font-size:12px;letter-spacing:.12em;color:var(--neon-cyan);text-shadow:0 0 12px #3ff4ed50}
+.signature span{font-size:10px;color:#c87dff;letter-spacing:.12em}
+@media(max-width:600px){.led-section{padding:11px 10px 13px}.led-screen canvas{height:154px}.led-settings{grid-template-columns:1fr;gap:8px}.led-kicker{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.led-indicator,.brand-stamp,.signature b{animation:none!important;text-shadow:none}}
+
+/* Harmonie v9 — identité, pochette disque, informations, visualiseur immersif */
+body[data-visual="matrix"]{--bg:#020b09;--card:#0c1814;--panel:#172e25;--line:#244c38;--text:#dcffec;--muted:#95c7a7;--soft:#79a38c;--accent:#20d36d;--mint:#4bffc0;background:radial-gradient(ellipse at top,#11301d 0%,#020907 70%)}
+body[data-visual="ice"]{--bg:#07121d;--card:#0d202e;--panel:#17354b;--line:#2b5970;--text:#e4f8ff;--muted:#a4c8d9;--soft:#85a8be;--accent:#58c8ff;--mint:#75ffe5;background:radial-gradient(ellipse at top,#103450 0%,#07121d 68%)}
+body[data-visual="fire"]{--bg:#190a13;--card:#240f1a;--panel:#3c1c30;--line:#6a2f4a;--text:#fff0ed;--muted:#e6b6b2;--soft:#c78f9b;--accent:#ff6398;--mint:#ffb977;background:radial-gradient(ellipse at top,#4b182c 0%,#170913 72%)}
+.visual-tools{display:flex;align-items:center;gap:7px;flex-wrap:wrap;justify-content:flex-end}.visual-tools label{font-size:11px;color:var(--muted)}
+#visualTheme{width:auto;max-width:150px;padding:6px 8px;font-size:12px}.visual-tools button{padding:7px 11px;font-size:12px}
+.current{position:relative}.current .art{position:relative;transition:border-radius .4s ease,box-shadow .3s ease}.art.is-rotating{border-radius:50%;box-shadow:0 0 25px #34ffd738}.art.is-rotating img{border-radius:50%;animation:record-spin 16s linear infinite}.art.is-rotating:after,.stage-art.is-rotating:after{content:"";width:12px;height:12px;background:radial-gradient(circle,#090e14 0 28%,#e6f4ff 33% 59%,#13282b 64%);border:1px solid #e6faf888;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;box-shadow:0 0 8px #0009;pointer-events:none}
+@keyframes record-spin{to{transform:rotate(360deg)}}
+.player-top-controls{display:flex;gap:6px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-top:4px}.player-top-controls button{padding:6px 9px;font-size:11px}
+.info-details{background:#0f1826;border:1px solid var(--line);border-radius:12px;padding:9px 12px;margin:10px 0 14px}.info-details summary{font-size:12px;letter-spacing:.03em;font-weight:700;color:var(--mint);cursor:pointer}
+.metadata-grid{margin:10px 0;display:grid;grid-template-columns:1fr 1fr;gap:8px 15px}.metadata-grid .meta{min-width:0}.metadata-grid .meta span{display:block;color:var(--soft);font-size:10px}.metadata-grid .meta strong{display:block;font-size:12px;font-weight:500;overflow-wrap:anywhere}
+.lyric-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:13px 0 7px}.lyric-head strong{font-size:12px;color:var(--mint)}.lyric-head div{display:flex;gap:7px;flex-wrap:wrap}.lyric-head button{font-size:11px;padding:6px 8px}.lyrics-display{white-space:pre-wrap;font-size:12px;max-height:230px;overflow:auto;padding:14px 12px;background:#060f16;border:1px solid #2b4851;border-radius:10px;color:#cfdfeb;line-height:1.8;scrollbar-color:#235d62 transparent}.lyrics-display .line{display:block;white-space:pre-wrap;line-height:1.7;transition:color .2s}.lyrics-display .line.active{color:#68ffe1;font-weight:750;text-shadow:0 0 8px #33ffd450}.lyrics-edit textarea{width:100%;min-height:125px;resize:vertical;background:#091420;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px;font:12px/1.5 ui-monospace,monospace}.lyrics-edit .line{display:flex;gap:9px;margin-top:8px}.lyrics-help{font-size:10px;color:var(--muted);margin:5px 0 0}
+#stageOverlay{position:fixed;inset:0;z-index:1000;background:radial-gradient(circle at 50% 25%,#0a2831,#02060c 65%);padding:0;color:#e5faff;overflow:auto;overscroll-behavior:contain}#stageOverlay[hidden]{display:none!important}#stageOverlay[data-mode="matrix"]{background:#010905}#stageOverlay[data-mode="ice"]{background:#03111f}#stageOverlay[data-mode="fire"]{background:#210a14}
+.stage-rain{position:fixed;inset:0;width:100%;height:100%;opacity:.45;pointer-events:none}.stage-ui{position:relative;z-index:1;min-height:100dvh;display:flex;flex-direction:column;align-items:center;gap:12px;padding:15px 18px 22px;background:linear-gradient(90deg,#030917c9,transparent 35%,transparent 65%,#030917c9)}
+.stage-top{display:flex;align-items:center;gap:16px;justify-content:space-between;width:100%;max-width:1200px}.stage-brand{font-weight:800;letter-spacing:.18em;font-size:12px;color:#8cfce8;text-shadow:0 0 18px #22fdcb9c}.stage-top button{background:#061b22d9;border-color:#4de3b974}.stage-main{width:100%;max-width:1150px;display:flex;flex:1;align-items:center;justify-content:center;gap:clamp(20px,4vw,70px);flex-wrap:wrap}.stage-art{height:clamp(185px,32vw,380px);width:clamp(185px,32vw,380px);border-radius:30px;overflow:hidden;position:relative;background:#14242b;border:2px solid #40d4bc81;box-shadow:0 0 32px #06d3c139,0 15px 60px #0008;flex-shrink:0}.stage-art img{width:100%;height:100%;object-fit:cover;display:block}.stage-art.is-rotating{border-radius:50%;box-shadow:0 0 45px #23facc5a}.stage-art.is-rotating img{border-radius:50%;animation:record-spin 16s linear infinite}.stage-art.is-rotating:after{width:25px;height:25px}.stage-description{text-align:left;max-width:min(520px,95%);flex:1 1 245px;min-width:0}.stage-kicker{color:#5fffee;font-size:11px;letter-spacing:.2em}.stage-description h2{font-size:clamp(22px,4vw,42px);line-height:1.15;margin:8px 0;overflow-wrap:anywhere}.stage-sub{color:#bbd7db;font-size:14px;overflow-wrap:anywhere}.stage-live-lyrics{font-size:clamp(13px,2vw,18px);margin-top:16px;color:#67ffcb;min-height:1.7em;white-space:pre-wrap;line-height:1.5;text-shadow:0 0 12px #04cdb450}
+.stage-spectrum{display:block;width:min(94vw,950px);height:clamp(90px,19vh,185px);background:#040b14bf;border:1px solid #38c2ae5d;border-radius:15px;box-shadow:0 0 24px #0effd122;object-fit:fill}
+.stage-controls{display:flex;align-items:center;gap:11px;justify-content:center;flex-wrap:wrap}.stage-controls button{min-width:60px;background:#173035de;border-color:#45ccae95;font-size:18px}.stage-controls button.primary{background:#35e4c2;color:#08141c}.stage-hint{color:#b5cdd2;font-size:10px;text-align:center}.stage-signature{font-size:11px;letter-spacing:.2em;font-weight:850;color:#91ffe8;text-shadow:0 0 12px #17eecc}
+@media(max-width:640px){.top{align-items:flex-start;flex-wrap:wrap}.visual-tools{justify-content:flex-start}.metadata-grid{grid-template-columns:1fr}.stage-ui{padding:12px 12px 19px}.stage-main{align-content:center;gap:13px}.stage-art{height:min(52vw,230px);width:min(52vw,230px)}.stage-description{text-align:center;flex:0 1 100%}.stage-description h2{font-size:22px}.stage-kicker{font-size:10px}.stage-spectrum{width:96vw;height:130px}.stage-live-lyrics{min-height:25px}.stage-hint{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.art img,.stage-art img{animation:none!important}.stage-rain{opacity:.12}}
+
+/* Diagnostic audio v3.5.6 : compact, sans changer les couleurs Cyberpunk. */
+.audio-repair-tools{border:1px solid var(--line);border-radius:10px;background:#101c2a;padding:8px 11px;margin:-5px 0 12px;color:var(--muted);font-size:12px}
+.audio-repair-tools summary{color:var(--mint);font-weight:650}
+.audio-repair-tools button{padding:7px 10px;font-size:12px}
+.audio-repair-tools .notice{white-space:pre-wrap;overflow-wrap:anywhere;margin:5px 0;line-height:1.45}
+/* Importateur de bibliothèque : v10 */
+.import-help{font-size:12px;color:var(--muted);margin:3px 0 10px;line-height:1.55}
+.import-help strong{color:var(--mint)}
+.import-state{border:1px solid #36546b;border-radius:13px;background:#102432;padding:11px 12px;margin:10px 0;color:#c8d7e4;font-size:12px}
+.import-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.import-state progress{width:100%;height:12px;margin:8px 0 4px;accent-color:var(--mint)}
+.import-state button{font-size:12px;padding:5px 10px}
+#importDetails{max-height:85px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;color:#ffb8ac;font-size:11px}
+#dropTarget.drag-over{outline:2px dashed var(--mint);outline-offset:-5px;background:#213548}
+.track .path .session-tag,.session-tag{color:#c99fff}
+#storageInfo{font-size:11px;color:var(--soft);margin:5px 0 4px}
+@media(max-width:600px){.actions button{flex:1 1 41%}.import-help{font-size:11px}}
+
+/* ANDROID v3 — effets supplémentaires, intégrés au panneau Hi-Fi existant */
+.fx-extra{border:1px solid var(--line);background:#111927;border-radius:12px;margin:12px 0 6px;padding:12px}
+.fx-extra h3{font-size:13px;color:var(--mint);letter-spacing:.03em;margin:0 0 10px}
+.fx-extra .fx-row{display:grid;grid-template-columns:minmax(0,1fr) 1fr 48px;gap:12px;align-items:center;margin:9px 0}
+.fx-extra label{font-size:12px;color:var(--text);cursor:pointer}.fx-extra label input{accent-color:var(--mint)}
+.fx-extra output{font-size:11px;color:var(--mint);text-align:right}.fx-extra .fx-note{font-size:10px;color:var(--muted);line-height:1.5;margin:10px 0 0}
+@media(max-width:400px){.fx-extra .fx-row{gap:6px;grid-template-columns:minmax(0,1fr) 1fr 33px}.fx-extra label{font-size:11px}}
+
+/* v3.4 : ajout isolé, sans changement de l'interface Cyberpunk d'origine */
+.hifi-pro{border:1px solid #4c6590;border-radius:14px;margin:15px 0 8px;padding:0;background:linear-gradient(150deg,#111b31,#152336 70%,#1c1730);box-shadow:0 0 19px #30f2d510}
+.hifi-pro>summary{cursor:pointer;display:flex;gap:9px;align-items:center;list-style:none;padding:13px 15px;color:#cffff7;font-size:13px;font-weight:800;letter-spacing:.04em}
+.hifi-pro>summary::-webkit-details-marker{display:none}.hifi-pro>summary::before{content:'▸';color:#49f5df;transition:transform .2s}.hifi-pro[open]>summary::before{transform:rotate(90deg)}
+.pro-label{color:#cffff7}.pro-state{margin-left:auto;border:1px solid #286458;border-radius:30px;padding:3px 9px;font-size:10px;letter-spacing:0;color:#65f7c5;font-weight:600}
+.pro-content{padding:0 13px 14px}.pro-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.pro-profile{display:flex;min-height:80px;align-items:flex-start;flex-direction:column;justify-content:center;text-align:left;gap:3px;border:1px solid #354c62;border-radius:11px;background:#101d2e;padding:11px 12px}
+.pro-profile:hover{background:#1b2b43}.pro-profile strong{font-size:12px;color:#ecfafa}.pro-profile small{font-size:10px;color:#a4b7c9;line-height:1.35}
+.pro-profile[aria-pressed="true"]{background:linear-gradient(130deg,#193b42,#24234b);border-color:#48ebcf;box-shadow:inset 3px 0 #4fffe1,0 0 12px #22ddbf20}
+.pro-help{color:#a9bdc9;font-size:11px;line-height:1.55;margin:11px 0 0}.pro-help strong{color:#b9fff1}
+@media(max-width:420px){.pro-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pro-profile{min-height:70px;padding:9px 8px}.hifi-pro>summary{padding:11px}.pro-state{font-size:9px}}
+
+/* v3.5.19 : tonalité et ambiance réunies dans HI-FI AUDIO PRO */
+.pro-section-name{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#67e3d4;font-weight:800;margin:13px 0 8px}
+.pro-tones{display:grid;gap:9px;padding:10px;border:1px solid #395363;border-radius:11px;background:#0b1a29}
+.pro-tones label{display:grid;grid-template-columns:minmax(55px,1fr) minmax(80px,3fr) 48px;gap:10px;align-items:center;color:#d2ebee;font-size:12px}
+.pro-tones input{width:100%;accent-color:#62e4d6}.pro-tones output{color:#73eaca;font-size:11px;text-align:right;font-variant-numeric:tabular-nums}
+.pro-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.pro-actions button{flex:1 1 130px;min-height:38px;border:1px solid #365d65;border-radius:9px;background:#17313a;color:#e3fff9;font-size:12px}
+.pro-actions button:disabled{opacity:.5}
+.pro-advanced{border:1px solid #365367;border-radius:11px;margin-top:13px;background:#0d1b2d}
+.pro-advanced>summary{padding:11px;font-size:12px;color:#b8e8ed;cursor:pointer;font-weight:700}
+.pro-advanced .fx-extra{margin:0;border:0;background:transparent;padding:2px 11px 12px}
+@media(max-width:420px){.pro-tones label{grid-template-columns:48px minmax(0,1fr) 42px;gap:7px}.pro-profile strong{font-size:11px}.pro-profile small{font-size:9px}}
+
+/* v3.5.5 - Tri par artiste, compact et compatible avec les thèmes Cyberpunk */
+/* v3.5.9 - interrupteur de lecture continue discret, thème inchangé */
+.continuous-playback-row{margin:0 0 10px;display:flex;justify-content:flex-end;color:var(--muted);font-size:12px}
+.continuous-playback-row input{accent-color:var(--mint)}
+.continuous-playback-row label{cursor:pointer}
+.playlist-sort-row{display:flex;align-items:center;justify-content:flex-end;gap:9px;margin:-3px 0 11px;flex-wrap:wrap}
+.playlist-sort-row label{font-size:12px;white-space:nowrap}
+.playlist-sort-row select{width:auto;min-width:175px;max-width:100%;font-size:12px;padding:7px 10px}
+.artist-divider{border-bottom:1px solid var(--line);background:linear-gradient(90deg,#272246,#142532);padding:8px 12px;color:var(--mint);font-size:12px;font-weight:750;letter-spacing:.01em}
+@media(max-width:420px){.playlist-sort-row{justify-content:flex-start}.playlist-sort-row select{flex:1;min-width:0}}
+
+/* v3.5.15 - Navigation secondaire mobile, style Cyberpunk conservé */
+.radio-help-details{margin:11px 0;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#121b2b}.radio-help-details summary{color:var(--muted);font-size:12px}.radio-help-details .radio-explain{margin:9px 0 2px}
+.subnav{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:7px;margin:0 0 15px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.subnav .subtab{min-width:0;padding:11px 8px;background:#141d2d;border:1px solid #35465f;border-radius:11px;color:var(--muted);font-size:13px;font-weight:720;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.subnav .subtab[aria-selected="true"]{color:#d6fff6;background:linear-gradient(115deg,#1b3540,#2a2750);border-color:var(--mint);box-shadow:inset 0 -3px var(--mint)}
+.subpane h2{margin-bottom:7px}.subpane-note{font-size:12px;color:var(--muted);margin:0 0 12px}
+.subpane .playlist-picker{margin:10px 0 13px}.subpane .playlist-picker label{font-size:12px;display:block;margin-bottom:5px}
+.music-search-row{margin-bottom:9px}.music-search-row input{width:100%}
+.music-list-area{margin-top:12px}.music-tools-pane .continuous-playback-row{justify-content:flex-start}
+.radio-subpane .radio-info{margin:5px 0 11px}.radio-subpane .radio-tools{margin:12px 0}
+.radio-favs-intro{font-size:12px;color:var(--muted);line-height:1.5}
+@media(max-width:420px){.subnav{gap:5px}.subnav .subtab{padding:10px 3px;font-size:12px}.radio-subpane .radio-tools button{flex:1}}
+
+/* v3.5.16 — LED visuellement distinctes, y compris avec le moteur natif. */
+.led-screen[data-led-palette="cyber"]{border-color:#8441d4;box-shadow:inset 0 0 28px #2d0c55a3,0 0 13px #a431ec37}
+.led-screen[data-led-palette="matrix"]{border-color:#236a48;box-shadow:inset 0 0 25px #0c3822,0 0 12px #33f48526}
+.led-screen[data-led-palette="fire"]{border-color:#a14353;box-shadow:inset 0 0 25px #4d1428,0 0 12px #f1457026}
+.led-screen[data-led-palette="ice"]{border-color:#258dab;box-shadow:inset 0 0 25px #10405b,0 0 12px #3ed2fc26}
+.led-screen[data-led-palette="plasma"]{border-color:#9943ff;box-shadow:inset 0 0 25px #4c0a76,0 0 12px #cc5eff36}
+.led-screen[data-led-palette="sunset"]{border-color:#c7774a;box-shadow:inset 0 0 25px #5b201a,0 0 12px #fca25336}
+.led-screen[data-led-palette="gold"]{border-color:#b8953a;box-shadow:inset 0 0 25px #473a12,0 0 12px #eed45236}
+.led-note{margin:7px 0 0;font-size:10px;color:var(--soft);line-height:1.5}
+</style>
+</head>
+<body>
+<main class="app">
+  <header class="top"><div><h1>♫ Harmonie <span class="brand-stamp">BY PHILOU/CYBERPUNK</span></h1><p class="sub">Import facile · FLAC · radios · pochettes · paroles · Hi-Fi · LED Matrix</p></div><div class="visual-tools"><label for="visualTheme">Style</label><select id="visualTheme" aria-label="Thème visuel"><option value="cyber">Cyberpunk violet</option><option value="matrix">Matrix vert</option><option value="ice">Néon bleu</option><option value="fire">Néon rose</option></select><button type="button" id="stageOpenTop" title="Ouvrir le visualiseur immersif">⛶ Plein écran</button></div></header>
+  <nav class="tabs" role="tablist" aria-label="Choisir la bibliothèque ou les radios">
+    <button id="musicTab" class="tab" role="tab" aria-controls="musicPanel" aria-selected="true">♫ Ma musique</button>
+    <button id="radioTab" class="tab" role="tab" aria-controls="radioPanel" aria-selected="false">◉ Radios Internet</button>
+  </nav>
+  <section class="library" id="musicPanel" role="tabpanel" aria-labelledby="musicTab" aria-label="Bibliothèque musicale">
+    <nav class="subnav" role="tablist" aria-label="Navigation Ma musique">
+      <button type="button" id="musicSubTracks" class="subtab" role="tab" aria-controls="musicTracksPane" aria-selected="true">♫ Titres</button>
+      <button type="button" id="musicSubPlaylists" class="subtab" role="tab" aria-controls="musicPlaylistsPane" aria-selected="false">▤ Playlists</button>
+      <button type="button" id="musicSubTools" class="subtab" role="tab" aria-controls="musicToolsPane" aria-selected="false">⚙ Gestion</button>
+    </nav>
+    <div id="musicTracksPane" class="subpane" role="tabpanel" aria-labelledby="musicSubTracks">
+      <div class="line" style="justify-content:space-between"><h2>Bibliothèque de titres</h2><span id="busy" aria-live="polite"></span></div>
+      <div class="line actions"><button id="addFilesBtn" type="button">+ Fichiers</button><button id="addFolderBtn" type="button">+ Dossier</button><button id="sessionFilesBtn" type="button" title="Écouter sans enregistrer les fichiers dans le navigateur">▷ Sans copie</button></div>
+      <p id="nativeImportNote" class="import-help" hidden><strong>Android natif :</strong> fichiers et dossiers enregistrés sans copie · lecture Media3 (écran verrouillé) · mode 432 Hz conservé. Les effets Web Audio concernent encore les anciens imports ; leur traitement natif est prévu en v3.6.</p>
+      <p class="import-help">Importez vos fichiers ou un dossier. « Sans copie » utilise des références temporaires, à rechoisir après fermeture.</p>
+      <div id="importState" class="import-state" hidden><div class="import-head"><span id="importLabel" aria-live="polite">Importation en cours…</span><button id="cancelImport" type="button">Annuler</button></div><progress id="importProgress" max="100" value="0"></progress><div id="importDetails" role="status" aria-live="polite"></div></div>
+    </div>
+    <div id="musicPlaylistsPane" class="subpane" role="tabpanel" aria-labelledby="musicSubPlaylists" hidden>
+      <h2>Playlists et dossiers</h2>
+      <p class="subpane-note">Choisissez une playlist ou un dossier. L'ordre peut être trié par artiste, sans changer l'ordre enregistré.</p>
+      <div class="playlist-picker"><label for="playlistSelect">Sélection</label><select id="playlistSelect" aria-label="Choisir une playlist"><option value="all">Toutes les pistes</option></select></div>
+      <div class="playlist-row"><button id="newPlaylistBtn">+ Playlist</button><button id="addToPlaylistBtn" disabled>Ajouter le titre</button><button id="removeFromPlaylistBtn" disabled>Retirer le titre</button><button id="deletePlaylistBtn" class="danger" disabled>Supprimer la playlist</button><span class="spacer"></span></div>
+    </div>
+    <div id="musicToolsPane" class="subpane music-tools-pane" role="tabpanel" aria-labelledby="musicSubTools" hidden>
+      <h2>Gestion de la musique</h2>
+      <p class="subpane-note">Options de lecture, entretien des pochettes et stockage.</p>
+      <div class="continuous-playback-row"><label title="Lecture continue Media3 même écran éteint. Reprend au début après le dernier titre de la sélection."><input id="continuousPlayback" type="checkbox" checked> Lecture continue (écran éteint) · boucler la sélection</label></div>
+      <div class="cover-repair-row"><button id="refreshCoversBtn" type="button" title="Relire les pochettes intégrées aux FLAC/MP3 de la bibliothèque">↻ Réanalyser les pochettes</button><span id="coverRefreshStatus" role="status" aria-live="polite"></span></div>
+      <div id="storageInfo" role="status"></div>
+      <div class="line actions"><button id="clearLibBtn" type="button" class="danger">Vider la bibliothèque</button></div>
+      <p class="import-help">La suppression d'une playlist ne supprime pas les fichiers du téléphone. Vider la bibliothèque supprime ses références dans Harmonie.</p>
+    </div>
+    <div id="musicListArea" class="music-list-area">
+      <div class="music-search-row"><input id="searchInput" type="search" placeholder="Rechercher titre, artiste ou album…" aria-label="Rechercher un morceau"></div>
+      <div class="playlist-sort-row"><label for="playlistSort">Trier la sélection :</label><select id="playlistSort" aria-label="Trier la playlist par artiste"><option value="original">Ordre de la playlist</option><option value="artist-asc">Artiste A → Z</option><option value="artist-desc">Artiste Z → A</option></select></div>
+      <div id="trackCount" class="stats">0 piste</div>
+      <div id="trackList" class="list" role="list" aria-label="Liste des pistes (déposez des fichiers audio ici)"></div>
+    </div>
+  </section>
+  <section class="radio-section" id="radioPanel" role="tabpanel" aria-labelledby="radioTab" hidden>
+    <nav class="subnav" role="tablist" aria-label="Navigation Radio Internet">
+      <button type="button" id="radioSubExplore" class="subtab" role="tab" aria-controls="radioExplorePane" aria-selected="true">◉ Explorer</button>
+      <button type="button" id="radioSubFavorites" class="subtab" role="tab" aria-controls="radioFavoritesPane" aria-selected="false">☆ Favoris</button>
+    </nav>
+    <div id="radioExplorePane" class="radio-subpane" role="tabpanel" aria-labelledby="radioSubExplore">
+      <div class="line" style="justify-content:space-between"><h2>Radios du monde</h2><span class="radio-badge">EN DIRECT</span></div>
+      <p class="radio-info">Recherchez les stations par pays, genre ou nom.</p>
+      <div class="radio-filters">
+        <div><label for="radioCountry">Pays</label><select id="radioCountry" aria-label="Pays de la radio"><option value="">Tous les pays</option></select></div>
+        <div><label for="radioGenre">Genre</label><select id="radioGenre" aria-label="Genre de la radio">
+          <option value="">Tous les genres</option><option value="pop">Pop</option><option value="rock">Rock</option><option value="jazz">Jazz</option>
+          <option value="classical">Classique</option><option value="electronic">Électronique</option><option value="dance">Dance</option><option value="house">House</option>
+          <option value="techno">Techno</option><option value="hip hop">Hip-hop</option><option value="rap">Rap</option><option value="blues">Blues</option>
+          <option value="reggae">Reggae</option><option value="metal">Métal</option><option value="soul">Soul</option><option value="funk">Funk</option>
+          <option value="disco">Disco</option><option value="ambient">Ambient</option><option value="lounge">Lounge</option><option value="relax">Relaxation</option>
+          <option value="country">Country</option><option value="folk">Folk</option><option value="chanson française">Chanson française</option>
+          <option value="news">Informations</option><option value="talk">Débats / Talk</option><option value="sports">Sports</option><option value="world">Musique du monde</option>
+        </select></div>
+      </div>
+      <form id="radioForm" class="radio-search-row"><input id="radioSearch" type="search" placeholder="Nom de radio (ex. FIP, BBC, Jazz)…" aria-label="Rechercher une station par nom"><button type="submit" class="primary">Rechercher</button></form>
+      <div class="radio-tools"><button type="button" id="radioRefresh">Actualiser</button><button type="button" id="radioFavorites" hidden>☆ Mes favoris</button></div>
+    </div>
+    <div id="radioFavoritesPane" class="radio-subpane" role="tabpanel" aria-labelledby="radioSubFavorites" hidden>
+      <h2>Mes radios favorites</h2>
+      <p class="radio-favs-intro">Retrouvez vos stations enregistrées. Ajoutez un flux personnel ou retirez une station avec l'étoile ☆.</p>
+      <div class="radio-tools"><button type="button" id="radioAddCustom">+ Flux personnel</button></div>
+    </div>
+    <div class="radio-tools"><span id="radioCount" role="status" aria-live="polite">Ouvrez cet onglet pour explorer les radios.</span></div>
+    <div id="radioResults" class="radio-results" role="list" aria-label="Résultats des radios"><div class="empty">Sélectionnez un pays, un genre ou lancez une recherche.</div></div>
+    <div class="radio-pages" id="radioPages"><button id="radioPrevPage" disabled>← Précédentes</button><button id="radioNextPage" disabled>Suivantes →</button></div>
+    <div class="radio-features"><label><input type="checkbox" id="radioEQ"> Égaliseur Hi-Fi natif pour les radios</label></div>
+    <details class="radio-help-details"><summary>Informations radio, égaliseur et 432 Hz</summary><p class="radio-explain">Les radios sont diffusées par des serveurs externes et nécessitent Internet. Certains flux peuvent ne pas fonctionner. Sur Android, l'égaliseur des radios utilise un effet audio natif lorsque la sortie le permet ; vérifiez son état dans le diagnostic. Le mode 432 Hz abaisse la hauteur sonore selon le rapport 432/440 en conservant le tempo : ce n'est pas une mesure de l'accordage réel du diffuseur. Dans un navigateur classique, l'égalisation peut nécessiter une autorisation CORS et le 432 Hz radio n'est pas garanti.</p></details>
+    <div id="radioStatus" class="radio-msg" role="status" aria-live="polite"></div>
+  </section>
+  <section class="player" aria-label="Lecteur audio">
+    <div class="current"><div id="currentArtWrap" class="art"><img id="currentArt" alt="Illustration en cours" src=""/></div><div class="current-text"><div id="nowPlaying" class="current-title">Aucun titre sélectionné</div><div id="nowSub" class="current-sub">Ajoutez des fichiers FLAC ou un dossier</div><div class="player-top-controls"><button type="button" id="rotateArtBtn" aria-pressed="true" title="Activer ou désactiver la rotation de la pochette">◉ Rotation activée</button><button type="button" id="stageOpen">⛶ Visualiseur plein écran</button></div></div></div>
+    <details id="infoDetails" class="info-details"><summary>Informations du morceau · Paroles (LRC)</summary>
+      <div id="metadataGrid" class="metadata-grid" aria-live="polite"></div>
+      <div class="lyric-head"><strong>Paroles</strong><div><button type="button" id="lyricsEditBtn">✎ Ajouter / modifier</button><button type="button" id="lyricsLoadBtn">Importer .LRC / .TXT</button></div></div>
+      <div id="lyricsDisplay" class="lyrics-display" aria-live="off">Sélectionnez une musique pour afficher ou ajouter des paroles.</div>
+      <div id="lyricsEdit" class="lyrics-edit" hidden><label for="lyricsInput">Paroles personnelles ou synchronisées</label><textarea id="lyricsInput" rows="7" placeholder="Paroles libres ou lignes [00:12.50] Première phrase …" spellcheck="false"></textarea><div class="line"><button type="button" id="lyricsSave" class="primary">Enregistrer les paroles</button><button type="button" id="lyricsCancel">Annuler</button><button type="button" id="lyricsDelete" class="danger">Effacer les paroles</button></div><p class="lyrics-help">Les paroles sont enregistrées uniquement avec les métadonnées locales du morceau. Aucun service externe n'est interrogé.</p></div>
+    </details>
+    <section class="led-section" id="ledSection" data-running="false" aria-label="Effets lumineux LED Cyberpunk">
+      <div class="led-head"><div class="led-heading"><span class="led-indicator" aria-hidden="true"></span><h2>VISUALISEUR LED · CYBERPUNK</h2></div><span class="led-kicker">PHILOU // AUDIO REACTIVE</span></div>
+      <div class="led-screen"><canvas id="ledCanvas" width="860" height="198" role="img" aria-label="Spectre lumineux de la musique et vumètres stéréo, lorsque le signal est analysable">Affichage LED non pris en charge par le navigateur.</canvas></div>
+      <div class="led-settings">
+        <label for="ledMode">Effet LED <select id="ledMode" aria-label="Effet lumineux"><option value="spectrum">Spectre musical</option><option value="vu">VU-mètre stéréo</option><option value="ambient">Néons d’ambiance</option><option value="radial">Halo circulaire</option><option value="waveform">Onde lumineuse</option><option value="particles">Particules néon</option><option value="matrixrain">Pluie Matrix</option><option value="pulse">Pulsations</option><option value="tunnel">Tunnel 3D</option><option value="off">LED désactivées</option></select></label>
+        <label for="ledPalette">Couleurs <select id="ledPalette" aria-label="Couleurs LED"><option value="cyber">Cyberpunk</option><option value="rainbow">Arc-en-ciel</option><option value="ice">Glace</option><option value="fire">Feu</option><option value="matrix">Matrix</option><option value="plasma">Plasma violet</option><option value="sunset">Coucher de soleil</option><option value="gold">Or électrique</option></select></label>
+        <label class="led-slide" for="ledSensitivity"><span>Sensibilité</span><input type="range" id="ledSensitivity" min="35" max="200" step="5" value="100"><output id="ledSensitivityLabel" for="ledSensitivity">100 %</output></label>
+        <label class="led-slide" for="ledBrightness"><span>Luminosité</span><input type="range" id="ledBrightness" min="20" max="100" step="5" value="85"><output id="ledBrightnessLabel" for="ledBrightness">85 %</output></label>
+      </div>
+      <div class="led-sync-toggle"><label for="ledNativeSync"><input type="checkbox" id="ledNativeSync"> <strong>LED synchronisées au son (Android)</strong></label><span id="ledSyncHint">Autorisation Android nécessaire pour analyser le signal du lecteur. Aucune voix ni aucun son du micro n'est enregistré.</span></div>
+      <div id="ledStatus" class="led-status" role="status" aria-live="polite">Choisissez un effet LED : aperçu disponible même à l’arrêt.</div>
+      <p class="led-note">Quand la synchronisation native est activée et autorisée, le spectre suit réellement la musique et les radios Media3. Le signal visualisé par Android est mono ; certains appareils, flux ou sorties Bluetooth peuvent ne pas le fournir. Sans signal, les effets restent décoratifs.</p>
+    </section>
+    <div class="timeline"><span id="position">0:00</span><input type="range" id="seek" min="0" max="1000" value="0" disabled aria-label="Position de lecture"><span id="duration">0:00</span></div>
+    <div class="controls"><button id="shuffleBtn" class="icon-btn" title="Lecture aléatoire" aria-label="Lecture aléatoire" aria-pressed="false">⤨</button><button id="prevBtn" class="icon-btn" title="Piste précédente" aria-label="Précédent" disabled>⏮</button><button id="playBtn" class="primary" disabled>▶ Lire</button><button id="nextBtn" class="icon-btn" title="Piste suivante" aria-label="Suivant" disabled>⏭</button><button id="repeatBtn" class="icon-btn" title="Répétition désactivée" aria-label="Répétition" aria-pressed="false">↻</button><button id="stopBtn" class="icon-btn" title="Arrêter" aria-label="Arrêter" disabled>■</button></div>
+    <details id="audioRepairTools" class="audio-repair-tools"><summary>Diagnostic / son coupé</summary>
+      <div class="line" style="margin:9px 0"><button type="button" id="audioRepairBtn" title="Relancer uniquement la sortie audio sans effacer la playlist">🔊 Rétablir le son</button><button type="button" id="audioCheckBtn">Vérifier la sortie audio</button></div>
+      <div id="audioRepairStatus" class="notice" role="status" aria-live="polite">Si la lecture avance sans son, vérifiez la sortie Bluetooth et utilisez « Rétablir le son ».</div>
+    </details>
+    <div class="settings"><div class="setting"><label class="title" for="volume">Volume</label><input type="range" id="volume" min="0" max="100" value="80" aria-label="Volume"><span id="volumeLabel" style="min-width:36px;text-align:right;font-size:12px">80%</span></div><div class="setting" style="justify-content:space-between"><span class="title">Accordage</span><div class="frequency"><button id="btn432" class="selected" aria-pressed="true">432 Hz</button><button id="btn440" aria-pressed="false">Original</button></div></div></div>
+
+    <section class="eq-section" aria-label="Égaliseur audio huit bandes">
+      <div class="eq-head"><h2>Égaliseur graphique · 8 bandes</h2><span id="eqState" class="eq-state" aria-live="polite">Prêt</span></div>
+      <div class="eq-toolbar">
+        <label class="eq-switch"><input type="checkbox" id="eqEnable" checked> Égaliseur</label>
+        <select class="eq-preset" id="eqPreset" aria-label="Préréglage de l'égaliseur">
+          <option value="hifi">Hi-Fi équilibré</option>
+          <option value="flat">Neutre (0 dB)</option>
+          <option value="bass">Basses profondes</option>
+          <option value="vocal">Voix claires</option>
+          <option value="rock">Rock</option>
+          <option value="classical">Classique</option>
+          <option value="electronic">Électronique</option>
+          <option value="custom">Personnalisé</option>
+        </select>
+        <button id="eqReset" type="button">Remise à zéro</button>
+      </div>
+      <div class="eq-grid" id="eqBands" role="group" aria-label="Réglages de fréquences de moins douze à plus douze décibels"></div>
+      <div class="eq-controls"><label class="eq-switch"><input id="hifiToggle" type="checkbox" checked> Protection Hi-Fi des crêtes</label><span id="eqHeadroom" class="eq-headroom">Marge : 0 dB</span></div>
+
+      <p class="eq-help">Réglages instantanés de −12 à +12 dB. Le mode Hi-Fi ajoute une marge de sécurité et une limitation douce des crêtes pour réduire les risques de saturation. Pour un rendu fidèle au fichier, choisissez « Neutre (0 dB) ». Cela n’augmente pas la résolution audio d’origine.</p>
+    </section>
+
+    <details class="hifi-pro" id="hifiPro" open aria-label="Hi-Fi Audio PRO — profils sonores">
+      <summary><span class="pro-label">◈ HI-FI AUDIO PRO</span><span id="proActiveLabel" class="pro-state">Réglages actuels</span></summary>
+      <div class="pro-content">
+        <div class="pro-section-name">Profils sonores</div>
+        <div class="pro-grid" role="group" aria-label="Huit profils Hi-Fi Audio PRO">
+          <button type="button" class="pro-profile" data-pro-profile="fidelity" aria-pressed="false"><strong>Fidélité FLAC</strong><small>Son direct, sans EQ ; accordage original.</small></button>
+          <button type="button" class="pro-profile" data-pro-profile="bass" aria-pressed="false"><strong>Basses profondes</strong><small>Graves renforcés, crêtes protégées.</small></button>
+          <button type="button" class="pro-profile" data-pro-profile="concert" aria-pressed="false"><strong>Concert</strong><small>Présence et réverbération selon le moteur.</small></button>
+          <button type="button" class="pro-profile" data-pro-profile="spatial" aria-pressed="false"><strong>Spatial 3D</strong><small>Effet stéréo Web Audio ou virtualisation Android si disponible.</small></button>
+          <button type="button" class="pro-profile" data-pro-profile="vocal" aria-pressed="false"><strong>Voix claires</strong><small>Dialogues et voix plus présents.</small></button>
+          <button type="button" class="pro-profile" data-pro-profile="rock" aria-pressed="false"><strong>Rock énergique</strong><small>Guitares et percussion.</small></button>
+          <button type="button" class="pro-profile" data-pro-profile="classical" aria-pressed="false"><strong>Classique</strong><small>Équilibre instrumental modéré.</small></button>
+          <button type="button" class="pro-profile" data-pro-profile="night" aria-pressed="false"><strong>Écoute douce</strong><small>Moins de graves et d'aigus la nuit.</small></button>
+        </div>
+        <p id="proDescription" class="pro-help" role="status" aria-live="polite">Choisissez un profil ou personnalisez votre son avec les réglages fins.</p>
+        <div class="pro-section-name">Réglages rapides de tonalité</div>
+        <div class="pro-tones" role="group" aria-label="Réglages rapides des graves, voix et aigus">
+          <label for="proBass">Graves <input type="range" id="proBass" min="-6" max="6" step="0.5" value="0"/><output id="proBassVal">0 dB</output></label>
+          <label for="proVoice">Voix <input type="range" id="proVoice" min="-6" max="6" step="0.5" value="0"/><output id="proVoiceVal">0 dB</output></label>
+          <label for="proTreble">Aigus <input type="range" id="proTreble" min="-6" max="6" step="0.5" value="0"/><output id="proTrebleVal">0 dB</output></label>
+        </div>
+        <div class="pro-actions"><button type="button" id="proSave">Enregistrer mon son</button><button type="button" id="proLoad">Rappeler mon son</button><button type="button" id="proBypass">Son direct</button></div>
+        <details class="pro-advanced" id="proAdvanced"><summary>Ambiance · écho / réverbération et espace stéréo</summary>
+          <div class="fx-extra" id="fxExtra">
+            <div class="fx-row"><label><input type="checkbox" id="fxEchoOn"> Écho / réverbération</label><input type="range" id="fxEchoAmount" min="0" max="70" value="25" aria-label="Intensité écho"><output id="fxEchoVal">25 %</output></div>
+            <div class="fx-row"><label><input type="checkbox" id="fxSpaceOn"> Espace stéréo</label><input type="range" id="fxSpaceAmount" min="0" max="100" value="35" aria-label="Intensité spatiale"><output id="fxSpaceVal">35 %</output></div>
+            <p class="fx-note">Web Audio : écho à répétitions et décalage stéréo. Media3 : réverbération et virtualisation Android si disponibles (ce ne sont pas les mêmes traitements). Certains casques Bluetooth et sorties audio ignorent les effets ; vérifiez le Diagnostic.</p>
+          </div>
+        </details>
+        <p class="pro-help" id="proEngineNote" role="status">Media3 : EQ, réverbération et virtualisation selon prise en charge Android. Web Audio : écho et stéréo décalée.</p>
+        <p class="pro-help">Les préréglages et corrections rapides ajustent les huit bandes de l'égaliseur, y compris sur Media3 si l'effet Android est disponible. Sur une radio native, les réglages rapides activent automatiquement « Égaliseur Hi-Fi natif pour les radios ». Le 432 Hz reste un réglage indépendant, sauf le profil Fidélité FLAC qui sélectionne Original. Aucun profil ne garantit une sortie bit-perfect.</p>
+      </div>
+    </details>
+    <div class="options"><label><input type="checkbox" id="wakeLockToggle"> Garder l’écran allumé pendant la lecture</label><button id="storageBtn">Protéger le stockage</button></div>
+    <div class="notice">Pour les fichiers locaux dans l'ancien lecteur Web Audio, le 432 Hz ralentit la lecture au ratio 432/440 (−1,82 %) et baisse toutes les hauteurs musicales. Avec Media3, le réglage 432 Hz applique une conversion de hauteur sans changement intentionnel de tempo, lorsque disponible, y compris pour les radios natives. Il ne garantit pas qu’un enregistrement ait été accordé en 440 Hz à l’origine. L’écran éteint, la lecture dépend d’Android et du navigateur.</div>
+    <div id="status" class="status" role="status" aria-live="polite">Prêt.</div>
+    <details><summary>Journal de diagnostic</summary><div id="log" aria-live="off"></div></details>
+  </section>
+  <footer class="footer"><div class="signature"><span>HARMONIE · CYBERPUNK EDITION</span><b>BY PHILOU/CYBERPUNK</b></div>Les fichiers locaux, les favoris radio, l’égaliseur et les réglages LED restent dans ce navigateur. Le catalogue et les flux radio nécessitent Internet. Effacer les données du navigateur peut supprimer la bibliothèque.<div class="app-version-badge" id="appVersionFooter" aria-label="Version de l’application">VERSION 3.5.20 · BUILD 27</div></footer>
+</main>
+<div id="stageOverlay" role="dialog" aria-modal="true" aria-label="Visualiseur musical immersif" data-mode="cyber" hidden>
+  <canvas id="stageRain" class="stage-rain" aria-hidden="true"></canvas>
+  <div class="stage-ui"><div class="stage-top"><span class="stage-brand">HARMONIE // CYBERPUNK</span><button type="button" id="stageClose" aria-label="Fermer le plein écran">✕ Fermer</button></div>
+    <div class="stage-main"><div id="stageArtWrap" class="stage-art"><img id="stageArt" alt="Pochette agrandie" src="" /></div><div class="stage-description"><div class="stage-kicker" id="stageKicker">AUDIO EXPERIENCE • BY PHILOU/CYBERPUNK</div><h2 id="stageTitle">HARMONIE</h2><div class="stage-sub" id="stageSubtitle">LECTEUR HI-FI · 432 / 440 HZ</div><div class="stage-live-lyrics" id="stageLyrics" aria-live="off"></div></div></div>
+    <canvas id="stageSpectrum" class="stage-spectrum" width="950" height="185" role="img" aria-label="Spectre LED plein écran">Spectre non pris en charge.</canvas>
+    <div class="stage-controls"><button type="button" id="stagePrev" aria-label="Piste précédente">⏮</button><button type="button" id="stagePlay" class="primary" aria-label="Lire ou mettre en pause">▶ Lire</button><button type="button" id="stageNext" aria-label="Piste suivante">⏭</button></div>
+    <div class="stage-hint">Mode plein écran · Échap ou Fermer pour revenir · Les animations ne modifient pas le signal audio</div><div class="stage-signature">BY PHILOU/CYBERPUNK</div>
+  </div>
+</div>
+<input id="lyricsFileInput" type="file" accept=".lrc,.txt,text/plain" hidden>
+<input id="fileInput" type="file" multiple hidden>
+<input id="sessionFileInput" type="file" multiple hidden>
+<input id="folderInput" type="file" webkitdirectory directory multiple hidden>
+<audio id="audio" preload="metadata" playsinline hidden></audio>
+<script>
+'use strict';
+(() => {
+  const DB_NAME='flac-player-db-v3', DB_VERSION=2, FILES='files', META='track_meta', PLAYLISTS='playlists';
+  const FREQ_KEY='flac-player-freq-v3', LAST_KEY='flac-player-last-track-v3', PREFS_KEY='harmonie-v4-preferences', SORT_KEY='harmonie-v355-playlist-artist-sort';
+  const CONTINUOUS_KEY='harmonie-v359-continuous-playback';
+  const MUSIC_SUBTAB_KEY='harmonie-v3515-music-subtab', RADIO_SUBTAB_KEY='harmonie-v3515-radio-subtab';
+  const SUPPORTED=/\.(flac|oga|ogg|mp3|wav|m4a|aac)$/i;
+  const EQ_KEY='harmonie-v5-equalizer';
+  const LED_KEY='harmonie-v7-led-cyberpunk';
+  const VISUAL_KEY='harmonie-v9-visual';
+  const RADIO_KEY='harmonie-v6-radio-favoris', RADIO_SETTINGS='harmonie-v6-radio-settings';
+  const EQ_FREQS=[60,150,400,1000,2400,6000,10000,16000];
+  const EQ_LABELS=['60','150','400','1 k','2,4 k','6 k','10 k','16 k'];
+  const EQ_PRESETS={
+    hifi:[1.5,0.5,-0.5,0,0.5,1,1,0.5],
+    flat:[0,0,0,0,0,0,0,0],
+    bass:[5,3,1,0,-1,0,0,0],
+    vocal:[-2,-1,1.5,2.5,2.5,1,0,-1],
+    rock:[3,1,-1,0.5,2,2,1,0.5],
+    classical:[1,0,0,0,0.5,1,1.5,1],
+    electronic:[5,3,-1,0,1,3,2,1]
+  };
+  const $=id=>document.getElementById(id);
+  const els={audio:$('audio'),list:$('trackList'),count:$('trackCount'),busy:$('busy'),status:$('status'),log:$('log'),search:$('searchInput'),playlist:$('playlistSelect'),sort:$('playlistSort'),continuous:$('continuousPlayback'),now:$('nowPlaying'),nowSub:$('nowSub'),art:$('currentArt'),play:$('playBtn'),prev:$('prevBtn'),next:$('nextBtn'),stop:$('stopBtn'),shuffle:$('shuffleBtn'),repeat:$('repeatBtn'),seek:$('seek'),position:$('position'),duration:$('duration'),volume:$('volume'),volumeLabel:$('volumeLabel'),btn432:$('btn432'),btn440:$('btn440'),wake:$('wakeLockToggle'),addTo:$('addToPlaylistBtn'),removeFrom:$('removeFromPlaylistBtn'),deletePlaylist:$('deletePlaylistBtn'),eqEnable:$('eqEnable'),eqPreset:$('eqPreset'),eqBands:$('eqBands'),eqReset:$('eqReset'),hifi:$('hifiToggle'),eqState:$('eqState'),eqHeadroom:$('eqHeadroom'),musicTab:$('musicTab'),radioTab:$('radioTab'),musicPanel:$('musicPanel'),radioPanel:$('radioPanel'),radioCountry:$('radioCountry'),radioGenre:$('radioGenre'),radioSearch:$('radioSearch'),radioResults:$('radioResults'),radioCount:$('radioCount'),radioStatus:$('radioStatus'),radioFavorites:$('radioFavorites'),radioEQ:$('radioEQ'),radioPrevPage:$('radioPrevPage'),radioNextPage:$('radioNextPage')};
+  const state={continuous:true,tracks:[],playlists:[],id:null,mode:null,loaded:false,loading:false,playing:false,shuffle:false,repeat:0,frequency:432,volume:.8,filter:'all',sortMode:'original',audioBuffer:null,source:null,audioCtx:null,gain:null,dspInput:null,dspPreamp:null,dspLimiter:null,dspFilters:[],nativeSource:null,eqEnabled:true,hifi:true,eqPreset:'hifi',eqGains:[...EQ_PRESETS.hifi],decoder:null,decoderLoading:null,tagReader:null,tagReaderLoading:null,tagReaderFailed:false,offset:0,startAt:0,startOffset:0,objectURL:null,token:0,wakeLock:null};
+  let dbPromise, memoryMode=false;
+  const visuals={theme:'cyber',rotate:true,stageOpen:false,rainRaf:0,rainLast:0,rainCols:[],rainCtx:null,stageCtx:null,rainDpi:1,stageLastLyric:'',lastLyricIndex:-1};
+  const radio={active:null,el:null,playing:false,loading:false,token:0,source:null,eq:false,eqAvailable:false,results:[],favorites:[],onlyFavorites:false,page:0,more:false,request:null,initialized:false,countriesLoaded:false,selectedTab:'music'};
+  const RADIO_APIS=['','https://de1.api.radio-browser.info','https://nl1.api.radio-browser.info','https://at1.api.radio-browser.info','https://fr1.api.radio-browser.info'];
+  const RADIO_PAGE_SIZE=40;
+  let musicSubtab='tracks', radioSubtab='explore', lastPlaylistFilter='all';
+  const led={nativeEnabled:false,nativeFrame:null,nativeLastPoll:0,nativeStatus:"disabled",nativePermission:false,canvas:null,ctx:null,analyser:null,left:null,right:null,fft:null,waveL:null,waveR:null,frame:0,last:0,raf:0,levels:Array(30).fill(0),peaks:Array(30).fill(0),vu:[0,0],mode:'spectrum',palette:'cyber',sensitivity:100,brightness:85,status:'',width:860,height:198,reduced:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches||false};
+  let radioDisplayNames=null;
+  try{radioDisplayNames=new Intl.DisplayNames(['fr'],{type:'region'})}catch{}
+  const memoryStores={files:new Map(),track_meta:new Map(),playlists:new Map()};
+  // Références de fichiers utilisées exclusivement pendant la session ; aucune copie en base.
+  const sessionFiles=new Map();
+  const androidNative=!!(window.AndroidBridge&&typeof window.AndroidBridge.getLibrary==='function');
+  const nativeLive={position:0,duration:0,playing:false,id:'',error:'',lastId:'',state:1,needsQueue:true,initialized:false,queueSize:0,queueIndex:-1,hasNext:false,repeatMode:0};
+  function nativeCall(name,...args){if(!androidNative)return null;try{return window.AndroidBridge[name](...args)}catch(e){log('Moteur Android : '+e.message);return null}}
+  function nativeCoverUrl(t){
+    return 'http://127.0.0.1:8767/__native_cover__/'+encodeURIComponent(t.id)+'?v='+String(t.coverRevision||0)
+  }
+  // La photo reste privée au téléphone et est fournie par le pont Android (aucun téléchargement réseau).
+  function artForTrack(t){return t?.cover || (t?.native&&t.hasCover?nativeCoverUrl(t):null)}
+  function validateNativeImage(row){
+    // Une pochette sur appareil ne doit pas être remplacée par une vieille data-URI JS.
+    return row&&row.native ? {...row,cover:''} : row;
+  }
+  function installNativeLibrary(json){
+    if(!androidNative)return;
+    try{
+      const rows=typeof json==='string'?JSON.parse(json):json;
+      if(!Array.isArray(rows))return;
+      const existing=state.tracks.filter(t=>!t.native);
+      const present=new Set(existing.map(t=>t.id));
+      const valid=rows.filter(t=>t&&typeof t.id==='string'&&t.id.startsWith('native:')&&typeof t.name==='string');
+      for(const t of valid)if(!present.has(t.id)){existing.push(validateNativeImage({...t,native:true}));present.add(t.id)}
+      state.tracks=existing.sort((a,b)=>String(a.path).localeCompare(String(b.path),'fr',{numeric:true}));
+      renderLibrary();
+      $('nativeImportNote').hidden=false;
+      $('storageInfo').textContent='Bibliothèque Android : '+valid.length+' morceau(x) référencés sans duplication des fichiers FLAC. Les anciens imports HTML sont conservés.';
+    }catch(e){message('Liste Android inaccessible : '+e.message,true)}
+  }
+  window.HARMONIE_NATIVE_LIBRARY=installNativeLibrary;
+  function readNativeState(){
+    if(!androidNative)return;
+    try{
+      const v=JSON.parse(nativeCall('getState')||'{}');
+      if(!v.ready){
+        nativeLive.playing=false;
+        if(state.mode==='android-native'&&state.playing){
+          state.playing=false;nativeLive.needsQueue=true;updateButtons();renderLibrary();
+        }
+        return;
+      }
+      nativeLive.position=Number(v.position)||0;
+      nativeLive.duration=Number(v.duration)||0;
+      nativeLive.playing=!!v.playing;
+      nativeLive.id=String(v.id||'');
+      nativeLive.error=String(v.error||'');nativeLive.state=Number(v.state)||1;
+      nativeLive.queueSize=Number(v.queueSize)||0;
+      nativeLive.queueIndex=Number.isInteger(v.queueIndex)?v.queueIndex:-1;
+      nativeLive.hasNext=!!v.hasNext;
+      nativeLive.repeatMode=Number(v.repeatMode)||0;
+      // Eviter l'affichage « lecture : oui » quand Media3 n'a plus aucune piste.
+      if(nativeLive.queueSize===0){
+        nativeLive.playing=false;
+        nativeLive.needsQueue=true;
+        if(state.mode==='android-native'&&state.playing){
+          state.playing=false;updateButtons();renderLibrary();
+          if(!nativeLive.queueLossReported){
+            nativeLive.queueLossReported=true;
+            message('Media3 : file de lecture vide. Utilisez « Rétablir le son » ou appuyez sur Lire.',true);
+          }
+        }
+      }else nativeLive.queueLossReported=false;
+      if(v.id&&String(v.id).startsWith('radio:')&&(!radio.active||!radio.native)){
+        const url=String(v.id).slice(6);radio.active={name:String(v.title||'Radio Internet'),url,stationuuid:v.id,countrycode:'',favicon:'',tags:'',codec:'',bitrate:0};
+        radio.native=true;radio.playing=!!v.playing;radio.loading=false;radio.eqAvailable=false;displayRadioNow();
+      }
+      if(v.id!==nativeLive.lastId){
+        nativeLive.lastId=v.id;
+        if(v.id.startsWith('native:')&&getTrack(v.id)){
+          if(state.mode!=='android-native'){stopOldForLoad(false);state.mode='android-native';state.loaded=true;nativeLive.needsQueue=false}
+          state.id=v.id;radio.active=null;displayNow();renderLibrary();
+        }
+      }
+      if(state.mode==='android-native'){
+        if(state.playing!==nativeLive.playing){state.playing=nativeLive.playing;updateButtons();renderLibrary()}
+        updateProgress();
+        if(nativeLive.error)message('Erreur Android : '+nativeLive.error,true);
+      }
+      if(radio.active&&radio.native){
+        if(radio.playing!==nativeLive.playing){radio.playing=nativeLive.playing;displayRadioNow();renderRadios()}
+        if(nativeLive.error)radioMessage('Flux indisponible : '+nativeLive.error,true);
+      }
+    }catch(e){log('État du lecteur Android : '+e.message)}
+  }
+  let audioRecoveryInFlight=false;
+  async function audioDiagnostic(){
+    const lines=[];
+    const nativePlaying=(state.mode==='android-native')||(radio.active&&radio.native);
+    lines.push('Moteur : '+(nativePlaying?'Android Media3':radio.active?'Web Audio / Radio HTML':state.mode||'Aucun'));
+    lines.push('Lecture indiquée par l’interface : '+(nativePlaying?(nativeLive.playing?'oui':'non'):state.playing||radio.playing?'oui':'non'));
+    if(androidNative){
+      try{const raw=nativeCall('getAudioDiagnostics');if(raw){const d=JSON.parse(raw);
+        if(d.error)lines.push('Diagnostic Android : '+d.error);
+        else if(d.ready===false)lines.push(d.message||'Contrôleur Media3 en connexion…');
+        else {
+          const st=Number(d.playbackState),reason=Number(d.suppressionReason);
+          const states={1:'arrêté/inactif',2:'chargement',3:'prêt',4:'terminé'};
+          lines.push('Sortie Android : '+(d.musicVolume ?? '?')+'/'+(d.musicVolumeMax ?? '?')+(d.musicMuted?' (silencieux)':''));
+          lines.push('Gain du lecteur Media3 : '+(d.playerVolume ?? '?'));
+          lines.push('Etat Media3 : '+(states[st]||st)+' · lecture : '+(d.playing?'active':'inactive')+' · priorité audio : '+(reason===0?'non suspendue':'suspendue ('+reason+')'));
+          lines.push('Position du morceau : '+Math.round((Number(d.positionMs)||0)/1000)+' s · file : '+(d.mediaItemCount??'?')+' titre(s)');
+          lines.push('File sauvegardée : '+(d.savedQueueCount??'?')+' titre(s)');
+          if(d.lastCommand)lines.push('Dernière commande : '+d.lastCommand);
+          if(d.lastServiceEvent)lines.push('Dernier événement service : '+d.lastServiceEvent);
+          lines.push('Lecture continue Android : '+(d.continuousPlayback?'activée':'désactivée'));
+          if(d.lastEndDiagnostic)lines.push('Dernière fin de file : '+d.lastEndDiagnostic);
+          if(nativePlaying && Number(d.mediaItemCount)===0){
+            lines.push('DIAGNOSTIC : AUCUNE PISTE dans Media3. La sortie Bluetooth et l’égaliseur ne sont pas la cause immédiate de ce silence.');
+            lines.push('Action : « Rétablir le son » reprend la file sauvegardée ou reconstruit la bibliothèque.');
+          }
+          if(d.playerError)lines.push('Erreur Media3 : '+d.playerError);
+          if(d.nativeEqStatus)lines.push('Égaliseur Android : '+d.nativeEqStatus+' · session : '+d.nativeEqSession);
+          if(d.nativeAmbienceStatus)lines.push('Ambiance Android : '+d.nativeAmbienceStatus);
+          if(d.playbackSpeed!=null&&d.playbackPitch!=null)lines.push('Lecture native : tempo x'+Number(d.playbackSpeed).toFixed(4)+' · hauteur x'+Number(d.playbackPitch).toFixed(4));
+          if(d.devices)lines.push('Périphériques disponibles (pas forcément actifs) : '+d.devices);
+          if(d.sampleTimeMs)lines.push('Mesure Android : '+new Date(d.sampleTimeMs).toLocaleTimeString('fr-FR'));
+        }
+      }}catch(e){lines.push('Diagnostic Android indisponible : '+e.message)}
+    }
+    if(state.audioCtx)lines.push('Web Audio : '+state.audioCtx.state+' · gain '+(state.gain?.gain.value??'?'));
+    if(state.mode==='native')lines.push('Audio HTML : '+(els.audio.paused?'pause':'en cours')+' · volume '+els.audio.volume+' · muet '+els.audio.muted);
+    if(radio.el)lines.push('Radio HTML : '+(radio.el.paused?'pause':'en cours')+' · volume '+radio.el.volume);
+    lines.push('Les LED mesurent le signal avant la sortie du haut-parleur ; elles ne confirment pas le son réel.');
+    $('audioRepairStatus').textContent=lines.join('\n');
+    return lines.join('\n');
+  }
+  async function repairAudioOutput(){
+    if(audioRecoveryInFlight)return;audioRecoveryInFlight=true;
+    const btn=$('audioRepairBtn');btn.disabled=true;
+    try{
+      const nativePlaying=(state.mode==='android-native')||(radio.active&&radio.native);
+      if(nativePlaying){
+        if(!androidNative)throw new Error('Moteur Android inaccessible');
+        const d=JSON.parse(nativeCall('getAudioDiagnostics')||'{}');
+        if(d.ready && Number(d.mediaItemCount)===0){
+          if(radio.active&&radio.native&&radio.active.url){
+            nativeCall('playRadio',radio.active.url,radio.active.name||'Radio Internet',state.volume,state.frequency);
+            $('audioRepairStatus').textContent='Relance de la station demandée après disparition de la file Media3.';
+          }else if(Number(d.savedQueueCount)>0){
+            nativeCall('restoreSavedQueue',state.volume);
+            nativeLive.needsQueue=false;nativeLive.queueLossReported=false;
+            $('audioRepairStatus').textContent='Restauration de '+d.savedQueueCount+' titre(s) demandée depuis la dernière position sauvegardée.';
+          }else if(state.id && getTrack(state.id)?.native){
+            const ids=nativeQueueIds();
+            nativeCall('playNative',state.id,JSON.stringify(ids.length?ids:[state.id]),state.frequency,state.volume,state.repeat,state.shuffle);
+            nativeLive.needsQueue=false;nativeLive.queueLossReported=false;
+            $('audioRepairStatus').textContent='Reconstruction de la file Android demandée ('+ids.length+' titre(s)). Vérifiez que la musique reprend.';
+          }else{
+            $('audioRepairStatus').textContent='File Media3 vide et piste inconnue : sélectionnez un morceau dans la bibliothèque Android.';
+          }
+        }else if(d.ready && d.playWhenReady===false){
+          $('audioRepairStatus').textContent='Lecteur en pause : aucune reprise forcée. Appuyez sur Lire pour reprendre.';
+        }else{
+          nativeCall('recoverNativeAudio');
+          $('audioRepairStatus').textContent='Relance Media3 demandée au même titre et à la même position. Vérifiez également la sortie Bluetooth.';
+        }
+      }else if(state.mode==='native'||state.mode==='buffer'||radio.el){
+        if(state.audioCtx){
+          if(state.audioCtx.state==='closed')throw new Error('Contexte Web Audio fermé : relancez le lecteur.');
+          routeDSP();
+          if(state.nativeSource){try{state.nativeSource.disconnect();state.nativeSource.connect(state.dspInput)}catch(e){log('Route audio HTML : '+e.message)}}
+          if(radio.source){try{radio.source.disconnect();radio.source.connect(state.dspInput)}catch(e){log('Route radio HTML : '+e.message)}}
+          if(state.audioCtx.state!=='running')await state.audioCtx.resume();
+        }
+        if(state.mode==='native'&&!els.audio.paused){
+          const pos=els.audio.currentTime;els.audio.pause();
+          if(Number.isFinite(pos))try{els.audio.currentTime=pos}catch{}
+          await els.audio.play();
+        }else if(state.mode==='buffer'&&state.playing){
+          state.offset=positionNow();clearSource();state.playing=false;await play();
+        }else if(radio.el&&!radio.el.paused){radio.el.pause();await radio.el.play()}
+        $('audioRepairStatus').textContent='Circuit Web Audio rebranché, lecture relancée si elle était active. Si le son manque encore, testez la sortie téléphone/Bluetooth.';
+      }else{
+        $('audioRepairStatus').textContent='Aucune lecture en cours : lancez un morceau puis relancez le diagnostic.';
+      }
+      log('Diagnostic son : réparation sollicitée · '+(nativePlaying?'Media3':'Web Audio'));
+    }catch(e){$('audioRepairStatus').textContent='Rétablissement non confirmé : '+e.message;log('Réparation audio : '+e.message)}
+    finally{btn.disabled=false;audioRecoveryInFlight=false}
+  }
+  function bindAudioRecovery(){
+    $('audioRepairBtn').addEventListener('click',repairAudioOutput);
+    $('audioCheckBtn').addEventListener('click',audioDiagnostic);
+    // Reprendre uniquement le contexte suspendu à la réouverture visible, sans forcer le lecteur natif.
+    document.addEventListener('visibilitychange',()=>{
+      if(document.hidden||!state.audioCtx||state.audioCtx.state!=='suspended')return;
+      if(!(state.playing||radio.playing))return;
+      state.audioCtx.resume().catch(e=>log('Reprise Web Audio impossible : '+e.message));
+    });
+    if(window.AudioContext||window.webkitAudioContext){
+      // Le contexte est construit à la première lecture ; sa transition est consignée dans audioCtx().
+    }
+  }
+  function setupNativeAndroid(){
+    if(!androidNative)return;
+    $('nativeImportNote').hidden=false;
+    $('nativeImportNote').innerHTML='<strong>Android natif :</strong> pour passer automatiquement au titre suivant écran verrouillé, importez vos titres avec <strong>+ Fichiers</strong> ou <strong>+ Dossier</strong>. Les imports anciens du navigateur et le bouton « Sans copie » restent soumis aux limites de la WebView.';
+    const importHelp=$('nativeImportNote').nextElementSibling;
+    if(importHelp)importHelp.textContent='Sur Android : « + Fichiers » et « + Dossier » ajoutent durablement les références, sans copie de vos FLAC. « Sans copie » reste le mode d’écoute temporaire du navigateur. Les dossiers sont limités à 1 500 pistes par sélection.';
+    for(const [id,fn] of [['addFilesBtn','chooseMusicFiles'],['addFolderBtn','chooseFolder']]){
+      $(id).addEventListener('click',ev=>{ev.preventDefault();ev.stopImmediatePropagation();nativeCall(fn)},true);
+    }
+    // The temporary no-copy button remains the original WebView importer.
+    setInterval(readNativeState,800);
+    installNativeLibrary(nativeCall('getLibrary')||'[]');
+    readNativeState();
+  }
+
+  const importManager={active:false,cancel:false,metadataQueue:[],metadataActive:false,metadataDisabled:false};
+  function getAudioRecord(id){return sessionFiles.has(id)?Promise.resolve(sessionFiles.get(id)):storeGet(FILES,id)}
+  function isStorageError(e){const msg=String(e?.message||e||'');return /quota|storage|stockage|database|transaction|abort|permission|space|espace|blocked|bloqu|invalidstate|unknownerror/i.test((e?.name||'')+' '+msg)}
+  async function storageReport(){const target=$('storageInfo');try{if(memoryMode){target.textContent='Stockage du navigateur indisponible : mode temporaire uniquement.';return}if(!navigator.storage?.estimate){target.textContent='Espace disponible non communiqué par le navigateur.';return}const {usage,quota}=await navigator.storage.estimate();target.textContent=Number.isFinite(usage)&&Number.isFinite(quota)?`Stockage du navigateur : ${filesize(usage)} utilisés / ${filesize(quota)} disponibles au total. Les gros fichiers peuvent atteindre la limite.`:'Stockage : capacité non communiquée.'}catch{target.textContent='Capacité de stockage non accessible sur ce navigateur.'}}
+  function queueMetadata(ids){importManager.metadataQueue.push(...ids);if(!importManager.metadataActive){setTimeout(()=>processMetadataQueue(),350)}}
+  async function processMetadataQueue(){if(importManager.metadataActive||importManager.active)return;importManager.metadataActive=true;try{while(importManager.metadataQueue.length){if(importManager.active)break;const id=importManager.metadataQueue.shift();try{await enrichTrackMeta(id)}catch(e){log('Pochette ignorée : '+e.message)}await new Promise(resolve=>setTimeout(resolve,20))}}finally{importManager.metadataActive=false;if(importManager.metadataQueue.length&&!importManager.active)setTimeout(()=>processMetadataQueue(),1000)}}
+
+  function log(message){const time=new Date().toLocaleTimeString('fr-FR');els.log.textContent=`[${time}] ${message}\n`+els.log.textContent.slice(0,6500);console.info('[Harmonie]',message);}
+  function message(text,error=false){els.status.textContent=text;els.status.classList.toggle('error',error);if(error)log(text);}
+  function safeGet(key){try{return localStorage.getItem(key)}catch{return null}}
+  function safeSet(key,val){try{localStorage.setItem(key,val)}catch{log('Préférences non enregistrées (stockage indisponible).')}}
+  function seconds(t){if(!Number.isFinite(t)||t<0)return '0:00';let s=Math.floor(t),m=Math.floor(s/60);s%=60;const h=Math.floor(m/60);m%=60;return h?`${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`:`${m}:${String(s).padStart(2,'0')}`}
+  function filesize(n){if(n==null||n<0)return 'Android';return (n/1048576).toLocaleString('fr-FR',{maximumFractionDigits:1})+' Mo'}
+  function folderOf(path){return path.includes('/')?path.slice(0,path.lastIndexOf('/')):''}
+  function mimeOf(name){const ext=name.split('.').pop().toLowerCase();return ({flac:'audio/flac',oga:'audio/ogg',ogg:'audio/ogg',mp3:'audio/mpeg',wav:'audio/wav',m4a:'audio/mp4',aac:'audio/aac'})[ext]||'application/octet-stream'}
+  function isFlac(track,blob){return /\.flac$/i.test(track.name)||blob.type==='audio/flac'}
+  function isCustomFilter(){return state.filter.startsWith('custom:')}
+  function isFolderFilter(){return state.filter.startsWith('folder:')}
+  function getPlaylist(){return state.playlists.find(p=>'custom:'+p.id===state.filter)}
+  function getTrack(id){return state.tracks.find(t=>t.id===id)}
+  function rate(){return state.frequency/440}
+  function openDB(){if(dbPromise)return dbPromise;dbPromise=new Promise((resolve,reject)=>{if(!window.indexedDB){reject(new Error('IndexedDB indisponible.'));return}const req=indexedDB.open(DB_NAME,DB_VERSION);req.onupgradeneeded=(event)=>{const db=req.result,tx=req.transaction;if(!db.objectStoreNames.contains(FILES))db.createObjectStore(FILES,{keyPath:'id'});if(!db.objectStoreNames.contains(META))db.createObjectStore(META,{keyPath:'id'});if(!db.objectStoreNames.contains(PLAYLISTS))db.createObjectStore(PLAYLISTS,{keyPath:'id'});if(event.oldVersion<2){const old=tx.objectStore(FILES),meta=tx.objectStore(META);old.openCursor().onsuccess=e=>{const cursor=e.target.result;if(!cursor)return;const tr=cursor.value;meta.put({id:tr.id,name:tr.name||'Sans titre',path:tr.path||tr.name||'',folder:folderOf(tr.path||''),size:tr.size||(tr.data?.byteLength||tr.blob?.size||0),addedAt:tr.addedAt||Date.now()});cursor.continue()}}};req.onsuccess=()=>{const db=req.result;db.onversionchange=()=>{db.close();dbPromise=null};resolve(db)};req.onerror=()=>reject(req.error||new Error('Ouverture de la bibliothèque impossible.'));req.onblocked=()=>log('Base bloquée : fermer les autres onglets de cette application.')});return dbPromise.catch(e=>{dbPromise=null;throw e})}
+  async function storeGet(store,id){if(memoryMode)return memoryStores[store].get(id);const db=await openDB();return new Promise((resolve,reject)=>{const tx=db.transaction(store,'readonly');const req=tx.objectStore(store).get(id);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
+  async function storeGetAll(store){if(memoryMode)return [...memoryStores[store].values()];const db=await openDB();return new Promise((resolve,reject)=>{const tx=db.transaction(store,'readonly');const req=tx.objectStore(store).getAll();req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
+  async function storePut(store,entry){if(memoryMode){memoryStores[store].set(entry.id,entry);return}const db=await openDB();return new Promise((resolve,reject)=>{const tx=db.transaction(store,'readwrite');tx.objectStore(store).put(entry);tx.oncomplete=()=>resolve();tx.onabort=()=>reject(tx.error||new Error('Écriture impossible'));tx.onerror=()=>reject(tx.error)})}
+  async function storeDelete(store,id){if(memoryMode){memoryStores[store].delete(id);return}const db=await openDB();return new Promise((resolve,reject)=>{const tx=db.transaction(store,'readwrite');tx.objectStore(store).delete(id);tx.oncomplete=()=>resolve();tx.onabort=()=>reject(tx.error||new Error('Suppression impossible'))})}
+  async function putFileAndMeta(entry,meta){if(memoryMode){memoryStores[FILES].set(entry.id,entry);memoryStores[META].set(meta.id,meta);return}const db=await openDB();return new Promise((resolve,reject)=>{const tx=db.transaction([FILES,META],'readwrite');tx.objectStore(FILES).put(entry);tx.objectStore(META).put(meta);tx.oncomplete=()=>resolve();tx.onabort=()=>reject(tx.error||new Error('Stockage saturé ou interdit'))})}
+  async function deleteTrackDB(id){if(memoryMode){memoryStores[FILES].delete(id);memoryStores[META].delete(id);return}const db=await openDB();return new Promise((resolve,reject)=>{const tx=db.transaction([FILES,META],'readwrite');tx.objectStore(FILES).delete(id);tx.objectStore(META).delete(id);tx.oncomplete=()=>resolve();tx.onabort=()=>reject(tx.error||new Error('Suppression impossible'))})}
+  async function clearDB(){if(memoryMode){Object.values(memoryStores).forEach(store=>store.clear());return}const db=await openDB();return new Promise((resolve,reject)=>{const tx=db.transaction([FILES,META,PLAYLISTS],'readwrite');[FILES,META,PLAYLISTS].forEach(s=>tx.objectStore(s).clear());tx.oncomplete=()=>resolve();tx.onabort=()=>reject(tx.error||new Error('Effacement impossible'))})}
+  // Le tri n'altère jamais l'ordre original enregistré dans les playlists.
+  const artistCollator=new Intl.Collator('fr',{numeric:true,sensitivity:'base',ignorePunctuation:true});
+  function artistName(track){return String(track?.artist||'').trim()||'Artiste inconnu'}
+  function artistSortTracks(tracks){
+    if(state.sortMode==='original')return tracks.slice();
+    const descending=state.sortMode==='artist-desc';
+    return tracks.map((track,index)=>({track,index})).sort((a,b)=>{
+      const aName=artistName(a.track),bName=artistName(b.track);
+      const aUnknown=aName==='Artiste inconnu',bUnknown=bName==='Artiste inconnu';
+      if(aUnknown!==bUnknown)return aUnknown?1:-1; // Toujours placer les artistes non renseignés à la fin.
+      const byArtist=artistCollator.compare(aName,bName);
+      if(byArtist)return descending?-byArtist:byArtist;
+      const byTitle=artistCollator.compare(trackTitle(a.track),trackTitle(b.track));
+      return byTitle||a.index-b.index;
+    }).map(item=>item.track);
+  }
+  function currentPlaylistTracks(){let tracks=state.tracks;if(isFolderFilter()){const folder=state.filter.slice(7);tracks=tracks.filter(t=>t.folder===folder||t.folder.startsWith(folder+'/'))}else if(isCustomFilter()){const p=getPlaylist();const byId=new Map(tracks.map(t=>[t.id,t]));tracks=p?p.items.map(id=>byId.get(id)).filter(Boolean):[]}const q=els.search.value.trim().toLocaleLowerCase('fr');if(q)tracks=tracks.filter(t=>(t.name+' '+t.path+' '+(t.artist||'')+' '+(t.album||'')).toLocaleLowerCase('fr').includes(q));return artistSortTracks(tracks)}
+  function showMusicSubtab(name){
+    if(!['tracks','playlists','tools'].includes(name))name='tracks';
+    if(name==='tracks'&&musicSubtab!=='tracks'){
+      if(state.filter!=='all')lastPlaylistFilter=state.filter;
+      state.filter='all';
+    }else if(name==='playlists'&&musicSubtab!=='playlists'&&state.filter==='all'&&lastPlaylistFilter!=='all'){
+      state.filter=lastPlaylistFilter;
+    }
+    musicSubtab=name;
+    for(const [key,pane,tab] of [['tracks','musicTracksPane','musicSubTracks'],['playlists','musicPlaylistsPane','musicSubPlaylists'],['tools','musicToolsPane','musicSubTools']]){
+      $(pane).hidden=name!==key;
+      $(tab).setAttribute('aria-selected',String(name===key));
+      $(tab).tabIndex=name===key?0:-1;
+    }
+    $('musicListArea').hidden=name==='tools';
+    if(name!=='tools')renderLibrary();
+    safeSet(MUSIC_SUBTAB_KEY,name);
+  }
+  function showRadioSubtab(name){
+    if(!['explore','favorites'].includes(name))name='explore';
+    radioSubtab=name;
+    radio.onlyFavorites=name==='favorites';
+    if(radio.onlyFavorites&&radio.request)radio.request.abort();
+    $('radioExplorePane').hidden=radio.onlyFavorites;
+    $('radioFavoritesPane').hidden=!radio.onlyFavorites;
+    $('radioPages').hidden=radio.onlyFavorites;
+    for(const [key,tab] of [['explore','radioSubExplore'],['favorites','radioSubFavorites']]){
+      $(tab).setAttribute('aria-selected',String(name===key));
+      $(tab).tabIndex=name===key?0:-1;
+    }
+    renderRadios();
+    safeSet(RADIO_SUBTAB_KEY,name);
+  }
+  function bindSubtabs(){
+    for(const [tab,name] of [['musicSubTracks','tracks'],['musicSubPlaylists','playlists'],['musicSubTools','tools']]){
+      $(tab).addEventListener('click',()=>showMusicSubtab(name));
+    }
+    $('radioSubExplore').addEventListener('click',()=>{
+      showRadioSubtab('explore');
+      if(radio.initialized){loadCountries();if(!radio.results.length)searchRadios(0)}
+    });
+    $('radioSubFavorites').addEventListener('click',()=>showRadioSubtab('favorites'));
+    showMusicSubtab(safeGet(MUSIC_SUBTAB_KEY)||'tracks');
+    showRadioSubtab(safeGet(RADIO_SUBTAB_KEY)||'explore');
+  }
+  function redrawPlaylistPicker(){const keep=state.filter;els.playlist.replaceChildren();const make=(value,label)=>{const o=document.createElement('option');o.value=value;o.textContent=label;els.playlist.append(o)};make('all','Toutes les pistes');const folders=[...new Set(state.tracks.map(t=>t.folder).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'fr'));folders.forEach(f=>make('folder:'+f,'Dossier · '+f));state.playlists.slice().sort((a,b)=>a.name.localeCompare(b.name,'fr')).forEach(p=>make('custom:'+p.id,'Playlist · '+p.name));state.filter=[...els.playlist.options].some(o=>o.value===keep)?keep:'all';els.playlist.value=state.filter;refreshPlaylistControls()}
+  function refreshPlaylistControls(){const p=getPlaylist(), selected=state.id;els.addTo.disabled=!selected||!state.playlists.length||(!!p&&p.items.includes(selected));els.removeFrom.disabled=!p||!selected||!p.items.includes(selected);els.deletePlaylist.disabled=!p}
+  function renderLibrary(){redrawPlaylistPicker();const items=currentPlaylistTracks(),fragment=document.createDocumentFragment();els.count.textContent=`${items.length} piste${items.length!==1?'s':''} affichée${items.length!==1?'s':''} · ${state.tracks.length} en bibliothèque`;els.list.replaceChildren();if(!items.length){const empty=document.createElement('div');empty.className='empty';empty.textContent=state.tracks.length?'Aucun titre dans cette sélection.':'Bibliothèque vide. Appuyez sur « + Fichiers » ou « + Dossier » pour ajouter de la musique.';els.list.append(empty);return}items.forEach((t,i)=>{if(state.sortMode!=='original'&&(i===0||artistCollator.compare(artistName(items[i-1]),artistName(t))!==0)){const group=document.createElement('div');group.className='artist-divider';group.textContent='♫ '+artistName(t);fragment.append(group)}const row=document.createElement('div');row.className='track'+(t.id===state.id?' active':'');row.role='listitem';row.tabIndex=0;const num=document.createElement('span');num.className='number';num.textContent=t.id===state.id&&state.playing?'♪':String(i+1);const cover=document.createElement('img');cover.className='track-cover';cover.alt='Pochette de '+trackTitle(t);cover.loading='lazy';cover.src=artForTrack(t)||defaultArt(trackTitle(t),'music');cover.onerror=()=>{cover.onerror=null;cover.src=defaultArt(trackTitle(t),'music')};const info=document.createElement('div');info.className='namebox';const name=document.createElement('div');name.className='name';name.textContent=trackTitle(t);const path=document.createElement('div');path.className='path';path.textContent=trackSubtitle(t);info.append(name,path);const size=document.createElement('span');size.className='size';size.textContent=filesize(t.size);const del=document.createElement('button');del.className='remove';del.textContent='×';del.title=`Supprimer ${trackTitle(t)} de la bibliothèque`;del.setAttribute('aria-label',del.title);del.addEventListener('click',e=>{e.stopPropagation();removeTrack(t.id)});row.append(num,cover,info,size,del);row.addEventListener('click',()=>selectTrack(t.id,true));row.addEventListener('keydown',e=>{if(e.target===row&&(e.key==='Enter'||e.key===' ')){e.preventDefault();selectTrack(t.id,true)}});fragment.append(row)});els.list.append(fragment)}
+  function updateButtons(){syncLedState();syncRotation();if(visuals.stageOpen)syncStageControls();if(radio.active){const enabled=!!radio.el||!!radio.native;els.play.disabled=radio.loading;els.stop.disabled=!enabled&&!radio.loading;els.prev.disabled=radio.loading||radioQueue().length<2;els.next.disabled=radio.loading||radioQueue().length<2;els.play.textContent=radio.loading?'Connexion…':radio.playing?'⏸ Pause':'▶ Radio';els.shuffle.disabled=true;els.repeat.disabled=true;els.btn432.disabled=!radio.native;els.btn440.disabled=!radio.native;
+    els.btn432.classList.toggle('selected',state.frequency===432);els.btn440.classList.toggle('selected',state.frequency===440);
+    els.btn432.setAttribute('aria-pressed',String(state.frequency===432));els.btn440.setAttribute('aria-pressed',String(state.frequency===440));return}
+    els.shuffle.disabled=false;els.repeat.disabled=false;els.btn432.disabled=false;els.btn440.disabled=false;els.play.disabled=!state.loaded||state.loading;els.stop.disabled=!state.loaded;els.prev.disabled=!state.tracks.length;els.next.disabled=!state.tracks.length;els.play.textContent=state.playing?'⏸ Pause':'▶ Lire';els.shuffle.classList.toggle('selected',state.shuffle);els.shuffle.setAttribute('aria-pressed',String(state.shuffle));els.repeat.classList.toggle('selected',state.repeat!==0);els.repeat.textContent=['↻','↻¹','↻∞'][state.repeat];els.repeat.title=['Répétition désactivée','Répéter le titre','Répéter la sélection'][state.repeat];els.repeat.setAttribute('aria-pressed',String(state.repeat!==0));els.btn432.classList.toggle('selected',state.frequency===432);els.btn440.classList.toggle('selected',state.frequency===440);els.btn432.setAttribute('aria-pressed',String(state.frequency===432));els.btn440.setAttribute('aria-pressed',String(state.frequency===440));refreshPlaylistControls()}
+  function displayNow(){if(radio.active){displayRadioNow();return}updateProEngineNote();const tr=getTrack(state.id);els.now.textContent=tr?trackTitle(tr):'Aucun titre sélectionné';els.nowSub.textContent=tr?trackSubtitle(tr):'Ajoutez des fichiers FLAC ou un dossier';setCurrentArt(artForTrack(tr),trackTitle(tr||{}),'music');refreshDetails();refreshStage();syncRotation();updateButtons()}
+  async function addFiles(fileList,mode='saved'){
+    if(importManager.active){message('Une importation est déjà en cours. Terminez-la ou cliquez sur Annuler.',true);return}
+    const all=[...(fileList||[])],files=all.filter(f=>SUPPORTED.test(f.name));
+    if(!files.length){message('Aucun fichier audio reconnu. Sélectionnez MP3, FLAC, WAV, OGG, M4A ou AAC.',true);return}
+    importManager.active=true;importManager.cancel=false;
+    const panel=$('importState'),label=$('importLabel'),progress=$('importProgress'),details=$('importDetails');
+    panel.hidden=false;progress.max=files.length;progress.value=0;details.textContent='';
+    for(const btn of ['addFilesBtn','addFolderBtn','sessionFilesBtn','clearLibBtn'])$(btn).disabled=true;
+    const known=new Set(state.tracks.map(t=>t.id));let added=0,skipped=0,errors=0,temporary=0,totalBytes=0;
+    const errorLines=[];let fallback=false;const enriched=[];
+    try{
+      for(let i=0;i<files.length;i++){
+        if(importManager.cancel)break;
+        const f=files[i];
+        label.textContent=`Importation ${i+1}/${files.length} · ${f.name}`;
+        els.busy.textContent=`${i+1}/${files.length}`;
+        try{
+          if(!f.size)throw new Error('Fichier vide');
+          const path=f.webkitRelativePath||f.name;
+          if(/\.flac$/i.test(f.name)){
+            const b=new Uint8Array(await f.slice(0,4).arrayBuffer());
+            if(String.fromCharCode(...b)!=='fLaC'&&String.fromCharCode(...b)!=='OggS')throw new Error('Fichier FLAC invalide');
+          }
+          const id=path+'__'+f.size+'__'+(f.lastModified||0);
+          if(known.has(id)){skipped++;continue}
+          let ephemeral=mode==='session'||memoryMode||fallback;
+          const meta={id,name:f.name,path,folder:folderOf(path),size:f.size,addedAt:Date.now()};
+          const record={id,name:f.name,path,size:f.size,blob:f,type:mimeOf(f.name)};
+          if(!ephemeral){
+            try{await putFileAndMeta(record,meta)}
+            catch(e){
+              if(!isStorageError(e))throw e;
+              fallback=true;ephemeral=true;
+              log('Stockage impossible pour '+f.name+' : '+(e?.message||e)+' ; passage en écoute temporaire.');
+            }
+          }
+          if(ephemeral){meta.temporary=true;sessionFiles.set(id,record);temporary++}
+          known.add(id);state.tracks.push(meta);enriched.push(id);added++;totalBytes+=f.size;
+        }catch(e){errors++;if(errorLines.length<10)errorLines.push(f.name+': '+(e?.message||e));log('Erreur import '+f.name+' : '+(e?.message||e))}
+        finally{progress.value=i+1;label.textContent=`${i+1}/${files.length} · ${added} ajoutés · ${skipped} doublons · ${errors} erreurs · ${temporary} temporaires`;details.textContent=errorLines.join('\n')}
+        if((i+1)%4===0){renderLibrary();await new Promise(r=>setTimeout(r,0))}
+      }
+    }finally{
+      importManager.active=false;els.busy.textContent='';
+      for(const btn of ['addFilesBtn','addFolderBtn','sessionFilesBtn','clearLibBtn'])$(btn).disabled=false;
+      state.tracks.sort((a,b)=>a.path.localeCompare(b.path,'fr',{numeric:true}));renderLibrary();storageReport();
+      const cancelled=importManager.cancel;
+      const summary=`${added} morceau(x) ajouté(s), ${skipped} doublon(s), ${errors} erreur(s).${temporary?' '+temporary+' en lecture temporaire (non conservés après fermeture).':''}${cancelled?' Importation interrompue.':''}`;
+      message(summary,errors>0||temporary>0);label.textContent=summary;
+      if(!errors&&!temporary){setTimeout(()=>{if(!importManager.active)panel.hidden=true},9000)}
+      queueMetadata(enriched);
+    }
+  }
+  async function reload(){state.tracks=await storeGetAll(META);state.playlists=await storeGetAll(PLAYLISTS);state.tracks.sort((a,b)=>a.path.localeCompare(b.path,'fr',{numeric:true}));for(const t of state.tracks)if(!('folder'in t))t.folder=folderOf(t.path||'');renderLibrary()}
+  function clearSource(){if(state.source){const src=state.source;state.source=null;src.onended=null;try{src.stop()}catch{}try{src.disconnect()}catch{}}}
+  function positionNow(){if(state.mode==='android-native')return nativeLive.position;if(state.mode==='native')return els.audio.currentTime||0;if(state.mode==='buffer'&&state.playing&&state.audioCtx)return Math.min(durationNow(),state.startOffset+(state.audioCtx.currentTime-state.startAt)*rate());return state.offset||0}
+  function durationNow(){if(state.mode==='android-native')return nativeLive.duration;return state.mode==='native'?Number.isFinite(els.audio.duration)?els.audio.duration:0:state.audioBuffer?.duration||0}
+  function updateProgress(){if(radio.active){els.position.textContent='LIVE';els.duration.textContent='DIRECT';els.seek.value=0;els.seek.disabled=true;return}const duration=durationNow(),position=Math.min(positionNow(),duration||0);els.position.textContent=seconds(position);els.duration.textContent=seconds(duration);if(!els.seek.matches(':active'))els.seek.value=duration?Math.round(position/duration*1000):0;syncLyrics(position);els.seek.disabled=!state.loaded||duration===0;if(state.mode!=='android-native'&&!(radio.active&&radio.native)&&'mediaSession'in navigator&&navigator.mediaSession.setPositionState&&state.loaded&&Number.isFinite(duration)&&duration>0){try{navigator.mediaSession.setPositionState({duration,playbackRate:rate(),position:Math.min(duration,Math.max(0,position))})}catch{}}}
+  function releaseURL(){if(state.objectURL){URL.revokeObjectURL(state.objectURL);state.objectURL=null}}
+  // ATTENTION : les notifications Media3 ne doivent JAMAIS arrêter Media3 en retour.
+  // Le drapeau false ne libère que Web Audio, sans toucher la playlist native.
+  function stopOldForLoad(stopNative=true){if(stopNative&&state.mode==='android-native'){nativeCall('stopNative');nativeLive.needsQueue=true}state.playing=false;els.audio.pause();els.audio.removeAttribute('src');els.audio.load();clearSource();state.offset=0;state.audioBuffer=null;state.loaded=false;state.mode=null;releaseURL();releaseWakeLock();updateButtons()}
+  function waitNativeReady(timeout=6500){return new Promise((resolve,reject)=>{const media=els.audio;let timer;const cleanup=()=>{clearTimeout(timer);media.removeEventListener('loadedmetadata',ok);media.removeEventListener('canplay',ok);media.removeEventListener('error',error)};const ok=()=>{cleanup();resolve()};const error=()=>{cleanup();reject(new Error('Format non pris en charge par le décodeur natif.'))};const fail=()=>{cleanup();reject(new Error('Le chargement audio a expiré.'))};media.addEventListener('loadedmetadata',ok);media.addEventListener('canplay',ok);media.addEventListener('error',error);timer=setTimeout(fail,timeout);if(media.readyState>=1)ok()})}
+  function loadJS(url){return new Promise((resolve,reject)=>{const script=document.createElement('script');let done=false;const timer=setTimeout(()=>finish(new Error('Chargement trop lent')),5000);function finish(err){if(done)return;done=true;clearTimeout(timer);script.onload=null;script.onerror=null;if(err){script.remove();reject(err)}else resolve()}script.src=url;script.charset='UTF-8';script.onload=()=>finish();script.onerror=()=>finish(new Error('Réseau ou CDN inaccessible'));document.head.append(script)})}
+
+  function escapeXml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+  function initials(text='♫'){return String(text).trim().split(/\s+/).slice(0,2).map(s=>s[0]||'').join('').toUpperCase()||'♫'}
+  function defaultArt(label='♫',kind='music'){
+    const colors=kind==='radio'?['#16d7d1','#213c64']:['#c87dff','#174c53'];
+    const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="${colors[0]}"/><stop offset="1" stop-color="${colors[1]}"/></linearGradient></defs><rect width="160" height="160" rx="28" fill="url(#g)"/><circle cx="122" cy="38" r="11" fill="#ffffff25"/><text x="80" y="93" text-anchor="middle" font-size="54" font-family="Arial,Helvetica,sans-serif" font-weight="700" fill="#fff">${escapeXml(initials(label))}</text></svg>`;
+    return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg)
+  }
+  function setCurrentArt(src,label='Illustration',kind='music'){els.art.onerror=()=>{els.art.onerror=null;els.art.src=defaultArt(label,kind)};els.art.src=src||defaultArt(label,kind);els.art.alt=label}
+  async function getTagReader(){if(importManager.metadataDisabled)throw new Error('Métadonnées indisponibles hors ligne (lecture audio inchangée)');if(window.jsmediatags)return window.jsmediatags;if(state.tagReader)return state.tagReader;if(state.tagReaderFailed && Date.now()-(state.tagReaderLastFailure||0)<30000)throw new Error('Lecteur de métadonnées temporairement indisponible. Réessayez dans 30 secondes.');if(state.tagReaderLoading)return state.tagReaderLoading;state.tagReaderLoading=(async()=>{try{await loadJS('https://cdn.jsdelivr.net/npm/jsmediatags@3.9.7/dist/jsmediatags.min.js')}catch{await loadJS('https://unpkg.com/jsmediatags@3.9.7/dist/jsmediatags.min.js')}if(!window.jsmediatags)throw new Error('Lecteur de métadonnées indisponible');state.tagReader=window.jsmediatags;state.tagReaderFailed=false;return window.jsmediatags})();try{return await state.tagReaderLoading}catch(e){state.tagReaderFailed=true;state.tagReaderLastFailure=Date.now();throw e}finally{state.tagReaderLoading=null}}
+  function pictureToDataUrl(pic){if(!pic?.data||!pic.format)return null;try{const bytes=pic.data instanceof Uint8Array?pic.data:new Uint8Array(pic.data);let binary='';const chunk=0x8000;for(let i=0;i<bytes.length;i+=chunk)binary+=String.fromCharCode(...bytes.slice(i,i+chunk));return `data:${pic.format};base64,${btoa(binary)}`}catch{return null}}
+  async function extractTagMetadata(blob,name=''){try{const tagsLib=await getTagReader();return await new Promise((resolve,reject)=>{new tagsLib.Reader(blob).setTagsToRead(['title','artist','album','picture','lyrics','unsynchronisedlyrics']).read({onSuccess:r=>{const t=r.tags||{};resolve({title:String(t.title||'').trim(),artist:String(t.artist||'').trim(),album:String(t.album||'').trim(),cover:pictureToDataUrl(t.picture),lyrics:typeof t.lyrics==='string'?t.lyrics.slice(0,200000):typeof t.unsynchronisedlyrics==='string'?t.unsynchronisedlyrics.slice(0,200000):''})},onError:e=>reject(new Error(e?.info||e?.type||'Lecture des tags impossible'))})})}catch(e){log('Métadonnées non lues pour '+name+' : '+e.message);return {title:'',artist:'',album:'',cover:'',lyrics:''}}}
+  function trackTitle(track){return track?.title||track?.name||'Sans titre'}
+  function trackSubtitle(track){if(!track)return 'Bibliothèque locale';const bits=[track.temporary?'SESSION':null,track.artist,track.album].filter(Boolean);if(bits.length)return bits.join(' · ');return track.path!==track.name?track.path:'Bibliothèque locale'}
+  async function enrichTrackMeta(id,{blob=null,force=false}={}){const meta=getTrack(id);if(!meta)return meta;const need=force||!(meta.cover||meta.title||meta.artist||meta.album);if(!need)return meta;try{if(!blob){const rec=await getAudioRecord(id);blob=rec?.blob instanceof Blob?rec.blob:rec?.data?new Blob([rec.data],{type:mimeOf(meta.name)}):null}if(!blob?.size)return meta;const extra=await extractTagMetadata(blob,meta.name);const updated={...meta};if(extra.title)updated.title=extra.title;if(extra.artist)updated.artist=extra.artist;if(extra.album)updated.album=extra.album;if(extra.cover)updated.cover=extra.cover;if(extra.lyrics&&!updated.lyrics)updated.lyrics=extra.lyrics;const changed=JSON.stringify([meta.title,meta.artist,meta.album,meta.cover,meta.lyrics])!==JSON.stringify([updated.title,updated.artist,updated.album,updated.cover,updated.lyrics]);if(changed){const i=state.tracks.findIndex(t=>t.id===id);if(i>=0)state.tracks[i]=updated;if(!updated.temporary)await storePut(META,updated);if(state.id===id){displayNow();updateMedia()}renderLibrary()}return updated}catch(e){log('Enrichissement métadonnées impossible : '+e.message);return meta}}
+  async function getDecoder(){if(state.decoder)return state.decoder;if(state.decoderLoading)return state.decoderLoading;state.decoderLoading=(async()=>{if(!window['flac-decoder']){try{await loadJS('https://cdn.jsdelivr.net/npm/@wasm-audio-decoders/flac@0.2.10/dist/flac-decoder.min.js')}catch{await loadJS('https://unpkg.com/@wasm-audio-decoders/flac@0.2.10/dist/flac-decoder.min.js')}}const ctor=window['flac-decoder']?.FLACDecoder;if(!ctor)throw new Error('Décodeur FLAC WASM indisponible');const decoder=new ctor();await decoder.ready;state.decoder=decoder;return decoder})();try{return await state.decoderLoading}finally{state.decoderLoading=null}}
+  function equalizerReserve(){
+    if(!state.hifi)return 0;
+    // Marge conservatrice : ce n'est pas un limiteur true-peak.
+    const eqPeak=state.eqEnabled?Math.max(0,...state.eqGains):0;
+    const effectsReserve=(extraFX.echoOn?1.5:0)+(extraFX.spaceOn?1:0);
+    return Math.min(20,eqPeak+(eqPeak?1.5:0)+effectsReserve);
+  }
+  // Envoie les 8 bandes et l'activation Radio vers l'effet Android natif.
+  // Web Audio et Media3 restent deux moteurs distincts ; pas de capture Web Audio
+  // mensongère pour les radios lues en arrière-plan.
+  let nativeEqTimer=null;
+  function syncNativeAudioEffects(){
+    if(!androidNative)return;
+    clearTimeout(nativeEqTimer);
+    nativeEqTimer=setTimeout(()=>{
+      nativeCall('setNativeAudioEffects',JSON.stringify({
+        enabled:state.eqEnabled,radioEnabled:els.radioEQ.checked,
+        hifi:state.hifi,gains:state.eqGains,
+        ambienceOn:extraFX.echoOn,ambienceAmount:extraFX.echoAmount,
+        virtualizerOn:extraFX.spaceOn,virtualizerAmount:extraFX.spaceAmount
+      }));
+    },120);
+  }
+  function updateDSPGains(){
+    const reserve=equalizerReserve();
+    els.eqHeadroom.textContent='Marge : '+(reserve?'-'+reserve.toLocaleString('fr-FR',{maximumFractionDigits:1}):'0')+' dB';
+    els.eqState.textContent=!state.eqEnabled?'Égaliseur désactivé':state.hifi?'Hi-Fi · protection active':'Égaliseur actif';
+    syncNativeAudioEffects();
+    if(!state.audioCtx)return;
+    const ctx=state.audioCtx,now=ctx.currentTime;
+    state.dspFilters.forEach((filter,i)=>filter.gain.setTargetAtTime(state.eqGains[i],now,0.025));
+    state.dspPreamp.gain.setTargetAtTime(Math.pow(10,-reserve/20),now,0.025);
+  }
+  function routeDSP(){
+    if(!state.dspInput)return;
+    state.dspInput.disconnect();
+    for(const filter of state.dspFilters)filter.disconnect();
+    state.dspPreamp.disconnect();
+    state.dspLimiter.disconnect();
+    let node=state.dspInput;
+    if(state.eqEnabled){for(const filter of state.dspFilters){node.connect(filter);node=filter}}
+    node.connect(state.dspPreamp);node=state.dspPreamp;
+    if(state.hifi){node.connect(state.dspLimiter);node=state.dspLimiter}
+    node.connect(extraFX.input || state.gain);
+    updateDSPGains();
+  }
+  function audioCtx(){
+    if(!state.audioCtx){
+      const Ctx=window.AudioContext||window.webkitAudioContext;
+      if(!Ctx)throw new Error('Web Audio API indisponible');
+      const ctx=new Ctx({latencyHint:'playback'});
+      state.audioCtx=ctx;
+      ctx.addEventListener('statechange',()=>{
+        log('Web Audio état : '+ctx.state);
+        if(ctx.state==='interrupted' || ctx.state==='suspended') {
+          // L'interface peut continuer à animer l'analyseur alors que la sortie est suspendue.
+          if(state.playing || radio.playing) $('audioRepairStatus').textContent='Sortie Web Audio '+ctx.state+' ; ouvrez le diagnostic audio si le son ne revient pas.';
+        }
+      });
+      state.gain=ctx.createGain();
+      state.gain.gain.value=state.volume;
+      connectLedAudioGraph(ctx);
+      state.dspInput=ctx.createGain();
+      state.dspPreamp=ctx.createGain();
+      state.dspLimiter=ctx.createDynamicsCompressor();
+      // Limitation conservatrice des crêtes, non une reconstruction « haute résolution ».
+      state.dspLimiter.threshold.value=-1.5;
+      state.dspLimiter.knee.value=0;
+      state.dspLimiter.ratio.value=16;
+      state.dspLimiter.attack.value=0.003;
+      state.dspLimiter.release.value=0.18;
+      state.dspFilters=EQ_FREQS.map((freq,i)=>{
+        const filter=ctx.createBiquadFilter();
+        filter.type=i===0?'lowshelf':i===EQ_FREQS.length-1?'highshelf':'peaking';
+        filter.frequency.value=freq;
+        if(filter.type==='peaking')filter.Q.value=1.05;
+        filter.gain.value=state.eqGains[i];
+        return filter;
+      });
+      initExtraFX(ctx);
+      routeDSP();
+    }
+    return state.audioCtx;
+  }
+  function connectNativeGraph(){
+    const ctx=audioCtx();
+    if(!state.nativeSource){
+      // Un MediaElementAudioSourceNode ne peut être créé qu'une fois par <audio>.
+      state.nativeSource=ctx.createMediaElementSource(els.audio);
+      state.nativeSource.connect(state.dspInput);
+      els.audio.volume=1; // Pas de double atténuation avec le gain de sortie.
+    }
+    return ctx;
+  }
+  function formatDb(value){return (value>0?'+':'')+Number(value).toLocaleString('fr-FR',{maximumFractionDigits:1})+' dB'}
+  function renderEqSliders(){
+    const frag=document.createDocumentFragment();
+    EQ_FREQS.forEach((freq,i)=>{
+      const band=document.createElement('div');band.className='eq-band';
+      const label=document.createElement('label');label.htmlFor='eqSlider'+i;label.textContent=EQ_LABELS[i];label.title=freq+' Hz';
+      const range=document.createElement('input');range.id='eqSlider'+i;range.className='eq-slider';range.type='range';range.min='-12';range.max='12';range.step='0.5';range.value=state.eqGains[i];range.disabled=!state.eqEnabled;
+      range.setAttribute('aria-label','Bande '+freq+' hertz, en décibels');
+      range.setAttribute('aria-valuetext',formatDb(state.eqGains[i]));
+      const output=document.createElement('output');output.htmlFor=range.id;output.textContent=formatDb(state.eqGains[i]);
+      range.addEventListener('input',()=>{
+        state.eqGains[i]=Number(range.value);
+        output.textContent=formatDb(state.eqGains[i]);
+        range.setAttribute('aria-valuetext',output.textContent);
+        state.eqPreset='custom';els.eqPreset.value='custom';
+        markProCustom();updateDSPGains();persistEqualizer();
+      });
+      band.append(label,range,output);frag.append(band);
+    });
+    els.eqBands.replaceChildren(frag);
+    syncEqUI();
+  }
+  function syncEqUI(){
+    els.eqEnable.checked=state.eqEnabled;
+    els.hifi.checked=state.hifi;
+    els.eqPreset.value=state.eqPreset;
+    [...els.eqBands.querySelectorAll('input')].forEach((range,i)=>{
+      range.value=state.eqGains[i];range.disabled=!state.eqEnabled;
+      range.setAttribute('aria-valuetext',formatDb(state.eqGains[i]));
+      range.nextElementSibling.textContent=formatDb(state.eqGains[i]);
+    });
+    updateDSPGains();
+  }
+  function persistEqualizer(){safeSet(EQ_KEY,JSON.stringify({enabled:state.eqEnabled,hifi:state.hifi,preset:state.eqPreset,gains:state.eqGains}))}
+  function changeEqPreset(name){
+    if(!Object.hasOwn(EQ_PRESETS,name))return;
+    markProCustom();
+    state.eqPreset=name;
+    state.eqGains=[...EQ_PRESETS[name]];
+    state.eqEnabled=true;
+    enableRadioEqForPro();routeDSP();syncEqUI();persistEqualizer();
+    message('Égaliseur : '+els.eqPreset.selectedOptions[0]?.textContent+'.');
+  }
+  function restoreEqualizer(){
+    try{
+      const config=JSON.parse(safeGet(EQ_KEY)||'{}');
+      if(typeof config.enabled==='boolean')state.eqEnabled=config.enabled;
+      if(typeof config.hifi==='boolean')state.hifi=config.hifi;
+      if(EQ_PRESETS[config.preset]||config.preset==='custom')state.eqPreset=config.preset;
+      if(Array.isArray(config.gains)&&config.gains.length===8&&config.gains.every(v=>Number.isFinite(v)&&v>=-12&&v<=12))state.eqGains=config.gains.map(Number);
+    }catch(e){log('Préréglages audio réinitialisés : '+e.message)}
+    renderEqSliders();
+  }
+  async function fallbackDecode(blob){const ctx=await audioCtx();const raw=await blob.arrayBuffer();const bytes=new Uint8Array(raw),head=String.fromCharCode(...bytes.slice(0,4));if(head!=='fLaC'&&head!=='OggS')throw new Error('Signature FLAC invalide');const decoder=await getDecoder();let result;try{result=decoder.decode(bytes);if(!result||!result.samplesDecoded||!result.channelData?.length)throw new Error('Aucun échantillon FLAC décodé');if(result.errors?.length)throw new Error(result.errors.map(e=>e.message||String(e)).join('; '));const channels=result.channelData.length;if(channels<1||channels>8)throw new Error('Nombre de canaux non supporté');const buffer=ctx.createBuffer(channels,result.samplesDecoded,result.sampleRate);for(let c=0;c<channels;c++)buffer.copyToChannel(result.channelData[c],c);return buffer}finally{try{await decoder.reset()}catch(e){log('Réinitialisation décodeur : '+e.message)}}}
+  async function selectTrack(id,autoPlay=false){let meta=getTrack(id);if(!meta)return;if(radio.active)stopRadio(true);
+    if(meta.native){
+      // Pendant la restauration de l'interface, ne pas interrompre le service audio.
+      ++state.token;stopOldForLoad(autoPlay);state.id=id;state.mode='android-native';state.loaded=true;state.loading=false;
+      state.playing=false;nativeLive.needsQueue=true;safeSet(LAST_KEY,id);displayNow();renderLibrary();updateProgress();
+      if(autoPlay)await play();else message('Piste Android prête · '+trackTitle(meta));
+      return;
+    }
+    const ticket=++state.token;stopOldForLoad();state.id=id;state.loading=true;displayNow();message('Chargement de '+trackTitle(meta)+'…');try{const rec=await getAudioRecord(id);if(ticket!==state.token)return;if(!rec)throw new Error('Fichier absent du stockage');const blob=rec.blob instanceof Blob?rec.blob:rec.data?new Blob([rec.data],{type:mimeOf(meta.name)}):null;if(!blob?.size)throw new Error('Données audio absentes');state.objectURL=URL.createObjectURL(blob);els.audio.src=state.objectURL;els.audio.playbackRate=rate();els.audio.preservesPitch=false;if('mozPreservesPitch'in els.audio)els.audio.mozPreservesPitch=false;els.audio.volume=state.nativeSource?1:state.volume;const nativeLikely=!!els.audio.canPlayType(mimeOf(meta.name));try{if(!nativeLikely&&isFlac(meta,blob))throw new Error('Décodeur natif FLAC absent');const ready=waitNativeReady();els.audio.load();await ready;if(ticket!==state.token)return;state.mode='native';state.loaded=true;log('Lecture native disponible : '+trackTitle(meta))}catch(e){if(ticket!==state.token)return;if(!isFlac(meta,blob))throw e;log('Décodage natif indisponible, tentative WASM : '+e.message);els.audio.pause();els.audio.removeAttribute('src');els.audio.load();releaseURL();message('Décodage FLAC de '+trackTitle(meta)+'…');state.audioBuffer=await fallbackDecode(blob);if(ticket!==state.token)return;state.mode='buffer';state.loaded=true;log('Décodage FLAC WASM effectué')}if(ticket!==state.token)return;state.loading=false;safeSet(LAST_KEY,id);displayNow();renderLibrary();updateMedia();updateProgress();message('Prêt : '+trackTitle(meta));if(autoPlay)await play();if(!importManager.metadataDisabled&&!importManager.active)queueMetadata([id]);}catch(e){if(ticket!==state.token)return;state.loading=false;state.loaded=false;state.playing=false;log('Erreur lecture : '+(e?.message||e));message('Impossible de lire '+trackTitle(meta)+' : '+(e?.message||e),true);updateButtons()}}
+  // Construire la playlist ENTIÈRE, indépendamment du texte dans Rechercher.
+  // La recherche filtre uniquement l'affichage, pas la lecture écran verrouillé.
+  function nativeQueueIds(){
+    let queue=state.tracks.filter(t=>t.native);
+    if(isFolderFilter()){
+      const folder=state.filter.slice(7);
+      queue=queue.filter(t=>t.folder===folder||t.folder?.startsWith(folder+'/'));
+    }else if(isCustomFilter()){
+      const p=getPlaylist();const map=new Map(queue.map(t=>[t.id,t]));
+      queue=p?p.items.map(id=>map.get(id)).filter(Boolean):[];
+    }
+    // Si la piste est hors filtre (ex. après réouverture), on conserve
+    // quand même la bibliothèque complète pour assurer l'enchaînement.
+    if(state.id&&!queue.some(t=>t.id===state.id))queue=state.tracks.filter(t=>t.native);
+    return artistSortTracks(queue).map(t=>t.id);
+  }
+  function playbackModeHint(meta){
+    if(!androidNative||!meta||meta.native)return;
+    message('Lecture HTML : le passage automatique peut être interrompu écran éteint. Pour une lecture continue, réimportez les titres via + Fichiers ou + Dossier (bibliothèque Android).',true);
+  }
+  async function play(){if(!state.loaded||state.loading)return;
+    if(state.mode==='android-native'){
+      const nativeIds=nativeQueueIds();
+      if(!nativeLive.needsQueue && nativeLive.id===state.id && nativeIds.includes(state.id) && nativeLive.state!==1)nativeCall('resumeNative');
+      else nativeCall('playNative',state.id,JSON.stringify(nativeIds.length?nativeIds:[state.id]),state.frequency,state.volume,state.repeat,state.shuffle);
+      nativeLive.needsQueue=false;
+      state.playing=false;updateButtons();renderLibrary();
+      message('Démarrage Media3 demandé · file de '+nativeIds.length+' titre(s) · '+(state.frequency===432?'432 Hz':'Original')+(nativeIds.length===1?' · Une seule piste native : ajoutez des titres dans cette sélection pour passer au suivant.':''));
+      return;
+    }
+    try{if(state.mode==='native'){
+      els.audio.playbackRate=rate();els.audio.preservesPitch=false;
+      try{
+        const ctx=connectNativeGraph();
+        if(ctx.state==='suspended')await ctx.resume();
+      }catch(e){
+        if(state.nativeSource)throw e; // Source déjà routée, le contexte doit reprendre.
+        log('Égaliseur natif indisponible : '+(e.message||e));
+        els.audio.volume=state.volume;
+        message('Lecture directe : égaliseur indisponible dans ce navigateur.',true);
+      }
+      await els.audio.play();
+    }else{const ctx=await audioCtx();if(ctx.state==='suspended')await ctx.resume();clearSource();if(!state.audioBuffer)throw new Error('Buffer audio absent');if(state.offset>=state.audioBuffer.duration)state.offset=0;const src=ctx.createBufferSource();src.buffer=state.audioBuffer;src.playbackRate.value=rate();src.connect(state.dspInput);state.source=src;state.startAt=ctx.currentTime;state.startOffset=state.offset;src.onended=()=>{if(state.source!==src)return;state.source=null;state.playing=false;state.offset=0;onEnded()};src.start(0,state.offset)}state.playing=true;updateButtons();renderLibrary();updateMediaState();requestWakeLock();message('Lecture en cours · '+(state.frequency===440?'vitesse originale':'432 Hz (−1,82 %)'))}catch(e){state.playing=false;updateButtons();message('Lecture refusée : '+(e?.name==='NotAllowedError'?'appuyez à nouveau sur Lire':e.message),true)}}
+  function pause(){if(!state.loaded)return;if(state.mode==='android-native'){nativeCall('pauseNative')}else if(state.mode==='native'){els.audio.pause()}else{state.offset=positionNow();clearSource()}state.playing=false;releaseWakeLock();updateMediaState();updateButtons();renderLibrary();updateProgress();message('En pause · reprise à la même position')}
+  function stop(){if(radio.active){stopRadio(true);message('Radio arrêtée.');return}if(!state.loaded)return;pause();seekTo(0);message('Lecture arrêtée')}
+  async function togglePlay(){if(radio.active){await toggleRadio();return}if(state.playing)pause();else if(state.loaded)await play();else if(state.tracks.length)await selectTrack(currentPlaylistTracks()[0]?.id||state.tracks[0].id,true)}
+  function seekTo(time){if(radio.active)return;if(!state.loaded)return;if(state.mode==='android-native'){nativeCall('seekNative',Math.round(Math.max(0,time)*1000));nativeLive.position=time;updateProgress();return}const target=Math.max(0,Math.min(time,durationNow()||0)),wasPlaying=state.playing;if(state.mode==='native'){try{els.audio.currentTime=target}catch(e){message('Déplacement impossible : '+e.message,true)}}else{clearSource();state.offset=target;state.playing=false;if(wasPlaying)play()}updateProgress()}
+  async function navigate(direction,ended=false){
+    if(radio.active){await navigateRadio(direction);return}
+    if(state.mode==='android-native' && state.loaded && !ended){
+      nativeCall(direction>0?'nextNative':'previousNative');
+      message('Navigation assurée par Media3 · la file reste active écran verrouillé.');
+      return;
+    }
+    const queue=currentPlaylistTracks().length?currentPlaylistTracks():state.tracks;if(!queue.length)return;const ix=queue.findIndex(t=>t.id===state.id);let next;if(state.shuffle&&queue.length>1){const candidates=queue.filter(t=>t.id!==state.id);next=candidates[Math.floor(Math.random()*candidates.length)]}else{let candidate=ix+direction;if(ix<0)candidate=direction>0?0:queue.length-1;if(candidate<0||candidate>=queue.length){if(!ended||state.repeat===2)candidate=(candidate+queue.length)%queue.length;else{state.playing=false;updateButtons();message('Fin de la sélection');return}}next=queue[candidate]}if(next)await selectTrack(next.id,true)}
+  function onEnded(){state.playing=false;state.offset=0;releaseWakeLock();updateMediaState();if(state.repeat===1){seekTo(0);play()}else navigate(1,true)}
+  function setFrequency(value){if(value!==432&&value!==440)return;if(state.mode==='android-native'||(radio.active&&radio.native))nativeCall('setFrequency',value);state.frequency=value;safeSet(FREQ_KEY,String(value));if(state.mode==='native'){els.audio.preservesPitch=false;els.audio.playbackRate=rate()}else if(state.mode==='buffer'&&state.playing&&state.audioCtx){const now=positionNow();state.offset=now;state.startOffset=now;state.startAt=state.audioCtx.currentTime;state.source.playbackRate.value=rate()}updateButtons();updateProgress();message(value===440?'Accordage original (pas de conversion).':radio.active&&radio.native?'Radio native : hauteur abaissée au ratio 432/440, tempo conservé.':'Conversion 432/440 : hauteur et vitesse abaissées de 1,82 %.')}
+  function updateMediaState(){if(state.mode==='android-native'||(radio.active&&radio.native))return;if(!('mediaSession'in navigator))return;try{navigator.mediaSession.playbackState=radio.active?(radio.playing?'playing':'paused'):state.playing?'playing':state.loaded?'paused':'none'}catch{}}
+  function updateMedia(){if(state.mode==='android-native'||(radio.active&&radio.native))return;if(!('mediaSession'in navigator))return;if(radio.active){try{navigator.mediaSession.metadata=new MediaMetadata({title:radio.active.name,artist:countryName(radio.active.countrycode),album:'Radio Internet · Harmonie',artwork:[{src:radio.active.favicon||defaultArt(radio.active.name,'radio'),sizes:'512x512',type:'image/png'}]});updateMediaState()}catch(e){log('Media Session radio : '+e.message)}return}const t=getTrack(state.id);if(!t)return;try{const artwork=t.cover?[{src:t.cover,sizes:'512x512',type:'image/png'}]:[{src:defaultArt(trackTitle(t),'music'),sizes:'512x512',type:'image/svg+xml'}];navigator.mediaSession.metadata=new MediaMetadata({title:trackTitle(t),artist:t.artist||'Musique locale',album:t.album||t.folder||'Bibliothèque Harmonie',artwork});updateMediaState()}catch(e){log('Media Session : '+e.message)}}
+  function registerMediaActions(){if(!('mediaSession'in navigator))return;const actions={play:()=>radio.active?toggleRadio(true):play(),pause:()=>radio.active?pauseRadio():pause(),stop:()=>stop(),previoustrack:()=>navigate(-1),nexttrack:()=>navigate(1),seekto:details=>seekTo(details.seekTime),seekbackward:details=>seekTo(positionNow()-(details.seekOffset||10)),seekforward:details=>seekTo(positionNow()+(details.seekOffset||10))};for(const [act,fn]of Object.entries(actions))try{navigator.mediaSession.setActionHandler(act,fn)}catch{}}
+  async function requestWakeLock(){if(!state.playing||!els.wake.checked||document.hidden||!('wakeLock'in navigator)||state.wakeLock)return;try{const lock=await navigator.wakeLock.request('screen');state.wakeLock=lock;lock.addEventListener('release',()=>{if(state.wakeLock===lock)state.wakeLock=null})}catch(e){log('Écran allumé non disponible : '+e.message)}}
+  function releaseWakeLock(){const lock=state.wakeLock;state.wakeLock=null;if(lock)lock.release().catch(()=>{})}
+  function persistPrefs(){safeSet(PREFS_KEY,JSON.stringify({volume:state.volume,shuffle:state.shuffle,repeat:state.repeat,wake:els.wake.checked}))}
+  async function removeTrack(id){const t=getTrack(id);if(!t||!confirm(`Supprimer « ${t.name} » de la bibliothèque ?`))return;
+    if(t.native){if(state.id===id){nativeCall('stopNative');state.id=null;state.loaded=false;state.playing=false;state.mode=null;displayNow()}
+      nativeCall('removeNative',id);state.tracks=state.tracks.filter(x=>x.id!==id);
+      for(const pl of state.playlists){if(pl.items.includes(id)){pl.items=pl.items.filter(x=>x!==id);await storePut(PLAYLISTS,pl)}}
+      renderLibrary();message('Référence Android retirée ; fichier original conservé.');return;}
+    try{if(state.id===id){++state.token;stopOldForLoad();state.id=null;displayNow()}if(t.temporary)sessionFiles.delete(id);else await deleteTrackDB(id);state.tracks=state.tracks.filter(x=>x.id!==id);for(const p of state.playlists){if(p.items.includes(id)){p.items=p.items.filter(x=>x!==id);await storePut(PLAYLISTS,p)}}renderLibrary();displayNow();message('Piste supprimée de la bibliothèque.')}catch(e){message('Suppression impossible : '+e.message,true)}}
+  async function newPlaylist(){const input=prompt('Nom de la nouvelle playlist :');if(input===null)return;const name=input.trim().slice(0,70);if(!name){message('Nom de playlist vide.',true);return}if(state.playlists.some(p=>p.name.toLocaleLowerCase('fr')===name.toLocaleLowerCase('fr'))){message('Ce nom de playlist existe déjà.',true);return}const p={id:globalThis.crypto?.randomUUID?.()||('playlist-'+Date.now()),name,items:[],createdAt:Date.now()};try{await storePut(PLAYLISTS,p);state.playlists.push(p);state.filter='custom:'+p.id;renderLibrary();message('Playlist créée : '+name)}catch(e){message('Création impossible : '+e.message,true)}}
+  async function addToPlaylist(){if(!state.id||!state.playlists.length)return;let p=getPlaylist();if(!p){const available=state.playlists.slice().sort((a,b)=>a.name.localeCompare(b.name,'fr'));if(available.length===1){p=available[0]}else{const choice=prompt('Choisissez la playlist :\n'+available.map((item,i)=>(i+1)+'. '+item.name).join('\n'),'1');if(choice===null)return;p=available[Number(choice)-1];if(!p){message('Numéro de playlist invalide.',true);return}}}if(p.items.includes(state.id)){message('Ce titre est déjà dans la playlist.');return}p.items.push(state.id);try{await storePut(PLAYLISTS,p);renderLibrary();message('Piste ajoutée à la playlist.')}catch(e){message('Modification impossible : '+e.message,true)}}
+  async function removeFromPlaylist(){const p=getPlaylist();if(!p||!state.id)return;p.items=p.items.filter(id=>id!==state.id);try{await storePut(PLAYLISTS,p);renderLibrary();message('Piste retirée de la playlist (fichier conservé).')}catch(e){message('Modification impossible : '+e.message,true)}}
+  async function deletePlaylist(){const p=getPlaylist();if(!p||!confirm(`Supprimer la playlist « ${p.name} » ? Les fichiers seront conservés.`))return;try{await storeDelete(PLAYLISTS,p.id);state.playlists=state.playlists.filter(x=>x.id!==p.id);state.filter='all';renderLibrary();message('Playlist supprimée ; fichiers conservés.')}catch(e){message('Suppression impossible : '+e.message,true)}}
+  async function clearLibrary(){if(!confirm('Supprimer TOUTES les références de la bibliothèque ? Les fichiers Android originaux restent sur le téléphone.'))return;try{if(androidNative)nativeCall('clearNative');nativeCall('stopNative');++state.token;stopOldForLoad();state.id=null;await clearDB();sessionFiles.clear();importManager.metadataQueue.length=0;state.tracks=[];state.playlists=[];state.filter='all';safeSet(LAST_KEY,'');renderLibrary();displayNow();updateProgress();message('Bibliothèque complètement vidée.')}catch(e){message('Effacement impossible : '+e.message,true)}}
+  async function protectStorage(){if(memoryMode){message('Mode temporaire : ce navigateur ne permet pas de conserver les fichiers.',true);return}if(!navigator.storage?.persist){message('Stockage persistant non pris en charge par ce navigateur.',true);return}try{const granted=await navigator.storage.persist();const estimation=await navigator.storage.estimate?.();const use=estimation?.usage!=null?' Espace utilisé par le site : '+filesize(estimation.usage)+'.':'';message(granted?'Stockage persistant autorisé.'+use:'Stockage persistant non accordé par ce navigateur.'+use,!granted)}catch(e){message('Demande de protection impossible : '+e.message,true)}}
+  async function refreshAllCovers(){
+    const btn=$('refreshCoversBtn'),status=$('coverRefreshStatus');
+    if(btn.disabled)return;
+    btn.disabled=true;
+    status.textContent='Réanalyse en cours…';
+    // Android extrait en arrière-plan; les résultats arrivent par HARMONIE_NATIVE_LIBRARY.
+    if(androidNative)nativeCall('refreshNativeCovers');
+    state.tagReaderFailed=false;
+    const ids=state.tracks.filter(t=>!t.native&&!t.cover).map(t=>t.id);
+    let repaired=0;
+    try{
+      for(let i=0;i<ids.length;i++){
+        // Évite d'enregistrer une pochette vide si le lecteur CDN est hors ligne.
+        const updated=await enrichTrackMeta(ids[i],{force:true});
+        if(updated?.cover)repaired++;
+        if(i%4===0){status.textContent=`Analyse HTML : ${i+1}/${ids.length}`;await new Promise(r=>setTimeout(r,0))}
+      }
+      status.textContent=`${repaired} pochette(s) HTML retrouvée(s). Analyse Android lancée${androidNative?' en arrière-plan':''}.`;
+      message('Pochettes réanalysées sans supprimer les playlists.');
+    }catch(e){status.textContent='Réanalyse interrompue : '+e.message;log(status.textContent)}
+    finally{btn.disabled=false}
+  }
+  function bindEvents(){$('refreshCoversBtn').addEventListener('click',refreshAllCovers);const pickFile=$('fileInput'),pickFolder=$('folderInput');$('addFilesBtn').addEventListener('click',()=>pickFile.click());$('addFolderBtn').addEventListener('click',()=>{try{pickFolder.click()}catch{message('Sélection de dossier non prise en charge : essayez + Fichiers.',true)}});const sessionPick=$('sessionFileInput');$('sessionFilesBtn').addEventListener('click',()=>sessionPick.click());$('cancelImport').addEventListener('click',()=>{importManager.cancel=true;$('importLabel').textContent='Annulation demandée…'});pickFile.addEventListener('change',async()=>{const files=[...pickFile.files];pickFile.value='';await addFiles(files,'saved')});pickFolder.addEventListener('change',async()=>{const files=[...pickFolder.files];pickFolder.value='';if(!files.length){message('Aucun fichier reçu. Sur Android, + Dossier peut ne pas fonctionner : utilisez + Fichiers.',true);return}await addFiles(files,'saved')});sessionPick.addEventListener('change',async()=>{const files=[...sessionPick.files];sessionPick.value='';await addFiles(files,'session')});const dropZone=$('musicPanel');for(const ev of ['dragenter','dragover'])dropZone.addEventListener(ev,e=>{if(e.dataTransfer?.types.includes('Files')){e.preventDefault();dropZone.classList.add('drag-over')}});dropZone.addEventListener('dragleave',e=>{if(!dropZone.contains(e.relatedTarget))dropZone.classList.remove('drag-over')});dropZone.addEventListener('drop',e=>{e.preventDefault();dropZone.classList.remove('drag-over');if(e.dataTransfer?.files?.length)addFiles([...e.dataTransfer.files],'saved')});$('clearLibBtn').addEventListener('click',clearLibrary);$('newPlaylistBtn').addEventListener('click',newPlaylist);els.addTo.addEventListener('click',addToPlaylist);els.removeFrom.addEventListener('click',removeFromPlaylist);els.deletePlaylist.addEventListener('click',deletePlaylist);els.playlist.addEventListener('change',()=>{state.filter=els.playlist.value;nativeLive.needsQueue=true;renderLibrary()});els.continuous.addEventListener('change',()=>{state.continuous=els.continuous.checked;safeSet(CONTINUOUS_KEY,String(state.continuous));nativeCall('setContinuousPlayback',state.continuous);message(state.continuous?'Lecture continue activée : Media3 relancera la sélection après le dernier titre, même écran éteint.':'Lecture continue désactivée : arrêt normal à la fin de la sélection.');});els.sort.addEventListener('change',()=>{state.sortMode=els.sort.value;safeSet(SORT_KEY,state.sortMode);renderLibrary();if(state.mode==='android-native'&&state.loaded){nativeCall('reorderNativeQueue',JSON.stringify(nativeQueueIds()))}message(state.sortMode==='original'?'Ordre original de la playlist restauré.':'Playlist triée par artiste '+(state.sortMode==='artist-desc'?'Z → A':'A → Z')+' · ordre de lecture actualisé (mode aléatoire prioritaire si activé).')});els.search.addEventListener('input',renderLibrary);els.play.addEventListener('click',togglePlay);els.prev.addEventListener('click',()=>navigate(-1));els.next.addEventListener('click',()=>navigate(1));els.stop.addEventListener('click',stop);els.shuffle.addEventListener('click',()=>{state.shuffle=!state.shuffle;if(androidNative)nativeCall('setShuffle',state.shuffle);persistPrefs();updateButtons()});els.repeat.addEventListener('click',()=>{state.repeat=(state.repeat+1)%3;if(androidNative)nativeCall('setRepeat',state.repeat);persistPrefs();updateButtons()});els.btn432.addEventListener('click',()=>{markProCustom();setFrequency(432)});els.btn440.addEventListener('click',()=>{markProCustom();setFrequency(440)});
+    els.eqEnable.addEventListener('change',()=>{markProCustom();state.eqEnabled=els.eqEnable.checked;routeDSP();syncEqUI();persistEqualizer()});
+    els.hifi.addEventListener('change',()=>{markProCustom();state.hifi=els.hifi.checked;routeDSP();syncEqUI();persistEqualizer()});
+    els.eqPreset.addEventListener('change',()=>changeEqPreset(els.eqPreset.value));
+    els.eqReset.addEventListener('click',()=>changeEqPreset('flat'));
+    els.volume.addEventListener('input',()=>{state.volume=+els.volume.value/100;els.audio.volume=state.nativeSource?1:state.volume;if(radio.el)radio.el.volume=radio.eqAvailable?1:state.volume;if(state.gain)state.gain.gain.value=state.volume;els.volumeLabel.textContent=els.volume.value+'%';if(state.mode==='android-native'||(radio.active&&radio.native))nativeCall('setVolume',state.volume);persistPrefs()});els.seek.addEventListener('change',()=>seekTo((+els.seek.value/1000)*durationNow()));els.wake.addEventListener('change',()=>{persistPrefs();if(els.wake.checked)requestWakeLock();else releaseWakeLock()});$('storageBtn').addEventListener('click',protectStorage);els.audio.addEventListener('ended',()=>{if(state.mode==='native'&&state.playing)onEnded()});els.audio.addEventListener('timeupdate',()=>{if(state.mode==='native')updateProgress()});els.audio.addEventListener('durationchange',updateProgress);els.audio.addEventListener('error',()=>{if(state.mode==='native'&&state.loaded)message('Erreur du lecteur audio : format ou fichier corrompu.',true)});document.addEventListener('visibilitychange',()=>{if(!document.hidden)requestWakeLock();syncLedState()});window.addEventListener('pagehide',()=>{releaseWakeLock();stopLedLoop()});window.addEventListener('pageshow',()=>{if(state.playing)requestWakeLock()});setInterval(()=>{if((state.loaded&&state.playing)||radio.active)updateProgress()},500)}
+  async function init(){initVisuals();initLED();restoreEqualizer();bindEvents();bindAudioRecovery();bindRadio();restoreRadio();bindSubtabs();const savedSort=safeGet(SORT_KEY);state.sortMode=['original','artist-asc','artist-desc'].includes(savedSort)?savedSort:'original';els.sort.value=state.sortMode;state.continuous=safeGet(CONTINUOUS_KEY)!=='false';els.continuous.checked=state.continuous;if(androidNative)nativeCall('setContinuousPlayback',state.continuous);const freq=+safeGet(FREQ_KEY);state.frequency=freq===440?440:432;try{const prefs=JSON.parse(safeGet(PREFS_KEY)||'{}');if(typeof prefs.volume==='number')state.volume=Math.max(0,Math.min(1,prefs.volume));state.shuffle=!!prefs.shuffle;state.repeat=[0,1,2].includes(prefs.repeat)?prefs.repeat:0;els.wake.checked=!!prefs.wake}catch{}els.volume.value=Math.round(state.volume*100);els.volumeLabel.textContent=els.volume.value+'%';els.audio.volume=state.volume;els.audio.preservesPitch=false;registerMediaActions();updateButtons();storageReport();try{await reload();setupNativeAndroid();message('Bibliothèque prête.');const last=safeGet(LAST_KEY);if(last&&getTrack(last))await selectTrack(last,false)}catch(e){memoryMode=true;state.tracks=[];state.playlists=[];renderLibrary();setupNativeAndroid();message('Ancien stockage HTML bloqué : la bibliothèque Android native reste accessible.',true);log('Stockage IndexedDB inaccessible : '+(e.message||e))}}
+  // ----------- Radio Browser : catalogue international, favoris, lecture -----------
+  function countryName(code){if(!code)return 'Pays non renseigné';try{return radioDisplayNames?.of(String(code).toUpperCase())||code}catch{return code}}
+  function radioUrl(value){try{const u=new URL(value);return (u.protocol==='https:'||u.protocol==='http:')?u.href:''}catch{return ''}}
+  function radioStation(raw){if(!raw||typeof raw!=='object')return null;const url=radioUrl(raw.url_resolved||raw.url),name=String(raw.name||'Station sans nom').trim().slice(0,150),favicon=radioUrl(raw.favicon||'');if(!url)return null;return {stationuuid:String(raw.stationuuid||'perso-'+url).slice(0,200),name,countrycode:String(raw.countrycode||'').slice(0,2).toUpperCase(),tags:String(raw.tags||'').slice(0,250),codec:String(raw.codec||'').slice(0,30),bitrate:Math.max(0,Number(raw.bitrate)||0),favicon,url,url_resolved:url}}
+  function radioKey(st){return st.stationuuid||st.url}
+  function isFav(st){return radio.favorites.some(f=>radioKey(f)===radioKey(st))}
+  function saveRadio(){safeSet(RADIO_KEY,JSON.stringify(radio.favorites));safeSet(RADIO_SETTINGS,JSON.stringify({country:els.radioCountry.value,genre:els.radioGenre.value,radioEQ:els.radioEQ.checked}))}
+  function restoreRadio(){try{radio.favorites=(JSON.parse(safeGet(RADIO_KEY)||'[]')||[]).map(radioStation).filter(Boolean).slice(0,500)}catch{radio.favorites=[]}try{const s=JSON.parse(safeGet(RADIO_SETTINGS)||'{}');if(typeof s.genre==='string'&&[...els.radioGenre.options].some(o=>o.value===s.genre))els.radioGenre.value=s.genre;if(typeof s.country==='string'&&/^[A-Z]{2}$/.test(s.country)){const o=new Option(countryName(s.country),s.country);els.radioCountry.add(o);els.radioCountry.value=s.country}els.radioEQ.checked=!!s.radioEQ}catch{}syncNativeAudioEffects();renderRadios()}
+  function displayRadioNow(){if(!radio.active)return;updateProEngineNote();els.now.textContent=radio.active.name;els.nowSub.textContent=countryName(radio.active.countrycode)+' · '+(radio.playing?'Radio en direct':radio.loading?'Connexion…':'En pause')+(radio.native?(els.radioEQ.checked?' · EQ Android demandé':' · EQ Android désactivé'):(radio.eqAvailable?' · Hi-Fi 8 bandes':' · Son direct'));setCurrentArt(radio.active.favicon,radio.active.name,'radio');refreshDetails();refreshStage();syncRotation();updateButtons();updateProgress()}
+  function radioMessage(s,error=false){els.radioStatus.textContent=s;els.radioStatus.classList.toggle('error',error);if(error)log('Radio : '+s)}
+  function radioQueue(){return radio.onlyFavorites?radio.favorites:radio.results}
+  function showTab(tab){const radioOpen=tab==='radio';radio.selectedTab=radioOpen?'radio':'music';els.musicPanel.hidden=radioOpen;els.radioPanel.hidden=!radioOpen;els.musicTab.setAttribute('aria-selected',String(!radioOpen));els.radioTab.setAttribute('aria-selected',String(radioOpen));if(radioOpen&&!radio.initialized){radio.initialized=true;if(radioSubtab==='explore'){loadCountries();searchRadios(0)}else renderRadios()}}
+  async function radioGet(endpoint,signal){let errors=[];for(const base of RADIO_APIS){if(signal?.aborted)throw new DOMException('Requête annulée','AbortError');const ctrl=new AbortController();const cancel=()=>ctrl.abort();if(signal)signal.addEventListener('abort',cancel,{once:true});const timer=setTimeout(()=>ctrl.abort(),6500);try{const resp=await fetch(base+endpoint,{mode:'cors',cache:'no-store',signal:ctrl.signal,headers:{'Accept':'application/json'}});if(!resp.ok)throw new Error('HTTP '+resp.status);const data=await resp.json();if(!Array.isArray(data))throw new Error('Réponse inattendue');return data}catch(e){if(signal?.aborted)throw e;errors.push(base+': '+e.message)}finally{clearTimeout(timer);if(signal)signal.removeEventListener('abort',cancel)}}throw new Error('Service Radio Browser indisponible ou accès réseau interdit ('+errors.slice(0,2).join(' ; ')+')')}
+  async function loadCountries(){if(radio.countriesLoaded)return;try{const data=await radioGet('/json/countrycodes?hidebroken=true&order=stationcount&reverse=true&limit=300');const chosen=els.radioCountry.value;const countries=data.filter(c=>/^[A-Z]{2}$/.test(c.name)&&Number(c.stationcount)>0).map(c=>({code:c.name,label:countryName(c.name),count:Number(c.stationcount)})).sort((a,b)=>a.label.localeCompare(b.label,'fr'));els.radioCountry.replaceChildren(new Option('Tous les pays',''));countries.forEach(c=>els.radioCountry.add(new Option(`${c.label} (${c.count.toLocaleString('fr-FR')})`,c.code)));els.radioCountry.value=chosen;radio.countriesLoaded=true;log(countries.length+' pays disponibles dans Radio Browser')}catch(e){radioMessage('Liste des pays non chargée. Vous pouvez rechercher des radios ou réessayer avec Actualiser.',true)}}
+  async function searchRadios(page=0){showRadioSubtab('explore');els.radioFavorites.classList.remove('selected');if(radio.request)radio.request.abort();const request=new AbortController();radio.request=request;radio.page=page;radio.more=false;els.radioResults.innerHTML='<div class="empty">Recherche de stations en cours…</div>';els.radioCount.textContent='Connexion au catalogue…';els.radioPrevPage.disabled=true;els.radioNextPage.disabled=true;radioMessage('');const q=new URLSearchParams({order:'votes',reverse:'true',hidebroken:'true',is_https:'true',limit:String(RADIO_PAGE_SIZE),offset:String(page*RADIO_PAGE_SIZE)});if(els.radioCountry.value)q.set('countrycode',els.radioCountry.value);if(els.radioGenre.value)q.set('tag',els.radioGenre.value);if(els.radioSearch.value.trim())q.set('name',els.radioSearch.value.trim());saveRadio();try{const rows=await radioGet('/json/stations/search?'+q.toString(),request.signal);if(request!==radio.request)return;const seen=new Set();radio.results=rows.map(radioStation).filter(st=>{if(!st||seen.has(radioKey(st)))return false;seen.add(radioKey(st));return true});radio.more=rows.length===RADIO_PAGE_SIZE;renderRadios();radioMessage(radio.results.length?'Appuyez sur une station pour écouter le direct.':'Aucune radio trouvée : essayez un autre pays, genre ou mot-clé.')}catch(e){if(request.signal.aborted)return;radio.results=[];renderRadios();radioMessage('Catalogue inaccessible : vérifiez Internet puis cliquez sur Actualiser. '+e.message,true)}}
+  function renderRadios(){const items=radioQueue();els.radioCount.textContent=radio.onlyFavorites?`${items.length} favori${items.length===1?'':'s'}`:`${items.length} résultat${items.length===1?'':'s'} · page ${radio.page+1}`;els.radioPrevPage.disabled=radio.onlyFavorites||radio.page===0;els.radioNextPage.disabled=radio.onlyFavorites||!radio.more;els.radioFavorites.classList.toggle('selected',radio.onlyFavorites);els.radioResults.replaceChildren();if(!items.length){const empty=document.createElement('div');empty.className='empty';empty.textContent=radio.onlyFavorites?'Aucun favori. Ajoutez des radios avec ☆.':'Aucune station pour ces critères. Modifiez les filtres ou recherchez un autre nom.';els.radioResults.append(empty);return}const frag=document.createDocumentFragment();items.forEach(st=>{const row=document.createElement('div');row.className='radio-item'+(radio.active&&radioKey(st)===radioKey(radio.active)?' active':'');row.setAttribute('role','listitem');const logo=document.createElement('img');logo.className='radio-logo';logo.alt='Logo de '+st.name;logo.loading='lazy';logo.src=st.favicon||defaultArt(st.name,'radio');logo.onerror=()=>{logo.onerror=null;logo.src=defaultArt(st.name,'radio')};const main=document.createElement('button');main.type='button';main.className='station-main';main.title='Écouter '+st.name;const title=document.createElement('span');title.className='station-name';title.textContent=(radio.active&&radioKey(st)===radioKey(radio.active)&&radio.playing?'◉ ':'')+st.name;const meta=document.createElement('span');meta.className='station-meta';meta.textContent=[countryName(st.countrycode),st.codec,st.bitrate?st.bitrate+' kb/s':'',st.tags.split(',').filter(Boolean).slice(0,2).join(' · ')].filter(Boolean).join(' · ');main.append(title,meta);main.addEventListener('click',()=>playRadio(st));const fav=document.createElement('button');fav.type='button';fav.className='radio-fav'+(isFav(st)?' on':'');fav.textContent=isFav(st)?'★':'☆';fav.title=isFav(st)?'Retirer des favoris':'Ajouter aux favoris';fav.setAttribute('aria-label',fav.title+' : '+st.name);fav.setAttribute('aria-pressed',String(isFav(st)));fav.addEventListener('click',()=>toggleFavorite(st));row.append(logo,main,fav);frag.append(row)});els.radioResults.append(frag)}
+  function toggleFavorite(st){if(isFav(st))radio.favorites=radio.favorites.filter(f=>radioKey(f)!==radioKey(st));else radio.favorites.push(st);saveRadio();renderRadios()}
+  function disposeRadioElement(){if(!radio.el)return;const el=radio.el;radio.el=null;try{el.pause();el.removeAttribute('src');el.load();el.remove()}catch{}if(radio.source){try{radio.source.disconnect()}catch{}radio.source=null}}
+  function stopRadio(clear=true){if(radio.native){nativeCall('stopNative');radio.native=false}++radio.token;disposeRadioElement();radio.playing=false;radio.loading=false;radio.eqAvailable=false;if(clear)radio.active=null;updateMediaState();if(!radio.active){displayNow();updateProgress()}else displayRadioNow();renderRadios();releaseWakeLock()}
+  async function runRadioElement(st,eq,ticket){disposeRadioElement();const audio=document.createElement('audio');audio.preload='none';audio.playsInline=true;audio.style.display='none';if(eq)audio.crossOrigin='anonymous';audio.src=st.url;audio.volume=eq?1:state.volume;document.body.append(audio);radio.el=audio;radio.eqAvailable=false;
+    // Surveiller aussi les interruptions APRÈS la connexion du flux.
+    audio.addEventListener('ended',()=>{if(ticket!==radio.token||radio.el!==audio||radio.loading)return;radio.playing=false;displayRadioNow();updateMediaState();releaseWakeLock();radioMessage('Le flux de '+st.name+' s’est terminé. Appuyez sur Lire pour réessayer.',true)});
+    audio.addEventListener('error',()=>{if(ticket!==radio.token||radio.el!==audio||radio.loading)return;radio.playing=false;displayRadioNow();updateMediaState();releaseWakeLock();radioMessage('Le flux de '+st.name+' a été interrompu. Réessayez ou choisissez une autre station.',true)});if(eq){const ctx=audioCtx();radio.source=ctx.createMediaElementSource(audio);radio.source.connect(state.dspInput);if(ctx.state==='suspended')await ctx.resume();radio.eqAvailable=true}if(ticket!==radio.token)return;await new Promise((resolve,reject)=>{let timer;let done=false;function end(err){if(done)return;done=true;clearTimeout(timer);audio.removeEventListener('playing',playing);audio.removeEventListener('error',error);if(err)reject(err);else resolve()}function playing(){end()}function error(){end(new Error('Flux indisponible, non compatible ou bloqué par CORS'))}audio.addEventListener('playing',playing);audio.addEventListener('error',error);timer=setTimeout(()=>end(new Error('Aucune réponse du flux radio après 12 secondes')),12000);audio.play().catch(end)});if(ticket!==radio.token)return;radio.playing=true;radio.loading=false;displayRadioNow();updateMediaState();updateMedia();renderRadios();requestWakeLock();radioMessage('En direct : '+st.name+(radio.eqAvailable?' · égaliseur Hi-Fi activé.':' · diffusion directe sans égaliseur.'));message('Radio en direct : '+st.name)}
+  async function playRadio(st){
+    if(androidNative){
+      if(state.playing)pause();if(state.mode==='android-native')nativeCall('stopNative');
+      ++radio.token;disposeRadioElement();radio.active=st;radio.native=true;
+      radio.loading=false;radio.playing=true;radio.eqAvailable=false;
+      syncNativeAudioEffects();
+      nativeCall('playRadio',st.url,st.name,state.volume,state.frequency);
+      displayRadioNow();renderRadios();radioMessage('Radio Media3 : '+st.name+' · '+(state.frequency===432?'432 Hz (hauteur, tempo constant)':'Original')+' · EQ Android '+(els.radioEQ.checked?'demandé':'désactivé')+'. Consultez Diagnostic pour confirmer son activation.');
+      message('Radio native : '+st.name);return;
+    }
+    if(state.playing)pause();const ticket=++radio.token;disposeRadioElement();radio.active=st;radio.playing=false;radio.loading=true;radio.eqAvailable=false;displayRadioNow();renderRadios();radioMessage('Connexion à '+st.name+'…');if(location.protocol==='https:'&&st.url.startsWith('http:')){radio.loading=false;displayRadioNow();radioMessage('Ce flux HTTP est bloqué sur une page HTTPS. Essayez un flux HTTPS.',true);return}try{if(els.radioEQ.checked){try{await runRadioElement(st,true,ticket)}catch(e){if(ticket!==radio.token)return;log('Essai égaliseur radio non disponible : '+e.message);radioMessage('Mode Hi-Fi non compatible avec cette station : essai en lecture directe…');await runRadioElement(st,false,ticket)}}else await runRadioElement(st,false,ticket)}catch(e){if(ticket!==radio.token)return;disposeRadioElement();radio.loading=false;radio.playing=false;radio.eqAvailable=false;displayRadioNow();updateMediaState();renderRadios();radioMessage('Lecture impossible : '+e.message+'. Essayez une autre station.',true);message('Flux radio indisponible : '+st.name,true)}}
+  function pauseRadio(){if(!radio.active)return;if(radio.native)nativeCall('pauseNative');radio.el?.pause();radio.playing=false;displayRadioNow();updateMediaState();releaseWakeLock();radioMessage('Radio en pause.');message('Radio en pause : '+radio.active.name)}
+  async function toggleRadio(forcePlay=false){if(!radio.active)return;
+    if(radio.native){if(radio.playing&&!forcePlay)pauseRadio();else{nativeCall('resumeNative');radio.playing=true;displayRadioNow();renderRadios()}return}
+    if(radio.playing&&!forcePlay){pauseRadio();return}if(radio.el&&!radio.loading){try{await radio.el.play();radio.playing=true;displayRadioNow();updateMediaState();requestWakeLock();radioMessage('En direct : '+radio.active.name)}catch(e){radioMessage('Reprise impossible : '+e.message,true)}}else if(!radio.loading)await playRadio(radio.active)}
+  async function navigateRadio(direction){const queue=radioQueue();if(!radio.active||!queue.length)return;const n=queue.findIndex(s=>radioKey(s)===radioKey(radio.active));const index=(n+direction+queue.length)%queue.length;await playRadio(queue[index])}
+  function bindRadio(){els.musicTab.addEventListener('click',()=>showTab('music'));els.radioTab.addEventListener('click',()=>showTab('radio'));$('radioForm').addEventListener('submit',e=>{e.preventDefault();searchRadios(0)});els.radioCountry.addEventListener('change',()=>searchRadios(0));els.radioGenre.addEventListener('change',()=>searchRadios(0));$('radioRefresh').addEventListener('click',()=>{loadCountries();searchRadios(0)});els.radioFavorites.addEventListener('click',()=>showRadioSubtab('favorites'));els.radioPrevPage.addEventListener('click',()=>searchRadios(Math.max(0,radio.page-1)));els.radioNextPage.addEventListener('click',()=>{if(radio.more)searchRadios(radio.page+1)});els.radioEQ.addEventListener('change',()=>{saveRadio();syncNativeAudioEffects();if(radio.active&&radio.native){radioMessage('Égaliseur Android '+(els.radioEQ.checked?'demandé':'désactivé')+' ; état réel dans Diagnostic / son coupé.');return}if(radio.active&&!radio.loading){const old=radio.active;playRadio(old)}});$('radioAddCustom').addEventListener('click',()=>{const name=prompt('Nom de la radio ou du flux Internet :');if(name===null)return;const url=prompt('Adresse directe du flux audio (HTTPS de préférence) :');if(url===null)return;const favicon=prompt('Adresse du logo de la radio (optionnel, PNG/JPG/SVG) :')||'';const st=radioStation({name:name.trim()||'Ma radio',url,favicon,stationuuid:'personnel-'+url});if(!st){radioMessage('Adresse incorrecte : indiquez une URL http:// ou https://.',true);return}if(!isFav(st))radio.favorites.push(st);saveRadio();showRadioSubtab('favorites');radioMessage('Flux personnel ajouté aux favoris. Appuyez sur son nom pour écouter.')})}
+
+  // ----------- LED : visualisation du signal en sortie ; aucun son ajouté ------------
+  function connectLedAudioGraph(ctx){
+    // Le visualiseur écoute la sortie du gain, sans modifier le son ni le volume.
+    try{
+      led.analyser=ctx.createAnalyser();
+      led.analyser.fftSize=2048;
+      led.analyser.smoothingTimeConstant=.78;
+      led.fft=new Uint8Array(led.analyser.frequencyBinCount);
+      state.gain.connect(led.analyser);
+      led.analyser.connect(ctx.destination);
+      const splitter=ctx.createChannelSplitter(2);
+      const mute=ctx.createGain();mute.gain.value=0;mute.connect(ctx.destination);
+      led.left=ctx.createAnalyser();led.right=ctx.createAnalyser();
+      led.left.fftSize=512;led.right.fftSize=512;
+      led.waveL=new Uint8Array(led.left.fftSize);led.waveR=new Uint8Array(led.right.fftSize);
+      state.gain.connect(splitter);
+      splitter.connect(led.left,0);splitter.connect(led.right,1);
+      led.left.connect(mute);led.right.connect(mute);
+    }catch(e){
+      log('Analyse LED indisponible : '+(e.message||e));
+      led.analyser=null;led.left=null;led.right=null;
+      try{state.gain.disconnect()}catch{}
+      state.gain.connect(ctx.destination);
+    }
+  }
+  function initLED(){
+    led.canvas=$('ledCanvas');led.ctx=led.canvas.getContext('2d',{alpha:false});
+    if(!led.ctx){$('ledStatus').textContent='Canvas 2D indisponible : effets lumineux non pris en charge.';return}
+    try{
+      const saved=JSON.parse(safeGet(LED_KEY)||'{}');
+      if(['spectrum','vu','ambient','radial','waveform','particles','matrixrain','pulse','tunnel','off'].includes(saved.mode))led.mode=saved.mode;
+      if(['cyber','rainbow','ice','fire','matrix','plasma','sunset','gold'].includes(saved.palette))led.palette=saved.palette;
+      if(Number.isFinite(saved.sensitivity))led.sensitivity=Math.min(200,Math.max(35,saved.sensitivity));
+      if(Number.isFinite(saved.brightness))led.brightness=Math.min(100,Math.max(20,saved.brightness));
+    }catch(e){log('Réglages LED ignorés : '+e.message)}
+    $('ledMode').value=led.mode;$('ledPalette').value=led.palette;
+    $('ledSensitivity').value=led.sensitivity;$('ledBrightness').value=led.brightness;
+    if(androidNative && typeof window.AndroidBridge.getNativeLedFrame==='function'){
+      const enabled=safeGet('harmonie-led-native-sync')==='true';
+      led.nativePermission=!!nativeCall('hasNativeLedPermission');
+      led.nativeEnabled=enabled&&led.nativePermission;
+      $('ledNativeSync').checked=led.nativeEnabled;
+      $('ledNativeSync').addEventListener('change',()=>{
+        const checked=$('ledNativeSync').checked;
+        led.nativeEnabled=checked;
+        if(!checked){led.nativeFrame=null;led.nativeStatus='disabled'}
+        safeSet('harmonie-led-native-sync',String(checked));
+        nativeCall('setNativeLedCapture',checked);
+        syncLedState(true);
+      });
+      window.HARMONIE_LED_PERMISSION=granted=>{
+        led.nativePermission=!!granted;
+        if(!granted){led.nativeEnabled=false;led.nativeFrame=null;led.nativeStatus='permission';$('ledNativeSync').checked=false;safeSet('harmonie-led-native-sync','false')}
+        else {led.nativeEnabled=true;led.nativeStatus='waiting';$('ledNativeSync').checked=true;safeSet('harmonie-led-native-sync','true')}
+        syncLedState(true);
+      };
+      if(led.nativeEnabled)nativeCall('setNativeLedCapture',true);
+      $('ledSyncHint').textContent='Synchronisation native facultative. Android demande une autorisation audio, mais Harmonie lit uniquement le spectre de sa propre session (pas de fichier enregistré).';
+    }else{
+      $('ledNativeSync').disabled=true;
+      $('ledSyncHint').textContent='Sur navigateur, les LED suivent automatiquement Web Audio. Sur Android, utilisez la synchronisation native.';
+    }
+    $('ledSensitivityLabel').textContent=led.sensitivity+' %';
+    $('ledBrightnessLabel').textContent=led.brightness+' %';
+    const update=()=>{led.mode=$('ledMode').value;led.palette=$('ledPalette').value;led.sensitivity=Number($('ledSensitivity').value);led.brightness=Number($('ledBrightness').value);
+      $('ledSensitivityLabel').textContent=led.sensitivity+' %';$('ledBrightnessLabel').textContent=led.brightness+' %';
+      safeSet(LED_KEY,JSON.stringify({mode:led.mode,palette:led.palette,sensitivity:led.sensitivity,brightness:led.brightness}));
+      applyLedPaletteFrame();syncLedState(true);
+    };
+    for(const id of ['ledMode','ledPalette','ledSensitivity','ledBrightness'])$(id).addEventListener(id.startsWith('ledSensi')||id.startsWith('ledBright')?'input':'change',update);
+    const resize=()=>{if(!led.canvas||!led.ctx)return;
+      const box=led.canvas.getBoundingClientRect();
+      const dpi=Math.min(2,window.devicePixelRatio||1);
+      led.width=Math.max(280,box.width||860);led.height=box.height||198;
+      led.canvas.width=Math.round(led.width*dpi);led.canvas.height=Math.round(led.height*dpi);
+      led.ctx.setTransform(dpi,0,0,dpi,0,0);
+      if(!led.raf)drawLED(1000,false,false,true);
+    };
+    if('ResizeObserver'in window){const ro=new ResizeObserver(resize);ro.observe(led.canvas)}else window.addEventListener('resize',resize);
+    resize();applyLedPaletteFrame();syncLedState(true);
+  }
+  const LED_EFFECT_LABELS={spectrum:'Spectre musical',vu:'VU-mètre stéréo',ambient:'Néons d’ambiance',radial:'Halo circulaire',waveform:'Onde lumineuse',particles:'Particules néon',matrixrain:'Pluie Matrix',pulse:'Pulsations',tunnel:'Tunnel 3D',off:'LED désactivées'};
+  const LED_PALETTE_LABELS={cyber:'Cyberpunk',rainbow:'Arc-en-ciel',ice:'Glace',fire:'Feu',matrix:'Matrix',plasma:'Plasma violet',sunset:'Coucher de soleil',gold:'Or électrique'};
+  function applyLedPaletteFrame(){const screen=led.canvas?.parentElement;if(screen)screen.dataset.ledPalette=led.palette;}
+  function ledNativeSource(){return androidNative&&(radio.active?!!radio.native:state.mode==='android-native')}
+  function ledPollNativeFrame(){
+    if(!led.nativeEnabled||!ledNativeSource()||!androidNative)return;
+    const now=performance.now();if(now-led.nativeLastPoll<55)return;
+    led.nativeLastPoll=now;
+    const wasReady=!!led.nativeFrame, previousStatus=led.nativeStatus;
+    try{
+      const raw=nativeCall('getNativeLedFrame');
+      const frame=raw?JSON.parse(raw):null;
+      led.nativeStatus=frame?.status||'waiting';
+      if(frame?.ready&&Array.isArray(frame.levels)&&frame.levels.length===30 &&
+         Date.now()-Number(frame.timestamp)<1500){led.nativeFrame=frame}
+      else led.nativeFrame=null;
+    }catch(_){led.nativeFrame=null;led.nativeStatus='unsupported'}
+    if(ledIsPlaying() && (wasReady!==!!led.nativeFrame || previousStatus!==led.nativeStatus)){
+      const mode=LED_EFFECT_LABELS[led.mode]||'LED';
+      const palette=LED_PALETTE_LABELS[led.palette]||'Cyberpunk';
+      if(led.nativeFrame)ledSetStatus(mode+' · '+palette+' · synchronisé au signal natif Media3 (spectre mono).');
+      else ledSetStatus(mode+' · '+palette+' · animation décorative (Media3 : '+led.nativeStatus+', signal indisponible).');
+    }
+  }
+  function ledHasNativeAudio(){return led.nativeEnabled&&ledNativeSource()&&!!led.nativeFrame && Date.now()-Number(led.nativeFrame.timestamp)<1500}
+  function ledHasWebAudio(){return ledIsPlaying()&&(!radio.active||radio.eqAvailable)&&(state.mode==='buffer'||!!state.nativeSource||!!radio.active)&&!!led.analyser&&state.audioCtx?.state==='running'}
+  function ledIsPlaying(){return radio.active?radio.playing:state.playing}
+  function ledHasAudio(){return ledHasNativeAudio()||ledHasWebAudio()}
+  function ledSetStatus(s){if(s!==led.status){led.status=s;$('ledStatus').textContent=s}}
+  function stopLedLoop(){if(led.raf){cancelAnimationFrame(led.raf);led.raf=0}led.last=0;$('ledSection')?.setAttribute('data-running','false')}
+  function syncLedState(force=false){
+    if(!led.ctx||!led.canvas)return;
+    const active=ledIsPlaying(), canAnimate=active&&led.mode!=='off'&&!document.hidden&&!led.reduced;
+    const name=LED_EFFECT_LABELS[led.mode]||'LED',pal=LED_PALETTE_LABELS[led.palette]||'Cyberpunk';
+    $('ledSection').setAttribute('data-running',String(canAnimate));
+    applyLedPaletteFrame();
+    if(led.mode==='off')ledSetStatus('LED désactivées.');
+    else if(led.reduced)ledSetStatus(name+' · '+pal+' · aperçu fixe (réduction des animations activée).');
+    else if(!active)ledSetStatus(name+' · '+pal+' · aperçu décoratif au repos.');
+    else if(ledHasNativeAudio())ledSetStatus(name+' · '+pal+' · synchronisé au signal natif Media3 (spectre mono).');
+    else if(led.nativeEnabled&&ledNativeSource())ledSetStatus(name+' · '+pal+' · animation décorative (Media3 : '+led.nativeStatus+', signal indisponible).');
+    else if(!ledHasAudio())ledSetStatus(name+' · '+pal+' · animation décorative (Media3 : synchronisation native désactivée).');
+    else ledSetStatus(name+' · '+pal+' · animé selon le signal analysable.');
+    if(!canAnimate){stopLedLoop();drawLED(1000,false,false,true);return}
+    if(force)stopLedLoop();
+    if(!led.raf)led.raf=requestAnimationFrame(ledTick);
+  }
+  function ledTick(t){led.raf=0;
+    if(!ledIsPlaying()||led.mode==='off'||document.hidden||led.reduced){syncLedState();return}
+    // Maximum 30 images/s. Ne jamais maintenir une boucle active écran masqué.
+    if(!led.last||t-led.last>=33){led.last=t;ledPollNativeFrame();drawLED(t,true,ledHasAudio(),false)}
+    led.raf=requestAnimationFrame(ledTick);
+  }
+  function rmsFromWave(analyser,array){
+    if(!analyser||!array)return 0;
+    analyser.getByteTimeDomainData(array);
+    let sq=0;
+    for(const sample of array){const d=(sample-128)/128;sq+=d*d}
+    return Math.min(1,Math.sqrt(sq/array.length)*3.5*led.sensitivity/100);
+  }
+  function ledColor(i,level,time,alpha=1){
+    const p=led.palette,bright=led.brightness/100;
+    let h=188,sat=100;
+    if(p==='cyber')h=(i%5<2?188+level*.9:296+level*1.05+Math.sin(time*.001)*6); // cyan ET magenta
+    else if(p==='rainbow')h=(i*21+time*.035+level*3)%360;
+    else if(p==='ice')h=185+level*.75;
+    else if(p==='fire')h=15+Math.max(0,36-level*2.2);
+    else if(p==='matrix')h=116+level*.6;
+    else if(p==='plasma')h=269+i*2.9+Math.sin(time*.0015)*12;
+    else if(p==='sunset')h=7+i*1.8+level*.35;
+    else if(p==='gold')h=38+i*.32+level*.6;
+    const light=Math.min(80,40+level*1.7);
+    return `hsla(${h},${sat}%,${light}%,${Math.max(0,Math.min(1,alpha))*bright})`;
+  }
+  function rectRound(ctx,x,y,w,h,r=2){if(ctx.roundRect){ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill()}else ctx.fillRect(x,y,w,h)}
+  function paintLedBar(ctx,x,y,w,h,levelCount,value,i,t){
+    const gap=2,segH=Math.max(1,(h-gap*(levelCount-1))/levelCount),lit=Math.ceil(Math.max(0,Math.min(1,value))*levelCount);
+    for(let row=0;row<levelCount;row++){
+      const v=levelCount-row-1,by=y+row*(segH+gap),glowing=v<lit;
+      ctx.fillStyle=glowing?ledColor(i,v,t,Math.max(.45,1-v*.006)):'rgba(48,62,84,.18)';
+      if(glowing&&v>=levelCount-4){ctx.shadowColor=ledColor(i,v,t,.8);ctx.shadowBlur=4}
+      rectRound(ctx,x,by,w,segH,Math.min(2,segH/2));ctx.shadowBlur=0;
+    }
+  }
+  function paintHorizontalVU(ctx,x,y,w,h,power,label,t){
+    ctx.font='700 10px system-ui';ctx.fillStyle='#b8c4db';ctx.fillText(label,x,y-3);
+    const sx=x+18,total=w-18,n=34,gap=2,sw=(total-gap*(n-1))/n;
+    for(let k=0;k<n;k++){
+      const on=(k+1)/n<=power;
+      ctx.fillStyle=on?ledColor(k,k/n*15,t,.93):'rgba(52,68,87,.25)';
+      rectRound(ctx,sx+k*(sw+gap),y-11,Math.max(1,sw),h,1);
+    }
+  }
+  function ledPseudoLevels(t,preview){
+    const phase=preview?1.4:t*.001;
+    const amp=led.sensitivity/100;
+    for(let i=0;i<led.levels.length;i++){
+      const v=(.15+.32*Math.abs(Math.sin(phase*1.8+i*.27))+.23*Math.abs(Math.sin(phase*.7+i*.71)))*amp;
+      led.levels[i]=Math.min(.93,v);
+      led.peaks[i]=Math.min(.98,v+.06);
+    }
+    led.vu[0]=Math.min(.93,(.38+.25*Math.sin(phase*2.1)**2)*amp);
+    led.vu[1]=Math.min(.93,(.34+.23*Math.cos(phase*1.7)**2)*amp);
+    return led.levels.reduce((a,b)=>a+b,0)/led.levels.length;
+  }
+  function drawLED(t,playing,signal,preview=false){
+    const ctx=led.ctx;if(!ctx)return;
+    const w=led.width,h=led.height,show=playing||preview;
+    ctx.clearRect(0,0,w,h);ctx.fillStyle='#070c19';ctx.fillRect(0,0,w,h);
+    ctx.strokeStyle='#17243a';ctx.lineWidth=.7;
+    for(let y=18;y<h;y+=22){ctx.beginPath();ctx.moveTo(0,y+.5);ctx.lineTo(w,y+.5);ctx.stroke()}
+    if(!show||led.mode==='off'){
+      ctx.font='700 11px system-ui';ctx.fillStyle='#4c6585';ctx.textAlign='center';
+      ctx.fillText(led.mode==='off'?'LED OFF':'PHILOU / CYBERPUNK · STANDBY',w/2,h/2);
+      ctx.textAlign='left';return;
+    }
+    let energy=0;
+    if(signal&&ledHasNativeAudio()){
+      const frame=led.nativeFrame,boost=led.sensitivity/100;
+      let total=0;
+      for(let i=0;i<led.levels.length;i++){
+        const value=Math.max(0,Math.min(1,Number(frame.levels[i]||0)*boost));
+        led.levels[i]=Math.max(value,led.levels[i]*.72);
+        led.peaks[i]=Math.max(led.levels[i],led.peaks[i]*.955);
+        total+=led.levels[i];
+      }
+      energy=Math.min(1,total/led.levels.length+Number(frame.pulse||0)*.15);
+      // Android Visualizer returns mono samples, so L/R have the SAME real RMS.
+      const mono=Math.max(0,Math.min(1,Number(frame.rms||0)*boost));
+      led.vu[0]=Math.max(mono,led.vu[0]*.7);
+      led.vu[1]=led.vu[0];
+    }else if(signal&&led.analyser&&state.audioCtx){
+      led.analyser.getByteFrequencyData(led.fft);
+      const nyquist=state.audioCtx.sampleRate/2,binHz=nyquist/led.fft.length;
+      let total=0;
+      for(let i=0;i<led.levels.length;i++){
+        const f0=50*Math.pow(16000/50,i/led.levels.length),f1=50*Math.pow(16000/50,(i+1)/led.levels.length);
+        const a=Math.max(0,Math.floor(f0/binHz)),b=Math.max(a+1,Math.min(led.fft.length,Math.ceil(f1/binHz)));
+        let peak=0,sum=0;
+        for(let j=a;j<b;j++){const val=led.fft[j];sum+=val;peak=Math.max(val,peak)}
+        const v=Math.max(0,Math.min(1,Math.pow((peak*.45+sum/(b-a)*.55)/200,1.10)*led.sensitivity/100));
+        led.levels[i]=Math.max(v,led.levels[i]*.84);
+        led.peaks[i]=Math.max(led.levels[i],led.peaks[i]*.97);
+        total+=led.levels[i];
+      }
+      energy=total/led.levels.length;
+      led.vu[0]=Math.max(rmsFromWave(led.left,led.waveL),led.vu[0]*.85);
+      led.vu[1]=Math.max(rmsFromWave(led.right,led.waveR),led.vu[1]*.85);
+    }else energy=ledPseudoLevels(t,preview);
+    if(led.mode==='ambient'){
+      const pulse=(Math.sin(t*.003)*.5+.5),strength=.3+energy*.5+pulse*.15;
+      const grd=ctx.createRadialGradient(w*.5,h*.5,5,w*.5,h*.5,w*.58);
+      grd.addColorStop(0,ledColor(5,12,t,.65*strength));grd.addColorStop(1,'rgba(7,12,25,0)');
+      ctx.fillStyle=grd;ctx.fillRect(0,0,w,h);
+      for(let i=0;i<28;i++){
+        const x=12+i*(w-24)/28;
+        const v=.14+.45*Math.sin(t*.002+i*.43)**2+energy*.25;
+        paintLedBar(ctx,x,h*.15,(w-35)/33,h*.6,13,Math.min(.9,v),i,t);
+      }
+    }else if(led.mode==='vu'){
+      paintHorizontalVU(ctx,16,h*.34,w-32,23,led.vu[0],'L',t);
+      paintHorizontalVU(ctx,16,h*.67,w-32,23,led.vu[1],'R',t);
+    }else if(led.mode==='radial'){
+      const count=48,cx=w*.5,cy=h*.51,r=Math.min(w*.27,h*.23),base=Math.min(22,h*.20);
+      for(let i=0;i<count;i++){
+        const a=(i/count)*Math.PI*2-Math.PI/2,level=led.levels[i%led.levels.length],reach=base+level*h*.25;
+        ctx.strokeStyle=ledColor(i,12,t,.88);ctx.lineWidth=Math.max(2,Math.min(6,w/count*.15));ctx.lineCap='round';
+        ctx.beginPath();ctx.moveTo(cx+Math.cos(a)*r,cy+Math.sin(a)*r);ctx.lineTo(cx+Math.cos(a)*(r+reach),cy+Math.sin(a)*(r+reach));ctx.stroke();
+      }
+      ctx.beginPath();ctx.arc(cx,cy,r*.72,0,2*Math.PI);ctx.strokeStyle=ledColor(3,14,t,.8);ctx.lineWidth=2;ctx.stroke();
+    }else if(led.mode==='waveform'){
+      for(let line=0;line<3;line++){
+        ctx.beginPath();ctx.lineWidth=line===0?3:1.6;ctx.strokeStyle=ledColor(3+line*6,14,t,.95-line*.17);
+        for(let k=0;k<=72;k++){
+          const x=k*w/72,ratio=k/72,env=.2+.8*Math.sin(Math.PI*ratio),amp=(.18+energy*.7)*h*.45;
+          const y=h*.5+Math.sin(ratio*Math.PI*(9+line*2)-t*.004*(1+line*.15))*amp*env*(line===0?1:.55);
+          if(k===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+        }ctx.stroke();
+      }
+    }else if(led.mode==='particles'){
+      const n=66,phase=t*.00027;
+      for(let i=0;i<n;i++){
+        const x=(Math.sin(i*24.719+phase*(i%4+1))*.5+.5)*w;
+        const y=(Math.cos(i*16.31-phase*(i%5+1))*.5+.5)*h;
+        const size=1.4+(i%5)*.65+energy*2;
+        ctx.beginPath();ctx.arc(x,y,size,0,2*Math.PI);ctx.fillStyle=ledColor(i,10,t,.45+(i%3)*.19);ctx.fill();
+      }
+    }else if(led.mode==='matrixrain'){
+      const cell=Math.max(14,Math.floor(w/38)),cols=Math.floor(w/cell),phase=t*.025;
+      ctx.font='bold 14px monospace';ctx.textAlign='center';
+      for(let i=0;i<cols;i++){
+        const offset=((i*31)%19)*cell,y=((phase*(.45+(i%4)*.11)+offset)%(h+cell*6))-cell*3;
+        for(let k=0;k<6;k++){
+          const py=y-k*cell;if(py<0||py>h)continue;
+          ctx.fillStyle=ledColor(i+k,12,t,1-k*.13);ctx.fillText((i+k)%3===0?'1':'0',i*cell+cell/2,py);
+        }
+      }
+      ctx.textAlign='left';
+    }else if(led.mode==='pulse'){
+      const cx=w/2,cy=h/2,maxR=Math.min(w*.46,h*.67),phase=t*.0007;
+      for(let j=0;j<8;j++){
+        const q=(j/8+phase)%1,r=10+maxR*q;
+        ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.lineWidth=1.5+(1-q)*3;
+        ctx.strokeStyle=ledColor(j*4,12,t,.9*(1-q));ctx.stroke();
+      }
+      ctx.beginPath();ctx.arc(cx,cy,9+energy*16,0,Math.PI*2);ctx.fillStyle=ledColor(4,14,t,.95);ctx.fill();
+    }else if(led.mode==='tunnel'){
+      const cx=w/2,cy=h/2,phase=t*.00024;
+      for(let j=11;j>=0;j--){
+        const q=((j+phase*12)%12)/12,depth=.1+q*.88,sizeX=w*.42*depth,sizeY=h*.43*depth;
+        ctx.strokeStyle=ledColor(j*3,12,t,.2+q*.7);ctx.lineWidth=1+q*2;
+        ctx.strokeRect(cx-sizeX,cy-sizeY,sizeX*2,sizeY*2);
+      }
+      for(const c of [[0,0],[w,0],[w,h],[0,h]]){
+        ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(c[0],c[1]);ctx.lineWidth=1;ctx.strokeStyle=ledColor(4,8,t,.22);ctx.stroke();
+      }
+    }else{
+      const N=led.levels.length,pad=10,bw=Math.max(1,(w-2*pad-(N-1)*3)/N);
+      for(let i=0;i<N;i++){
+        paintLedBar(ctx,pad+i*(bw+3),25,bw,h-68,15,led.levels[i],i,t);
+        const peakY=25+(1-led.peaks[i])*(h-68);
+        ctx.fillStyle=ledColor(i,15,t,.75);ctx.fillRect(pad+i*(bw+3),peakY,bw,2);
+      }
+      paintHorizontalVU(ctx,10,h-39,w/2-16,14,led.vu[0],'L',t);
+      paintHorizontalVU(ctx,w/2+6,h-39,w/2-16,14,led.vu[1],'R',t);
+      ctx.fillStyle='#6b88aa';ctx.font='10px system-ui';ctx.fillText('60 Hz',10,h-7);ctx.textAlign='right';ctx.fillText('16 kHz',w-10,h-7);ctx.textAlign='left';
+    }
+    // Informations dans la zone visuelle pour identifier le mode même sans signal audio.
+    ctx.textAlign='left';ctx.font='700 9px system-ui';ctx.fillStyle='#c4cbe0';
+    ctx.fillText((LED_EFFECT_LABELS[led.mode]||'LED').toUpperCase(),10,15);
+    ctx.textAlign='right';ctx.fillStyle=ledColor(12,14,t,.86);
+    ctx.fillText(signal?'SIGNAL':'VISUEL',w-10,15);ctx.textAlign='left';
+  }
+
+  // ----------- Visuels, paroles locales, lecteur immersif -----------
+  function escapeSafeText(v){return String(v??'').slice(0,25000)}
+  function visualPrefs(){safeSet(VISUAL_KEY,JSON.stringify({theme:visuals.theme,rotate:visuals.rotate}))}
+  function refreshDetails(){
+    const grid=$('metadataGrid');if(!grid)return;
+    const tr=getTrack(state.id),st=radio.active;
+    let rows=[];
+    if(st){rows=[['Radio',st.name],['Pays',countryName(st.countrycode)],['Genre',st.tags||'Non précisé'],['Format',st.codec||'Flux en direct'],['Débit',st.bitrate?st.bitrate+' kb/s':'Non communiqué']];}
+    else if(tr){rows=[['Titre',trackTitle(tr)],['Artiste',tr.artist||'Non renseigné'],['Album',tr.album||'Non renseigné'],['Format',(tr.name.split('.').pop()||'').toUpperCase()],['Taille',filesize(tr.size)],['Dossier',tr.folder||'Racine de la bibliothèque']];}
+    else rows=[['Sélection','Aucun titre sélectionné']];
+    grid.replaceChildren();for(const [key,value] of rows){const d=document.createElement('div');d.className='meta';const small=document.createElement('span');small.textContent=key;const val=document.createElement('strong');val.textContent=value;d.append(small,val);grid.append(d)}
+    const hasTrack=!!tr&&!st;
+    $('lyricsEditBtn').disabled=!hasTrack;$('lyricsLoadBtn').disabled=!hasTrack;
+    $('lyricsEdit').hidden=true;
+    displayLyrics();
+  }
+  function parseLyrics(raw){
+    const lines=String(raw||'').replace(/\r/g,'').split('\n').slice(0,3000);
+    const timed=[];let seenTime=false;
+    for(const line of lines){
+      const reg=/\[(\d{1,3}):(\d{2})(?:[.:](\d{1,3}))?\]/g;
+      const matches=[...line.matchAll(reg)];if(!matches.length)continue;
+      const body=line.replace(reg,'').trim();
+      for(const match of matches){
+        const fract=match[3]?Number('0.'+match[3].padEnd(3,'0')):0;
+        const time=Number(match[1])*60+Number(match[2])+fract;
+        if(Number.isFinite(time))timed.push({time,text:body||'♪'});
+      }
+      seenTime=true;
+    }
+    if(seenTime&&timed.length){timed.sort((a,b)=>a.time-b.time);return {timed:true,lines:timed}}
+    return {timed:false,lines:lines.map(text=>({time:null,text}))};
+  }
+  function displayLyrics(){
+    const viewer=$('lyricsDisplay'),tr=radio.active?null:getTrack(state.id);
+    if(!tr){viewer.textContent=radio.active?'Les paroles ne sont pas disponibles pour les radios en direct.':'Sélectionnez un morceau pour afficher ou enregistrer ses paroles.';visuals.lastLyricIndex=-1;refreshStageLyrics('');return}
+    const lyrics=String(tr.lyrics||'').trim();
+    if(!lyrics){viewer.textContent='Aucune parole enregistrée pour ce morceau. Utilisez « Ajouter / modifier » ou importez un fichier .lrc / .txt.';visuals.lastLyricIndex=-1;refreshStageLyrics('');return}
+    const parsed=parseLyrics(lyrics);viewer.replaceChildren();const fragment=document.createDocumentFragment();
+    parsed.lines.forEach((line,i)=>{const item=document.createElement('span');item.className='line';item.textContent=line.text||' ';item.dataset.index=String(i);fragment.append(item)});
+    viewer.append(fragment);visuals.lastLyricIndex=-1;syncLyrics(positionNow());
+  }
+  function refreshStageLyrics(text){const el=$('stageLyrics');if(el&&el.textContent!==text)el.textContent=text}
+  function syncLyrics(pos){
+    const tr=radio.active?null:getTrack(state.id);if(!tr?.lyrics){refreshStageLyrics('');return}
+    const parsed=parseLyrics(tr.lyrics);if(!parsed.lines.length){refreshStageLyrics('');return}
+    let ix=-1;if(parsed.timed){for(let i=0;i<parsed.lines.length;i++){if(parsed.lines[i].time<=pos+.07)ix=i;else break}}
+    if(visuals.lastLyricIndex!==ix){const viewer=$('lyricsDisplay');const prev=viewer.querySelector('.line.active');if(prev)prev.classList.remove('active');if(ix>=0){const current=viewer.querySelector(`[data-index="${ix}"]`);if(current){current.classList.add('active');if($('infoDetails').open&&viewer.scrollHeight>viewer.clientHeight)current.scrollIntoView({behavior:'instant',block:'nearest'})}}visuals.lastLyricIndex=ix;}
+    const line=parsed.timed?(ix>=0?parsed.lines[ix].text:'Paroles synchronisées disponibles'):parsed.lines.find(x=>x.text.trim())?.text||'';
+    refreshStageLyrics(escapeSafeText(line).slice(0,500));
+  }
+  async function saveLyrics(raw){const tr=!radio.active?getTrack(state.id):null;if(!tr)return;
+    const updated={...tr,lyrics:String(raw||'').slice(0,200000)};
+    try{await storePut(META,updated);const idx=state.tracks.findIndex(t=>t.id===tr.id);if(idx>=0)state.tracks[idx]=updated;visuals.lastLyricIndex=-1;displayLyrics();refreshStage();$('lyricsEdit').hidden=true;message(updated.lyrics?'Paroles enregistrées dans la bibliothèque locale.':'Paroles supprimées.')}catch(e){message('Impossible de sauvegarder les paroles : '+e.message,true)}
+  }
+  function syncRotation(){const rotating=visuals.rotate&&!radio.active&&state.playing&&!!state.id;
+    $('currentArtWrap').classList.toggle('is-rotating',rotating);
+    $('stageArtWrap').classList.toggle('is-rotating',rotating);
+    $('rotateArtBtn').textContent=visuals.rotate?'◉ Rotation activée':'◎ Rotation arrêtée';
+    $('rotateArtBtn').setAttribute('aria-pressed',String(visuals.rotate));
+  }
+  function refreshStage(){
+    if(!$('stageTitle'))return;
+    const tr=getTrack(state.id),st=radio.active;
+    $('stageTitle').textContent=st?st.name:tr?trackTitle(tr):'HARMONIE';
+    $('stageSubtitle').textContent=st?countryName(st.countrycode)+' · RADIO EN DIRECT':tr?trackSubtitle(tr):'BY PHILOU/CYBERPUNK';
+    $('stageKicker').textContent=st?'◉ RADIO INTERNET // EN DIRECT':state.frequency===432?'♪ FLAC / AUDIO · 432 HZ':'♪ FLAC / AUDIO · VITESSE ORIGINALE';
+    $('stageArt').src=els.art.src||defaultArt('HARMONIE');
+    $('stageArt').alt=els.art.alt||'Pochette du titre en cours';
+    syncStageControls();syncLyrics(positionNow());
+  }
+  function syncStageControls(){const playing=radio.active?radio.playing:state.playing;
+    $('stagePlay').textContent=playing?'⏸ Pause':'▶ Lire';
+    $('stagePrev').disabled=els.prev.disabled;$('stageNext').disabled=els.next.disabled;
+  }
+  function stageSize(){
+    const cv=$('stageSpectrum');const dpr=Math.min(window.devicePixelRatio||1,2);
+    const w=cv.getBoundingClientRect().width||900,h=cv.getBoundingClientRect().height||180;
+    cv.width=Math.ceil(w*dpr);cv.height=Math.ceil(h*dpr);
+    visuals.stageCtx=cv.getContext('2d');visuals.stageCtx?.setTransform(dpr,0,0,dpr,0,0);
+    const rain=$('stageRain');const rw=innerWidth,rh=innerHeight;visuals.rainDpi=Math.min(window.devicePixelRatio||1,1.5);
+    rain.width=Math.round(rw*visuals.rainDpi);rain.height=Math.round(rh*visuals.rainDpi);
+    visuals.rainCtx=rain.getContext('2d');visuals.rainCtx?.setTransform(visuals.rainDpi,0,0,visuals.rainDpi,0,0);
+    visuals.rainCols=Array.from({length:Math.ceil(rw/20)},()=>-Math.random()*rh/20);
+  }
+  function paintStage(){
+    if(!visuals.stageOpen)return;
+    const cv=$('stageSpectrum'),ctx=visuals.stageCtx;if(!ctx)return;
+    const w=cv.getBoundingClientRect().width||900,h=cv.getBoundingClientRect().height||180;
+    ctx.clearRect(0,0,w,h);ctx.fillStyle='#06121c';ctx.fillRect(0,0,w,h);
+    try{if(led.canvas&&led.canvas.width)ctx.drawImage(led.canvas,0,0,w,h)}catch{}
+  }
+  function frameStage(time){
+    if(!visuals.stageOpen){visuals.rainRaf=0;return}
+    if(!visuals.rainLast||time-visuals.rainLast>=40){
+      visuals.rainLast=time;
+      paintStage();
+      if(!led.reduced&&!document.hidden&&visuals.rainCtx){
+        const ctx=visuals.rainCtx,w=innerWidth,h=innerHeight,sz=20;
+        ctx.fillStyle='rgba(1,10,12,0.115)';ctx.fillRect(0,0,w,h);
+        ctx.font='14px monospace';
+        const tint=visuals.theme==='matrix'?'#3aff83':visuals.theme==='fire'?'#ff538d':visuals.theme==='ice'?'#4acfff':'#61ffe0';
+        ctx.fillStyle=tint;
+        for(let j=0;j<visuals.rainCols.length;j++){
+          const y=visuals.rainCols[j]*sz;
+          ctx.fillText('01アBキ'[Math.floor(Math.random()*5)]||'0',j*sz+3,y);
+          if(y>h+Math.random()*h*.2)visuals.rainCols[j]=-Math.random()*25;else visuals.rainCols[j]++;
+        }
+      }
+    }
+    visuals.rainRaf=requestAnimationFrame(frameStage);
+  }
+  async function openStage(){
+    if(visuals.stageOpen)return;
+    visuals.stageOpen=true;
+    const overlay=$('stageOverlay');overlay.hidden=false;overlay.setAttribute('aria-hidden','false');overlay.dataset.mode=visuals.theme;
+    document.body.style.overflow='hidden';refreshStage();syncRotation();
+    stageSize();visuals.rainLast=0;visuals.rainRaf=requestAnimationFrame(frameStage);
+    $('stageClose').focus({preventScroll:true});
+    try{if(overlay.requestFullscreen)await overlay.requestFullscreen()}catch(e){log('Plein écran natif refusé : affichage immersif dans la page. '+(e.message||e))}
+  }
+  function closeStage(){
+    if(!visuals.stageOpen)return;
+    visuals.stageOpen=false;$('stageOverlay').hidden=true;$('stageOverlay').setAttribute('aria-hidden','true');
+    document.body.style.overflow='';cancelAnimationFrame(visuals.rainRaf);visuals.rainRaf=0;
+    if(document.fullscreenElement=== $('stageOverlay'))document.exitFullscreen().catch(()=>{});
+    $('stageOpen').focus({preventScroll:true});
+  }
+  function initVisuals(){
+    try{const cfg=JSON.parse(safeGet(VISUAL_KEY)||'{}');if(['cyber','matrix','ice','fire'].includes(cfg.theme))visuals.theme=cfg.theme;if(typeof cfg.rotate==='boolean')visuals.rotate=cfg.rotate}catch{}
+    document.body.dataset.visual=visuals.theme;$('visualTheme').value=visuals.theme;
+    $('visualTheme').addEventListener('change',()=>{visuals.theme=$('visualTheme').value;document.body.dataset.visual=visuals.theme;$('stageOverlay').dataset.mode=visuals.theme;visualPrefs();if(led.canvas){led.palette=visuals.theme;$('ledPalette').value=led.palette;safeSet(LED_KEY,JSON.stringify({mode:led.mode,palette:led.palette,sensitivity:led.sensitivity,brightness:led.brightness}));applyLedPaletteFrame();syncLedState(true)}});
+    $('rotateArtBtn').addEventListener('click',()=>{visuals.rotate=!visuals.rotate;syncRotation();visualPrefs()});
+    $('stageOpen').addEventListener('click',openStage);$('stageOpenTop').addEventListener('click',openStage);
+    $('stageClose').addEventListener('click',closeStage);
+    $('stagePlay').addEventListener('click',togglePlay);$('stagePrev').addEventListener('click',()=>navigate(-1));$('stageNext').addEventListener('click',()=>navigate(1));
+    $('stageArt').onerror=()=>{$('stageArt').onerror=null;$('stageArt').src=defaultArt('HARMONIE')};
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&visuals.stageOpen)closeStage()});
+    document.addEventListener('fullscreenchange',()=>{if(visuals.stageOpen&&!document.fullscreenElement&&$('stageOverlay').hidden===false){/* mode CSS de secours conserve les commandes */}});
+    window.addEventListener('resize',()=>{if(visuals.stageOpen)stageSize()});
+    $('lyricsEditBtn').addEventListener('click',()=>{const tr=getTrack(state.id);if(!tr||radio.active)return;$('lyricsEdit').hidden=false;$('lyricsInput').value=tr.lyrics||'';$('lyricsInput').focus()});
+    $('lyricsCancel').addEventListener('click',()=>{$('lyricsEdit').hidden=true});
+    $('lyricsSave').addEventListener('click',()=>saveLyrics($('lyricsInput').value));
+    $('lyricsDelete').addEventListener('click',()=>{if(confirm('Effacer les paroles enregistrées pour ce titre ?'))saveLyrics('')});
+    $('lyricsLoadBtn').addEventListener('click',()=>{if(!radio.active&&state.id)$('lyricsFileInput').click()});
+    $('lyricsFileInput').addEventListener('change',async e=>{
+      const f=e.target.files?.[0];e.target.value='';if(!f||!state.id||radio.active)return;
+      if(f.size>250000){message('Fichier de paroles trop volumineux (maximum 250 Ko).',true);return}
+      try{$('lyricsInput').value=await f.text();$('lyricsEdit').hidden=false;$('lyricsInput').focus();message('Paroles chargées : cliquez sur « Enregistrer les paroles ».')}catch(err){message('Import de paroles impossible : '+err.message,true)}
+    });
+    syncRotation();refreshDetails();refreshStage();
+  }
+
+
+  // Effets audio supplémentaires : ne modifient pas l'interface d'origine.
+  const extraFX={input:null,output:null,echoOn:false,echoAmount:25,spaceOn:false,spaceAmount:35};
+  function initExtraFX(ctx){
+    const f=extraFX;
+    f.input=ctx.createGain();f.output=ctx.createGain();
+    const echoDry=ctx.createGain(),echoWet=ctx.createGain(),echoDelay=ctx.createDelay(1),feedback=ctx.createGain(),echoOut=ctx.createGain();
+    echoDelay.delayTime.value=.24;
+    f.input.connect(echoDry);echoDry.connect(echoOut);
+    f.input.connect(echoDelay);echoDelay.connect(echoWet);echoWet.connect(echoOut);
+    echoDelay.connect(feedback);feedback.connect(echoDelay);
+    const dry=ctx.createGain(),wet=ctx.createGain(),split=ctx.createChannelSplitter(2),merge=ctx.createChannelMerger(2),rightDelay=ctx.createDelay(.05);
+    echoOut.connect(dry);dry.connect(f.output);
+    echoOut.connect(split);split.connect(merge,0,0);split.connect(rightDelay,1);rightDelay.connect(merge,0,1);
+    merge.connect(wet);wet.connect(f.output);f.output.connect(state.gain);
+    f.nodes={echoDry,echoWet,feedback,dry,wet,rightDelay};updateExtraFX();
+  }
+  function updateExtraFX(){
+    const f=extraFX,n=f.nodes;
+    if(n){const t=state.audioCtx.currentTime;
+      const echoMix=f.echoOn?f.echoAmount/100:0;
+      n.echoDry.gain.setTargetAtTime(1-echoMix*.3,t,.03);
+      n.echoWet.gain.setTargetAtTime(echoMix*.55,t,.03);
+      n.feedback.gain.setTargetAtTime(f.echoOn?Math.min(.5,echoMix*.6):0,t,.03);
+      const spaceMix=f.spaceOn?f.spaceAmount/100:0;
+      n.dry.gain.setTargetAtTime(1-spaceMix*.55,t,.03);
+      n.wet.gain.setTargetAtTime(spaceMix*.55,t,.03);
+      n.rightDelay.delayTime.setTargetAtTime(.006+spaceMix*.016,t,.03);
+    }
+    $('fxEchoVal').textContent=f.echoAmount+' %';$('fxSpaceVal').textContent=f.spaceAmount+' %';
+    if(state.dspPreamp)updateDSPGains();
+    else syncNativeAudioEffects();
+    updateProEngineNote();
+    safeSet('harmonie-v3-spatial-echo',JSON.stringify({echoOn:f.echoOn,echoAmount:f.echoAmount,spaceOn:f.spaceOn,spaceAmount:f.spaceAmount}));
+  }
+  function initExtraFXControls(){
+    try{const v=JSON.parse(safeGet('harmonie-v3-spatial-echo')||'{}');
+      if(typeof v.echoOn==='boolean')extraFX.echoOn=v.echoOn;
+      if(typeof v.spaceOn==='boolean')extraFX.spaceOn=v.spaceOn;
+      if(Number.isFinite(v.echoAmount))extraFX.echoAmount=Math.max(0,Math.min(70,v.echoAmount));
+      if(Number.isFinite(v.spaceAmount))extraFX.spaceAmount=Math.max(0,Math.min(100,v.spaceAmount));
+    }catch{}
+    for(const [key,checkbox,slider,value] of [['echoOn','fxEchoOn','fxEchoAmount','echoAmount'],['spaceOn','fxSpaceOn','fxSpaceAmount','spaceAmount']]){
+      $(checkbox).checked=extraFX[key];$(slider).value=extraFX[value];
+      $(checkbox).addEventListener('change',()=>{markProCustom();extraFX[key]=$(checkbox).checked;updateExtraFX()});
+      $(slider).addEventListener('input',()=>{markProCustom();extraFX[value]=Number($(slider).value);updateExtraFX()});
+    }
+    updateExtraFX();
+  }
+  function initAndroidFolderImport(){
+    if(!window.AndroidBridge)return;
+    $('addFolderBtn').addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();
+      try{window.AndroidBridge.chooseFolder()}catch(err){message('Sélection du dossier impossible : '+err.message,true)}
+    },true);
+    window.HARMONIE_ANDROID_FILES=async items=>{
+      if(!Array.isArray(items)||!items.length){message('Aucun fichier audio trouvé dans le dossier choisi.',true);return}
+      let successful=0,failed=0;
+      for(const it of items){
+        if(!it||!it.name||!/\.(flac|mp3|wav|m4a|aac|ogg|oga)$/i.test(it.name))continue;
+        try{
+          const response=await fetch(it.url,{cache:'no-store'});
+          if(!response.ok)throw new Error('Lecture impossible (HTTP '+response.status+')');
+          const blob=await response.blob();
+          const file=new File([blob],it.name,{type:blob.type||mimeOf(it.name),lastModified:it.modified||Date.now()});
+          Object.defineProperty(file,'webkitRelativePath',{value:it.path||it.name,configurable:true});
+          await addFiles([file],'saved');successful++;
+        }catch(err){failed++;log('Import Android : '+it.name+' : '+err.message)}
+      }
+      message('Dossier Android : '+successful+' importé(s), '+failed+' erreur(s).',failed>0);
+    };
+  }
+
+
+  // HI-FI AUDIO PRO : quatre profils sans modifier les commandes audio existantes.
+  const PRO_KEY='harmonie-v3.4-hifi-audio-pro';
+  const PRO_PROFILES=Object.freeze({
+    fidelity:{label:'Fidélité FLAC',description:'Égaliseur, limiteur et effets coupés. Lecture locale à la vitesse originale (440 / Original).',gains:[0,0,0,0,0,0,0,0],eqEnabled:false,hifi:false,echoOn:false,echoAmount:0,spaceOn:false,spaceAmount:0,original:true},
+    bass:{label:'Basses profondes',description:'Renforcement modéré des graves avec réserve de niveau et protection anti-saturation.',gains:[4,2.5,1,0,-0.5,0,0,0],eqEnabled:true,hifi:true,echoOn:false,echoAmount:0,spaceOn:false,spaceAmount:0},
+    concert:{label:'Concert',description:'Légère présence, ambiance et espace stéréo si la sortie les prend en charge.',gains:[1.5,0.5,-0.5,0,1,1.5,1,0],eqEnabled:true,hifi:true,echoOn:true,echoAmount:18,spaceOn:true,spaceAmount:25},
+    spatial:{label:'Spatial 3D',description:'Espace stéréo Web Audio ; virtualisation Android native si disponible.',gains:[0,-0.5,0,0.5,1,1.5,1,0.5],eqEnabled:true,hifi:true,echoOn:false,echoAmount:0,spaceOn:true,spaceAmount:58},
+    vocal:{label:'Voix claires',description:'Met la présence des voix en avant sans renforcement excessif des aigus.',gains:[-1,-0.5,0,1,2,1.5,0,0],eqEnabled:true,hifi:true,echoOn:false,echoAmount:0,spaceOn:false,spaceAmount:0},
+    rock:{label:'Rock énergique',description:'Équilibre grave/presence pour guitares et batteries.',gains:[2,1,0,0.5,1,2,1,0],eqEnabled:true,hifi:true,echoOn:false,echoAmount:0,spaceOn:false,spaceAmount:0},
+    classical:{label:'Classique',description:'Tonalité discrète favorisant la clarté des instruments.',gains:[0.5,0,0,0,0.5,0.5,0.5,0],eqEnabled:true,hifi:true,echoOn:false,echoAmount:0,spaceOn:false,spaceAmount:0},
+    night:{label:'Écoute douce',description:'Graves et extrêmes aigus atténués pour une écoute calme.',gains:[-1.5,-1,-0.5,0,0.5,0,-1,-1.5],eqEnabled:true,hifi:true,echoOn:false,echoAmount:0,spaceOn:false,spaceAmount:0}
+  });
+  const PRO_PERSONAL_KEY='harmonie-v3.5.19-hifi-personal';
+  let activeProProfile='';
+  let personalProActive=false;
+  let proToneContrib=Array(8).fill(0);
+  function formatProDb(value){return (value>0?'+':'')+Number(value).toLocaleString('fr-FR',{maximumFractionDigits:1})+' dB'}
+  function resetProTones(){
+    proToneContrib=Array(8).fill(0);
+    for(const id of ['proBass','proVoice','proTreble']){const el=$(id);if(el){el.value='0';$(id+'Val').textContent='0 dB'}}
+  }
+  function updateProEngineNote(){
+    const note=$('proEngineNote');if(!note)return;
+    if(state.mode==='android-native'||(radio.active&&radio.native)){
+      note.textContent='Media3 Android : réglages Graves/Voix/Aigus → EQ natif ; ambiance → réverbération et espace → virtualisation si pris en charge. Le Diagnostic confirme les effets activés. Certains périphériques Bluetooth peuvent les ignorer.'+(radio.active&&radio.native&&!els.radioEQ.checked?' Activez EQ radio ou déplacez un réglage rapide.':'');
+    }else if(state.mode==='native'||state.mode==='buffer'||(radio.active&&!radio.native)){
+      note.textContent='Web Audio : EQ, écho à répétitions et élargissement stéréo actifs sur le signal du navigateur.';
+    }else note.textContent='Mode audio non sélectionné : Media3 utilise les effets Android selon compatibilité ; Web Audio utilise les effets internes.';
+  }
+  function syncProProfile(){
+    const p=PRO_PROFILES[activeProProfile];
+    document.querySelectorAll('[data-pro-profile]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.proProfile===activeProProfile)));
+    $('proActiveLabel').textContent=p?p.label:personalProActive?'Ma signature':'Réglages personnalisés';
+    $('proDescription').textContent=p?p.description:personalProActive?'Signature personnelle chargée. Les corrections restent ajustables.':'Réglages personnalisés : vous pouvez choisir à nouveau un profil ou continuer vos modifications.';
+    updateProEngineNote();
+  }
+  function markProCustom(){
+    resetProTones();personalProActive=false;
+    if(activeProProfile){activeProProfile='';safeSet(PRO_KEY,'')}
+    syncProProfile();
+  }
+  function applyProProfile(name,{silent=false}={}){
+    const p=PRO_PROFILES[name];if(!p)return;
+    // Conserver le panneau et tous les autres onglets intacts.
+    personalProActive=false;resetProTones();
+    state.eqEnabled=p.eqEnabled;
+    state.hifi=p.hifi;
+    state.eqPreset='custom';
+    state.eqGains=[...p.gains];
+    extraFX.echoOn=p.echoOn;extraFX.echoAmount=p.echoAmount;
+    extraFX.spaceOn=p.spaceOn;extraFX.spaceAmount=p.spaceAmount;
+    $('fxEchoOn').checked=extraFX.echoOn;$('fxEchoAmount').value=extraFX.echoAmount;
+    $('fxSpaceOn').checked=extraFX.spaceOn;$('fxSpaceAmount').value=extraFX.spaceAmount;
+    // Fidélité FLAC nécessite de ne pas modifier la vitesse/hauteur.
+    if(p.original&&state.frequency!==440)setFrequency(440);
+    enableRadioEqForPro();updateExtraFX();routeDSP();syncEqUI();persistEqualizer();
+    activeProProfile=name;safeSet(PRO_KEY,name);syncProProfile();
+    if(!silent){const note=radio.active&&radio.native?' (radio Android : EQ, réverbération et virtualisation selon compatibilité)':'';message('Hi-Fi Audio PRO : '+p.label+note)}
+  }
+  function enableRadioEqForPro(){
+    if(radio.active&&radio.native&&state.eqEnabled&&!els.radioEQ.checked){
+      els.radioEQ.checked=true;
+      saveRadio();
+      message('Égaliseur Android activé pour cette radio. État réel dans Diagnostic / son coupé.');
+    }
+  }
+  function applyProToneControls(){
+    // Ajustement différentiel : conserve le profil choisi comme point de départ.
+    const bass=Number($('proBass').value),voice=Number($('proVoice').value),treble=Number($('proTreble').value);
+    const additions=[bass,bass*.7,bass*.2,voice*.5,voice,voice*.55,treble*.7,treble];
+    state.eqGains=state.eqGains.map((g,i)=>Math.max(-12,Math.min(12,Math.round((g-proToneContrib[i]+additions[i])*2)/2)));
+    proToneContrib=additions;
+    for(const [id,v] of [['proBass',bass],['proVoice',voice],['proTreble',treble]])$(id+'Val').textContent=formatProDb(v);
+    state.eqEnabled=true;state.hifi=true;state.eqPreset='custom';
+    activeProProfile='';personalProActive=false;safeSet(PRO_KEY,'');
+    enableRadioEqForPro();routeDSP();syncEqUI();persistEqualizer();syncProProfile();
+  }
+  function proSnapshot(){return {enabled:state.eqEnabled,hifi:state.hifi,gains:[...state.eqGains],echoOn:extraFX.echoOn,echoAmount:extraFX.echoAmount,spaceOn:extraFX.spaceOn,spaceAmount:extraFX.spaceAmount}}
+  function saveProPersonal(){
+    safeSet(PRO_PERSONAL_KEY,JSON.stringify(proSnapshot()));
+    $('proLoad').disabled=false;
+    message('Hi-Fi Audio PRO : votre signature sonore est enregistrée sur cet appareil.');
+  }
+  function loadProPersonal(){
+    let c;try{c=JSON.parse(safeGet(PRO_PERSONAL_KEY)||'null')}catch{}
+    if(!c||!Array.isArray(c.gains)||c.gains.length!==8||!c.gains.every(v=>typeof v==='number'&&Number.isFinite(v)&&v>=-12&&v<=12)){
+      message('Aucun réglage sonore personnel valide enregistré.',true);return;
+    }
+    resetProTones();
+    state.eqEnabled=!!c.enabled;state.hifi=!!c.hifi;state.eqPreset='custom';state.eqGains=[...c.gains];
+    extraFX.echoOn=!!c.echoOn;extraFX.spaceOn=!!c.spaceOn;
+    extraFX.echoAmount=Math.max(0,Math.min(70,Number(c.echoAmount)||0));
+    extraFX.spaceAmount=Math.max(0,Math.min(100,Number(c.spaceAmount)||0));
+    for(const [id,val] of [['fxEchoOn',extraFX.echoOn],['fxSpaceOn',extraFX.spaceOn],['fxEchoAmount',extraFX.echoAmount],['fxSpaceAmount',extraFX.spaceAmount]])$(id)[['fxEchoOn','fxSpaceOn'].includes(id)?'checked':'value']=val;
+    activeProProfile='';personalProActive=true;safeSet(PRO_KEY,'');
+    enableRadioEqForPro();updateExtraFX();routeDSP();syncEqUI();persistEqualizer();syncProProfile();
+    message('Hi-Fi Audio PRO : votre signature sonore est rétablie.');
+  }
+  function bypassProEffects(){
+    resetProTones();activeProProfile='';personalProActive=false;safeSet(PRO_KEY,'');
+    state.eqEnabled=false;state.hifi=false;state.eqPreset='custom';state.eqGains=Array(8).fill(0);
+    extraFX.echoOn=false;extraFX.spaceOn=false;
+    $('fxEchoOn').checked=false;$('fxSpaceOn').checked=false;
+    updateExtraFX();routeDSP();syncEqUI();persistEqualizer();syncProProfile();
+    message('Son direct activé : EQ, écho et spatialisation désactivés ; accordage conservé.');
+  }
+  function initProProfileControls(){
+    for(const button of document.querySelectorAll('[data-pro-profile]')){
+      button.addEventListener('click',()=>applyProProfile(button.dataset.proProfile));
+    }
+    for(const id of ['proBass','proVoice','proTreble'])$(id).addEventListener('input',applyProToneControls);
+    $('proSave').addEventListener('click',saveProPersonal);
+    $('proLoad').addEventListener('click',loadProPersonal);
+    $('proBypass').addEventListener('click',bypassProEffects);
+    $('proLoad').disabled=!safeGet(PRO_PERSONAL_KEY);
+    const stored=safeGet(PRO_KEY)||'';
+    if(Object.hasOwn(PRO_PROFILES,stored))activeProProfile=stored;
+    syncProProfile();
+  }
+
+  initExtraFXControls();
+  initProProfileControls();
+  init();
+  initAndroidFolderImport();
+
+  // Le numéro au pied de l'application correspond à la version réellement installée
+  // sur Android. La valeur HTML sert d'aperçu dans un navigateur sans le pont natif.
+  function syncAppVersionFooter(){
+    try{
+      const native=window.AndroidBridge;
+      if(native && typeof native.getAppVersionLabel==='function'){
+        const label=native.getAppVersionLabel();
+        if(typeof label==='string' && /^VERSION [0-9][0-9.]* · BUILD [0-9]+$/.test(label)){
+          $('appVersionFooter').textContent=label;
+        }
+      }
+    }catch(err){ console.warn('Version de l’application non disponible :',err); }
+  }
+  syncAppVersionFooter();
+})();
+</script>
+</body>
+</html>

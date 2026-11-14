@@ -1,0 +1,48 @@
+# Android, Gradle, Rust
+.gradle/
+.idea/
+**/build/
+**/target/
+**/.cxx/
+*.apk
+*.aab
+*.apks
+*.so
+local.properties
+.cxx/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# IDE / system
+.vscode/
+.DS_Store
+*.log
+*.tmp
+
+# Secrets / signatures
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+*.crt
+*.mobileprovision
+secrets.properties
+keystore.properties
+
+# local builds and media
+*.flac
+*.mp3
+*.wav
+*.m4a
+*.ogg
+*.opus
+*.aac

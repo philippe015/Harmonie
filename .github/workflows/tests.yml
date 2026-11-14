@@ -1,0 +1,37 @@
+name: Tests des sources
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Tests Python
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Scripts Bash
+        run: bash -n compiler_manjaro.sh scripts/*.sh
+      - name: Vérification XML et JS
+        run: |
+          python - <<'PY2'
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          for p in Path('app/src/main/res').rglob('*.xml'):
+              ET.parse(p)
+          ET.parse('app/src/main/AndroidManifest.xml')
+          print('XML OK')
+          PY2
+          node - <<'JS2'
+          const fs = require('fs'); const vm = require('vm');
+          const html = fs.readFileSync('app/src/main/assets/harmonie.html','utf8');
+          const scripts=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)];
+          if(!scripts.length)throw new Error('Aucun script HTML trouvé');
+          for(const x of scripts){ new vm.Script(x[1]); }
+          console.log(`${scripts.length} script(s) JS OK`);
+          JS2

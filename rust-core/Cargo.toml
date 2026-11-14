@@ -1,0 +1,16 @@
+[package]
+name = "harmonie_core"
+version = "0.3.0"
+edition = "2021"
+description = "DSP natif et outils de métadonnées Harmonie"
+
+[lib]
+name = "harmonie_core"
+crate-type = ["cdylib"]
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+strip = "symbols"
